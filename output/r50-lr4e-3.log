@@ -5225,3 +5225,37 @@ json_stats: {"accuracy_cls": 0.998047, "eta": "0:00:51", "iter": 89920, "loss": 
 json_stats: {"accuracy_cls": 0.997559, "eta": "0:00:38", "iter": 89940, "loss": 0.362436, "loss_bbox": 0.007441, "loss_cls": 0.009170, "loss_mask": 0.330879, "loss_rpn_bbox_fpn2": 0.002824, "loss_rpn_bbox_fpn3": 0.000786, "loss_rpn_bbox_fpn4": 0.000120, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.000556, "loss_rpn_cls_fpn3": 0.000018, "loss_rpn_cls_fpn4": 0.000002, "loss_rpn_cls_fpn5": 0.000000, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.000040, "mb_qsize": 64, "mem": 8304, "time": 0.638116}
 json_stats: {"accuracy_cls": 0.998047, "eta": "0:00:25", "iter": 89960, "loss": 0.340626, "loss_bbox": 0.009524, "loss_cls": 0.007921, "loss_mask": 0.316646, "loss_rpn_bbox_fpn2": 0.001829, "loss_rpn_bbox_fpn3": 0.000833, "loss_rpn_bbox_fpn4": 0.000135, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.000292, "loss_rpn_cls_fpn3": 0.000019, "loss_rpn_cls_fpn4": 0.000003, "loss_rpn_cls_fpn5": 0.000000, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.000040, "mb_qsize": 64, "mem": 8304, "time": 0.638119}
 json_stats: {"accuracy_cls": 0.998047, "eta": "0:00:12", "iter": 89980, "loss": 0.335999, "loss_bbox": 0.005291, "loss_cls": 0.007579, "loss_mask": 0.316213, "loss_rpn_bbox_fpn2": 0.001411, "loss_rpn_bbox_fpn3": 0.000452, "loss_rpn_bbox_fpn4": 0.000000, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.000192, "loss_rpn_cls_fpn3": 0.000011, "loss_rpn_cls_fpn4": 0.000000, "loss_rpn_cls_fpn5": 0.000000, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.000040, "mb_qsize": 64, "mem": 8304, "time": 0.638115}
+json_stats: {"accuracy_cls": 0.997070, "eta": "0:00:00", "iter": 89999, "loss": 0.344632, "loss_bbox": 0.006873, "loss_cls": 0.009868, "loss_mask": 0.312464, "loss_rpn_bbox_fpn2": 0.002117, "loss_rpn_bbox_fpn3": 0.000816, "loss_rpn_bbox_fpn4": 0.000078, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.000211, "loss_rpn_cls_fpn3": 0.000016, "loss_rpn_cls_fpn4": 0.000002, "loss_rpn_cls_fpn5": 0.000000, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.000040, "mb_qsize": 64, "mem": 8304, "time": 0.638119}
+INFO net.py: 140: Saving parameters and momentum to /tmp/detectron-output-r50-lr4e-3/train/dsb_2018_train/generalized_rcnn/model_final.pkl
+INFO loader.py: 126: Stopping enqueue thread
+INFO loader.py: 113: Stopping mini-batch loading thread
+INFO loader.py: 113: Stopping mini-batch loading thread
+INFO loader.py: 113: Stopping mini-batch loading thread
+INFO loader.py: 113: Stopping mini-batch loading thread
+loading annotations into memory...
+Done (t=1.04s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.49s)
+creating index...
+index created!
+WARNING cnn.py:  40: [====DEPRECATE WARNING====]: you are creating an object from CNNModelHelper class which will be deprecated soon. Please use ModelHelper object with brew module. For more information, please refer to caffe2.ai and python/brew.py, python/brew_test.py for more information.
+INFO net.py:  57: Loading weights from: /tmp/detectron-output-r50-lr4e-3/train/dsb_2018_train/generalized_rcnn/model_final.pkl
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 1/134 0.247s + 0.005s (eta: 0:00:33)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 11/134 0.148s + 0.010s (eta: 0:00:19)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 21/134 0.130s + 0.014s (eta: 0:00:16)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 31/134 0.121s + 0.011s (eta: 0:00:13)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 41/134 0.118s + 0.011s (eta: 0:00:11)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 51/134 0.115s + 0.010s (eta: 0:00:10)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 61/134 0.114s + 0.011s (eta: 0:00:09)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 71/134 0.113s + 0.017s (eta: 0:00:08)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 81/134 0.112s + 0.019s (eta: 0:00:06)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 91/134 0.112s + 0.018s (eta: 0:00:05)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 101/134 0.113s + 0.019s (eta: 0:00:04)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 111/134 0.113s + 0.018s (eta: 0:00:03)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 121/134 0.113s + 0.018s (eta: 0:00:01)
+INFO test_engine.py: 225: im_detect: range [1, 134] of 134: 131/134 0.112s + 0.017s (eta: 0:00:00)
+INFO test_engine.py: 258: Wrote detections to: /tmp/detectron-output-r50-lr4e-3/test/dsb_2018_val/generalized_rcnn/detections.pkl
+INFO test_engine.py: 111: Total inference time: 19.097s
+INFO task_evaluation.py:  75: Evaluating detections
