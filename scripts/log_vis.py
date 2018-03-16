@@ -14,11 +14,16 @@ accuracy_cls = []
 loss_mask = []
 
 print(args.file)
+skip_iters = 100
 
 with open(args.file, 'r') as f:
     for line in f:
         if line.startswith("json_stats"):
             stats = json.loads(line[12:])
+
+            if stats["iter"] < 100:
+                continue
+
             iter.append(stats["iter"])
             accuracy_cls.append(stats["accuracy_cls"])
             loss_mask.append(stats["loss_mask"])
