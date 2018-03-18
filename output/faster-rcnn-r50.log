@@ -1,0 +1,804 @@
+Found Detectron ops lib: /usr/local/lib/libcaffe2_detectron_ops_gpu.so
+Found Detectron ops lib: /usr/local/lib/libcaffe2_detectron_ops_gpu.so
+INFO train_net.py: 104: Called with args:
+INFO train_net.py: 105: Namespace(cfg_file='configs/nuclei/e2e_faster_rcnn_R-50-FPN_1x.yaml', multi_gpu_testing=False, opts=['OUTPUT_DIR', '/tmp/detectron-faster-rcnn-r50'], skip_test=False)
+INFO train_net.py: 111: Training with config:
+INFO train_net.py: 112: {'BBOX_XFORM_CLIP': 4.135166556742356,
+ 'CLUSTER': {'ON_CLUSTER': False},
+ 'DATA_LOADER': {'NUM_THREADS': 4},
+ 'DEDUP_BOXES': 0.0625,
+ 'DOWNLOAD_CACHE': '/tmp/detectron-download-cache',
+ 'EPS': 1e-14,
+ 'EXPECTED_RESULTS': [],
+ 'EXPECTED_RESULTS_ATOL': 0.005,
+ 'EXPECTED_RESULTS_EMAIL': '',
+ 'EXPECTED_RESULTS_RTOL': 0.1,
+ 'FAST_RCNN': {'MLP_HEAD_DIM': 1024,
+               'ROI_BOX_HEAD': 'fast_rcnn_heads.add_roi_2mlp_head',
+               'ROI_XFORM_METHOD': 'RoIAlign',
+               'ROI_XFORM_RESOLUTION': 7,
+               'ROI_XFORM_SAMPLING_RATIO': 2},
+ 'FPN': {'COARSEST_STRIDE': 32,
+         'DIM': 256,
+         'EXTRA_CONV_LEVELS': False,
+         'FPN_ON': True,
+         'MULTILEVEL_ROIS': True,
+         'MULTILEVEL_RPN': True,
+         'ROI_CANONICAL_LEVEL': 4,
+         'ROI_CANONICAL_SCALE': 224,
+         'ROI_MAX_LEVEL': 5,
+         'ROI_MIN_LEVEL': 2,
+         'RPN_ANCHOR_START_SIZE': 32,
+         'RPN_ASPECT_RATIOS': (0.5, 1, 2),
+         'RPN_MAX_LEVEL': 6,
+         'RPN_MIN_LEVEL': 2,
+         'ZERO_INIT_LATERAL': False},
+ 'KRCNN': {'CONV_HEAD_DIM': 256,
+           'CONV_HEAD_KERNEL': 3,
+           'CONV_INIT': 'GaussianFill',
+           'DECONV_DIM': 256,
+           'DECONV_KERNEL': 4,
+           'DILATION': 1,
+           'HEATMAP_SIZE': -1,
+           'INFERENCE_MIN_SIZE': 0,
+           'KEYPOINT_CONFIDENCE': 'bbox',
+           'LOSS_WEIGHT': 1.0,
+           'MIN_KEYPOINT_COUNT_FOR_VALID_MINIBATCH': 20,
+           'NMS_OKS': False,
+           'NORMALIZE_BY_VISIBLE_KEYPOINTS': True,
+           'NUM_KEYPOINTS': -1,
+           'NUM_STACKED_CONVS': 8,
+           'ROI_KEYPOINTS_HEAD': '',
+           'ROI_XFORM_METHOD': 'RoIAlign',
+           'ROI_XFORM_RESOLUTION': 7,
+           'ROI_XFORM_SAMPLING_RATIO': 0,
+           'UP_SCALE': -1,
+           'USE_DECONV': False,
+           'USE_DECONV_OUTPUT': False},
+ 'MATLAB': 'matlab',
+ 'MEMONGER': True,
+ 'MEMONGER_SHARE_ACTIVATIONS': False,
+ 'MODEL': {'BBOX_REG_WEIGHTS': (10.0, 10.0, 5.0, 5.0),
+           'CLS_AGNOSTIC_BBOX_REG': False,
+           'CONV_BODY': 'FPN.add_fpn_ResNet50_conv5_body',
+           'EXECUTION_TYPE': 'dag',
+           'FASTER_RCNN': True,
+           'KEYPOINTS_ON': False,
+           'MASK_ON': False,
+           'NUM_CLASSES': 2,
+           'RPN_ONLY': False,
+           'TYPE': 'generalized_rcnn'},
+ 'MRCNN': {'CLS_SPECIFIC_MASK': True,
+           'CONV_INIT': 'GaussianFill',
+           'DILATION': 2,
+           'DIM_REDUCED': 256,
+           'RESOLUTION': 14,
+           'ROI_MASK_HEAD': '',
+           'ROI_XFORM_METHOD': 'RoIAlign',
+           'ROI_XFORM_RESOLUTION': 7,
+           'ROI_XFORM_SAMPLING_RATIO': 0,
+           'THRESH_BINARIZE': 0.5,
+           'UPSAMPLE_RATIO': 1,
+           'USE_FC_OUTPUT': False,
+           'WEIGHT_LOSS_MASK': 1.0},
+ 'NUM_GPUS': 1,
+ 'OUTPUT_DIR': '/tmp/detectron-faster-rcnn-r50',
+ 'PIXEL_MEANS': array([[[102.9801, 115.9465, 122.7717]]]),
+ 'RESNETS': {'NUM_GROUPS': 1,
+             'RES5_DILATION': 1,
+             'STRIDE_1X1': True,
+             'TRANS_FUNC': 'bottleneck_transformation',
+             'WIDTH_PER_GROUP': 64},
+ 'RETINANET': {'ANCHOR_SCALE': 4,
+               'ASPECT_RATIOS': (0.5, 1.0, 2.0),
+               'BBOX_REG_BETA': 0.11,
+               'BBOX_REG_WEIGHT': 1.0,
+               'CLASS_SPECIFIC_BBOX': False,
+               'INFERENCE_TH': 0.05,
+               'LOSS_ALPHA': 0.25,
+               'LOSS_GAMMA': 2.0,
+               'NEGATIVE_OVERLAP': 0.4,
+               'NUM_CONVS': 4,
+               'POSITIVE_OVERLAP': 0.5,
+               'PRE_NMS_TOP_N': 1000,
+               'PRIOR_PROB': 0.01,
+               'RETINANET_ON': False,
+               'SCALES_PER_OCTAVE': 3,
+               'SHARE_CLS_BBOX_TOWER': False,
+               'SOFTMAX': False},
+ 'RFCN': {'PS_GRID_SIZE': 3},
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/swk/Documents/ML/Detectron',
+ 'RPN': {'ASPECT_RATIOS': (0.5, 1, 2),
+         'RPN_ON': True,
+         'SIZES': (64, 128, 256, 512),
+         'STRIDE': 16},
+ 'SOLVER': {'BASE_LR': 0.02,
+            'GAMMA': 0.1,
+            'LOG_LR_CHANGE_THRESHOLD': 1.1,
+            'LRS': [],
+            'LR_POLICY': 'steps_with_decay',
+            'MAX_ITER': 90000,
+            'MOMENTUM': 0.9,
+            'SCALE_MOMENTUM': True,
+            'SCALE_MOMENTUM_THRESHOLD': 1.1,
+            'STEPS': [0, 60000, 80000],
+            'STEP_SIZE': 30000,
+            'WARM_UP_FACTOR': 0.3333333333333333,
+            'WARM_UP_ITERS': 500,
+            'WARM_UP_METHOD': u'linear',
+            'WEIGHT_DECAY': 0.0001},
+ 'TEST': {'BBOX_AUG': {'AREA_TH_HI': 32400,
+                       'AREA_TH_LO': 2500,
+                       'ASPECT_RATIOS': (),
+                       'ASPECT_RATIO_H_FLIP': False,
+                       'COORD_HEUR': 'UNION',
+                       'ENABLED': False,
+                       'H_FLIP': False,
+                       'MAX_SIZE': 4000,
+                       'SCALES': (),
+                       'SCALE_H_FLIP': False,
+                       'SCALE_SIZE_DEP': False,
+                       'SCORE_HEUR': 'UNION'},
+          'BBOX_REG': True,
+          'BBOX_VOTE': {'ENABLED': False,
+                        'SCORING_METHOD': 'ID',
+                        'SCORING_METHOD_BETA': 1.0,
+                        'VOTE_TH': 0.8},
+          'COMPETITION_MODE': True,
+          'DATASET': '',
+          'DATASETS': ('dsb_2018_val',),
+          'DETECTIONS_PER_IM': 100,
+          'FORCE_JSON_DATASET_EVAL': False,
+          'KPS_AUG': {'AREA_TH': 32400,
+                      'ASPECT_RATIOS': (),
+                      'ASPECT_RATIO_H_FLIP': False,
+                      'ENABLED': False,
+                      'HEUR': 'HM_AVG',
+                      'H_FLIP': False,
+                      'MAX_SIZE': 4000,
+                      'SCALES': (),
+                      'SCALE_H_FLIP': False,
+                      'SCALE_SIZE_DEP': False},
+          'MASK_AUG': {'AREA_TH': 32400,
+                       'ASPECT_RATIOS': (),
+                       'ASPECT_RATIO_H_FLIP': False,
+                       'ENABLED': False,
+                       'HEUR': 'SOFT_AVG',
+                       'H_FLIP': False,
+                       'MAX_SIZE': 4000,
+                       'SCALES': (),
+                       'SCALE_H_FLIP': False,
+                       'SCALE_SIZE_DEP': False},
+          'MAX_SIZE': 1333,
+          'NMS': 0.5,
+          'PRECOMPUTED_PROPOSALS': False,
+          'PROPOSAL_FILE': '',
+          'PROPOSAL_FILES': (),
+          'PROPOSAL_LIMIT': 2000,
+          'RPN_MIN_SIZE': 0,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 1000,
+          'RPN_PRE_NMS_TOP_N': 1000,
+          'SCALES': (800,),
+          'SCORE_THRESH': 0.05,
+          'SOFT_NMS': {'ENABLED': False, 'METHOD': 'linear', 'SIGMA': 0.5},
+          'WEIGHTS': ''},
+ 'TRAIN': {'ASPECT_GROUPING': True,
+           'AUTO_RESUME': True,
+           'BATCH_SIZE_PER_IM': 512,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'CROWD_FILTER_THRESH': 0.7,
+           'DATASETS': ('dsb_2018_train',),
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'FREEZE_CONV_BODY': False,
+           'GT_MIN_AREA': -1,
+           'IMS_PER_BATCH': 2,
+           'MAX_SIZE': 1333,
+           'PROPOSAL_FILES': (),
+           'RPN_BATCH_SIZE_PER_IM': 256,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 0,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 2000,
+           'RPN_STRADDLE_THRESH': 0,
+           'SCALES': (800,),
+           'SNAPSHOT_ITERS': 20000,
+           'USE_FLIPPED': True,
+           'WEIGHTS': u'/tmp/detectron-download-cache/ImageNetPretrained/MSRA/R-50.pkl'},
+ 'USE_NCCL': False,
+ 'VIS': False,
+ 'VIS_TH': 0.9}
+INFO train_net.py: 205: Building model: generalized_rcnn
+WARNING cnn.py:  40: [====DEPRECATE WARNING====]: you are creating an object from CNNModelHelper class which will be deprecated soon. Please use ModelHelper object with brew module. For more information, please refer to caffe2.ai and python/brew.py, python/brew_test.py for more information.
+WARNING memonger.py:  70: NOTE: Executing memonger to optimize gradient memory
+INFO memonger.py: 112: Memonger memory optimization took 0.0206031799316 secs
+INFO train_net.py: 253: Loading dataset: ('dsb_2018_train',)
+loading annotations into memory...
+Done (t=2.07s)
+creating index...
+index created!
+INFO roidb.py:  49: Appending horizontally-flipped training examples...
+INFO roidb.py:  51: Loaded dataset: dsb_2018_train
+INFO roidb.py: 135: Filtered 0 roidb entries: 1072 -> 1072
+INFO roidb.py:  67: Computing bounding-box regression targets...
+INFO roidb.py:  69: done
+INFO train_net.py: 257: 1072 roidb entries
+INFO net.py:  57: Loading weights from: /tmp/detectron-download-cache/ImageNetPretrained/MSRA/R-50.pkl
+INFO net.py:  86: fpn_inner_res5_2_sum_w not found
+INFO net.py:  86: fpn_inner_res5_2_sum_b not found
+INFO net.py:  86: fpn_inner_res4_5_sum_lateral_w not found
+INFO net.py:  86: fpn_inner_res4_5_sum_lateral_b not found
+INFO net.py:  86: fpn_inner_res3_3_sum_lateral_w not found
+INFO net.py:  86: fpn_inner_res3_3_sum_lateral_b not found
+INFO net.py:  86: fpn_inner_res2_2_sum_lateral_w not found
+INFO net.py:  86: fpn_inner_res2_2_sum_lateral_b not found
+INFO net.py:  86: fpn_res5_2_sum_w not found
+INFO net.py:  86: fpn_res5_2_sum_b not found
+INFO net.py:  86: fpn_res4_5_sum_w not found
+INFO net.py:  86: fpn_res4_5_sum_b not found
+INFO net.py:  86: fpn_res3_3_sum_w not found
+INFO net.py:  86: fpn_res3_3_sum_b not found
+INFO net.py:  86: fpn_res2_2_sum_w not found
+INFO net.py:  86: fpn_res2_2_sum_b not found
+INFO net.py:  86: conv_rpn_fpn2_w not found
+INFO net.py:  86: conv_rpn_fpn2_b not found
+INFO net.py:  86: rpn_cls_logits_fpn2_w not found
+INFO net.py:  86: rpn_cls_logits_fpn2_b not found
+INFO net.py:  86: rpn_bbox_pred_fpn2_w not found
+INFO net.py:  86: rpn_bbox_pred_fpn2_b not found
+INFO net.py:  86: fc6_w not found
+INFO net.py:  86: fc6_b not found
+INFO net.py:  86: fc7_w not found
+INFO net.py:  86: fc7_b not found
+INFO net.py:  86: cls_score_w not found
+INFO net.py:  86: cls_score_b not found
+INFO net.py:  86: bbox_pred_w not found
+INFO net.py:  86: bbox_pred_b not found
+INFO train_net.py: 241: Outputs saved to: /tmp/detectron-faster-rcnn-r50/train/dsb_2018_train/generalized_rcnn
+INFO loader.py: 227: Pre-filling mini-batch queue...
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [1/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [1/64]
+INFO loader.py: 232:   [1/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [1/64]
+INFO loader.py: 232:   [1/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [1/64]
+INFO loader.py: 232:   [2/64]
+INFO loader.py: 232:   [2/64]
+INFO loader.py: 232:   [3/64]
+INFO loader.py: 232:   [3/64]
+INFO loader.py: 232:   [3/64]
+INFO loader.py: 232:   [4/64]
+INFO loader.py: 232:   [4/64]
+INFO loader.py: 232:   [4/64]
+INFO loader.py: 232:   [4/64]
+INFO loader.py: 232:   [4/64]
+INFO loader.py: 232:   [6/64]
+INFO loader.py: 232:   [7/64]
+INFO loader.py: 232:   [8/64]
+INFO loader.py: 232:   [9/64]
+INFO loader.py: 232:   [9/64]
+INFO loader.py: 232:   [9/64]
+INFO loader.py: 232:   [9/64]
+INFO loader.py: 232:   [9/64]
+INFO loader.py: 232:   [9/64]
+INFO loader.py: 232:   [10/64]
+INFO loader.py: 232:   [11/64]
+INFO loader.py: 232:   [12/64]
+INFO loader.py: 232:   [12/64]
+INFO loader.py: 232:   [12/64]
+INFO loader.py: 232:   [13/64]
+INFO loader.py: 232:   [14/64]
+INFO loader.py: 232:   [15/64]
+INFO loader.py: 232:   [16/64]
+INFO loader.py: 232:   [17/64]
+INFO loader.py: 232:   [19/64]
+INFO loader.py: 232:   [19/64]
+INFO loader.py: 232:   [19/64]
+INFO loader.py: 232:   [21/64]
+INFO loader.py: 232:   [22/64]
+INFO loader.py: 232:   [22/64]
+INFO loader.py: 232:   [23/64]
+INFO loader.py: 232:   [23/64]
+INFO loader.py: 232:   [23/64]
+INFO loader.py: 232:   [25/64]
+INFO loader.py: 232:   [25/64]
+INFO loader.py: 232:   [25/64]
+INFO loader.py: 232:   [26/64]
+INFO loader.py: 232:   [27/64]
+INFO loader.py: 232:   [27/64]
+INFO loader.py: 232:   [27/64]
+INFO loader.py: 232:   [28/64]
+INFO loader.py: 232:   [29/64]
+INFO loader.py: 232:   [30/64]
+INFO loader.py: 232:   [30/64]
+INFO loader.py: 232:   [30/64]
+INFO loader.py: 232:   [30/64]
+INFO loader.py: 232:   [31/64]
+INFO loader.py: 232:   [32/64]
+INFO loader.py: 232:   [32/64]
+INFO loader.py: 232:   [32/64]
+INFO loader.py: 232:   [33/64]
+INFO loader.py: 232:   [33/64]
+INFO loader.py: 232:   [33/64]
+INFO loader.py: 232:   [33/64]
+INFO loader.py: 232:   [34/64]
+INFO loader.py: 232:   [34/64]
+INFO loader.py: 232:   [34/64]
+INFO loader.py: 232:   [34/64]
+INFO loader.py: 232:   [35/64]
+INFO loader.py: 232:   [36/64]
+INFO loader.py: 232:   [37/64]
+INFO loader.py: 232:   [37/64]
+INFO loader.py: 232:   [38/64]
+INFO loader.py: 232:   [39/64]
+INFO loader.py: 232:   [40/64]
+INFO loader.py: 232:   [41/64]
+INFO loader.py: 232:   [41/64]
+INFO loader.py: 232:   [42/64]
+INFO loader.py: 232:   [43/64]
+INFO loader.py: 232:   [43/64]
+INFO loader.py: 232:   [43/64]
+INFO loader.py: 232:   [43/64]
+INFO loader.py: 232:   [43/64]
+INFO loader.py: 232:   [43/64]
+INFO loader.py: 232:   [44/64]
+INFO loader.py: 232:   [45/64]
+INFO loader.py: 232:   [45/64]
+INFO loader.py: 232:   [46/64]
+INFO loader.py: 232:   [48/64]
+INFO loader.py: 232:   [49/64]
+INFO loader.py: 232:   [50/64]
+INFO loader.py: 232:   [50/64]
+INFO loader.py: 232:   [50/64]
+INFO loader.py: 232:   [50/64]
+INFO loader.py: 232:   [50/64]
+INFO loader.py: 232:   [52/64]
+INFO loader.py: 232:   [53/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [55/64]
+INFO loader.py: 232:   [55/64]
+INFO loader.py: 232:   [56/64]
+INFO loader.py: 232:   [57/64]
+INFO loader.py: 232:   [58/64]
+INFO loader.py: 232:   [58/64]
+INFO loader.py: 232:   [59/64]
+INFO loader.py: 232:   [59/64]
+INFO loader.py: 232:   [59/64]
+INFO loader.py: 232:   [60/64]
+INFO loader.py: 232:   [60/64]
+INFO loader.py: 232:   [61/64]
+INFO loader.py: 232:   [62/64]
+INFO loader.py: 232:   [62/64]
+INFO loader.py: 232:   [62/64]
+INFO loader.py: 232:   [62/64]
+INFO loader.py: 232:   [63/64]
+INFO detector.py: 436: Changing learning rate 0.000000 -> 0.006667 at iter 0
+INFO net.py: 210: Printing model: generalized_rcnn
+INFO net.py: 240: data                        : (2, 3, 800, 800)     => conv1                       : (2, 64, 400, 400)    ------- (op: Conv)
+INFO net.py: 240: conv1                       : (2, 64, 400, 400)    => conv1                       : (2, 64, 400, 400)    ------- (op: AffineChannel)
+INFO net.py: 240: conv1                       : (2, 64, 400, 400)    => conv1                       : (2, 64, 400, 400)    ------- (op: Relu)
+INFO net.py: 240: conv1                       : (2, 64, 400, 400)    => pool1                       : (2, 64, 200, 200)    ------- (op: MaxPool)
+INFO net.py: 240: pool1                       : (2, 64, 200, 200)    => res2_0_branch2a             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_0_branch2a             : (2, 64, 200, 200)    => res2_0_branch2a             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_0_branch2a             : (2, 64, 200, 200)    => res2_0_branch2a             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_0_branch2a             : (2, 64, 200, 200)    => res2_0_branch2b             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_0_branch2b             : (2, 64, 200, 200)    => res2_0_branch2b             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_0_branch2b             : (2, 64, 200, 200)    => res2_0_branch2b             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_0_branch2b             : (2, 64, 200, 200)    => res2_0_branch2c             : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: res2_0_branch2c             : (2, 256, 200, 200)   => res2_0_branch2c_bn          : (2, 256, 200, 200)   ------- (op: AffineChannel)
+INFO net.py: 240: pool1                       : (2, 64, 200, 200)    => res2_0_branch1              : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: res2_0_branch1              : (2, 256, 200, 200)   => res2_0_branch1_bn           : (2, 256, 200, 200)   ------- (op: AffineChannel)
+INFO net.py: 240: res2_0_branch2c_bn          : (2, 256, 200, 200)   => res2_0_branch2c_bn          : (2, 256, 200, 200)   ------- (op: Sum)
+INFO net.py: 240: res2_0_branch1_bn           : (2, 256, 200, 200)   => res2_0_branch2c_bn          : (2, 256, 200, 200)   ------|
+INFO net.py: 240: res2_0_branch2c_bn          : (2, 256, 200, 200)   => res2_0_branch2c_bn          : (2, 256, 200, 200)   ------- (op: Relu)
+INFO net.py: 240: res2_0_branch2c_bn          : (2, 256, 200, 200)   => res2_1_branch2a             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_1_branch2a             : (2, 64, 200, 200)    => res2_1_branch2a             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_1_branch2a             : (2, 64, 200, 200)    => res2_1_branch2a             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_1_branch2a             : (2, 64, 200, 200)    => res2_1_branch2b             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_1_branch2b             : (2, 64, 200, 200)    => res2_1_branch2b             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_1_branch2b             : (2, 64, 200, 200)    => res2_1_branch2b             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_1_branch2b             : (2, 64, 200, 200)    => res2_1_branch2c             : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: res2_1_branch2c             : (2, 256, 200, 200)   => res2_1_branch2c_bn          : (2, 256, 200, 200)   ------- (op: AffineChannel)
+INFO net.py: 240: res2_1_branch2c_bn          : (2, 256, 200, 200)   => res2_1_branch2c_bn          : (2, 256, 200, 200)   ------- (op: Sum)
+INFO net.py: 240: res2_0_branch2c_bn          : (2, 256, 200, 200)   => res2_1_branch2c_bn          : (2, 256, 200, 200)   ------|
+INFO net.py: 240: res2_1_branch2c_bn          : (2, 256, 200, 200)   => res2_1_branch2c_bn          : (2, 256, 200, 200)   ------- (op: Relu)
+INFO net.py: 240: res2_1_branch2c_bn          : (2, 256, 200, 200)   => res2_2_branch2a             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_2_branch2a             : (2, 64, 200, 200)    => res2_2_branch2a             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_2_branch2a             : (2, 64, 200, 200)    => res2_2_branch2a             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_2_branch2a             : (2, 64, 200, 200)    => res2_2_branch2b             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_2_branch2b             : (2, 64, 200, 200)    => res2_2_branch2b             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_2_branch2b             : (2, 64, 200, 200)    => res2_2_branch2b             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_2_branch2b             : (2, 64, 200, 200)    => res2_2_branch2c             : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: res2_2_branch2c             : (2, 256, 200, 200)   => res2_2_branch2c_bn          : (2, 256, 200, 200)   ------- (op: AffineChannel)
+INFO net.py: 240: res2_2_branch2c_bn          : (2, 256, 200, 200)   => res2_2_sum                  : (2, 256, 200, 200)   ------- (op: Sum)
+INFO net.py: 240: res2_1_branch2c_bn          : (2, 256, 200, 200)   => res2_2_sum                  : (2, 256, 200, 200)   ------|
+INFO net.py: 240: res2_2_sum                  : (2, 256, 200, 200)   => res2_2_sum                  : (2, 256, 200, 200)   ------- (op: Relu)
+INFO net.py: 240: res2_2_sum                  : (2, 256, 200, 200)   => res2_2_sum                  : (2, 256, 200, 200)   ------- (op: StopGradient)
+INFO net.py: 240: res2_2_sum                  : (2, 256, 200, 200)   => res3_0_branch2a             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_0_branch2a             : (2, 128, 100, 100)   => res3_0_branch2a             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_0_branch2a             : (2, 128, 100, 100)   => res3_0_branch2a             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_0_branch2a             : (2, 128, 100, 100)   => res3_0_branch2b             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_0_branch2b             : (2, 128, 100, 100)   => res3_0_branch2b             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_0_branch2b             : (2, 128, 100, 100)   => res3_0_branch2b             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_0_branch2b             : (2, 128, 100, 100)   => res3_0_branch2c             : (2, 512, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_0_branch2c             : (2, 512, 100, 100)   => res3_0_branch2c_bn          : (2, 512, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res2_2_sum                  : (2, 256, 200, 200)   => res3_0_branch1              : (2, 512, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_0_branch1              : (2, 512, 100, 100)   => res3_0_branch1_bn           : (2, 512, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_0_branch2c_bn          : (2, 512, 100, 100)   => res3_0_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Sum)
+INFO net.py: 240: res3_0_branch1_bn           : (2, 512, 100, 100)   => res3_0_branch2c_bn          : (2, 512, 100, 100)   ------|
+INFO net.py: 240: res3_0_branch2c_bn          : (2, 512, 100, 100)   => res3_0_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_0_branch2c_bn          : (2, 512, 100, 100)   => res3_1_branch2a             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_1_branch2a             : (2, 128, 100, 100)   => res3_1_branch2a             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_1_branch2a             : (2, 128, 100, 100)   => res3_1_branch2a             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_1_branch2a             : (2, 128, 100, 100)   => res3_1_branch2b             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_1_branch2b             : (2, 128, 100, 100)   => res3_1_branch2b             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_1_branch2b             : (2, 128, 100, 100)   => res3_1_branch2b             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_1_branch2b             : (2, 128, 100, 100)   => res3_1_branch2c             : (2, 512, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_1_branch2c             : (2, 512, 100, 100)   => res3_1_branch2c_bn          : (2, 512, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_1_branch2c_bn          : (2, 512, 100, 100)   => res3_1_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Sum)
+INFO net.py: 240: res3_0_branch2c_bn          : (2, 512, 100, 100)   => res3_1_branch2c_bn          : (2, 512, 100, 100)   ------|
+INFO net.py: 240: res3_1_branch2c_bn          : (2, 512, 100, 100)   => res3_1_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_1_branch2c_bn          : (2, 512, 100, 100)   => res3_2_branch2a             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_2_branch2a             : (2, 128, 100, 100)   => res3_2_branch2a             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_2_branch2a             : (2, 128, 100, 100)   => res3_2_branch2a             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_2_branch2a             : (2, 128, 100, 100)   => res3_2_branch2b             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_2_branch2b             : (2, 128, 100, 100)   => res3_2_branch2b             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_2_branch2b             : (2, 128, 100, 100)   => res3_2_branch2b             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_2_branch2b             : (2, 128, 100, 100)   => res3_2_branch2c             : (2, 512, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_2_branch2c             : (2, 512, 100, 100)   => res3_2_branch2c_bn          : (2, 512, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_2_branch2c_bn          : (2, 512, 100, 100)   => res3_2_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Sum)
+INFO net.py: 240: res3_1_branch2c_bn          : (2, 512, 100, 100)   => res3_2_branch2c_bn          : (2, 512, 100, 100)   ------|
+INFO net.py: 240: res3_2_branch2c_bn          : (2, 512, 100, 100)   => res3_2_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_2_branch2c_bn          : (2, 512, 100, 100)   => res3_3_branch2a             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_3_branch2a             : (2, 128, 100, 100)   => res3_3_branch2a             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_3_branch2a             : (2, 128, 100, 100)   => res3_3_branch2a             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_3_branch2a             : (2, 128, 100, 100)   => res3_3_branch2b             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_3_branch2b             : (2, 128, 100, 100)   => res3_3_branch2b             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_3_branch2b             : (2, 128, 100, 100)   => res3_3_branch2b             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_3_branch2b             : (2, 128, 100, 100)   => res3_3_branch2c             : (2, 512, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_3_branch2c             : (2, 512, 100, 100)   => res3_3_branch2c_bn          : (2, 512, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_3_branch2c_bn          : (2, 512, 100, 100)   => res3_3_sum                  : (2, 512, 100, 100)   ------- (op: Sum)
+INFO net.py: 240: res3_2_branch2c_bn          : (2, 512, 100, 100)   => res3_3_sum                  : (2, 512, 100, 100)   ------|
+INFO net.py: 240: res3_3_sum                  : (2, 512, 100, 100)   => res3_3_sum                  : (2, 512, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_3_sum                  : (2, 512, 100, 100)   => res4_0_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_0_branch2a             : (2, 256, 50, 50)     => res4_0_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_0_branch2a             : (2, 256, 50, 50)     => res4_0_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_0_branch2a             : (2, 256, 50, 50)     => res4_0_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_0_branch2b             : (2, 256, 50, 50)     => res4_0_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_0_branch2b             : (2, 256, 50, 50)     => res4_0_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_0_branch2b             : (2, 256, 50, 50)     => res4_0_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_0_branch2c             : (2, 1024, 50, 50)    => res4_0_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res3_3_sum                  : (2, 512, 100, 100)   => res4_0_branch1              : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_0_branch1              : (2, 1024, 50, 50)    => res4_0_branch1_bn           : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_0_branch2c_bn          : (2, 1024, 50, 50)    => res4_0_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_0_branch1_bn           : (2, 1024, 50, 50)    => res4_0_branch2c_bn          : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_0_branch2c_bn          : (2, 1024, 50, 50)    => res4_0_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_0_branch2c_bn          : (2, 1024, 50, 50)    => res4_1_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_1_branch2a             : (2, 256, 50, 50)     => res4_1_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_1_branch2a             : (2, 256, 50, 50)     => res4_1_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_1_branch2a             : (2, 256, 50, 50)     => res4_1_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_1_branch2b             : (2, 256, 50, 50)     => res4_1_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_1_branch2b             : (2, 256, 50, 50)     => res4_1_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_1_branch2b             : (2, 256, 50, 50)     => res4_1_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_1_branch2c             : (2, 1024, 50, 50)    => res4_1_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_1_branch2c_bn          : (2, 1024, 50, 50)    => res4_1_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_0_branch2c_bn          : (2, 1024, 50, 50)    => res4_1_branch2c_bn          : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_1_branch2c_bn          : (2, 1024, 50, 50)    => res4_1_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_1_branch2c_bn          : (2, 1024, 50, 50)    => res4_2_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_2_branch2a             : (2, 256, 50, 50)     => res4_2_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_2_branch2a             : (2, 256, 50, 50)     => res4_2_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_2_branch2a             : (2, 256, 50, 50)     => res4_2_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_2_branch2b             : (2, 256, 50, 50)     => res4_2_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_2_branch2b             : (2, 256, 50, 50)     => res4_2_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_2_branch2b             : (2, 256, 50, 50)     => res4_2_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_2_branch2c             : (2, 1024, 50, 50)    => res4_2_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_2_branch2c_bn          : (2, 1024, 50, 50)    => res4_2_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_1_branch2c_bn          : (2, 1024, 50, 50)    => res4_2_branch2c_bn          : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_2_branch2c_bn          : (2, 1024, 50, 50)    => res4_2_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_2_branch2c_bn          : (2, 1024, 50, 50)    => res4_3_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_3_branch2a             : (2, 256, 50, 50)     => res4_3_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_3_branch2a             : (2, 256, 50, 50)     => res4_3_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_3_branch2a             : (2, 256, 50, 50)     => res4_3_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_3_branch2b             : (2, 256, 50, 50)     => res4_3_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_3_branch2b             : (2, 256, 50, 50)     => res4_3_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_3_branch2b             : (2, 256, 50, 50)     => res4_3_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_3_branch2c             : (2, 1024, 50, 50)    => res4_3_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_3_branch2c_bn          : (2, 1024, 50, 50)    => res4_3_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_2_branch2c_bn          : (2, 1024, 50, 50)    => res4_3_branch2c_bn          : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_3_branch2c_bn          : (2, 1024, 50, 50)    => res4_3_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_3_branch2c_bn          : (2, 1024, 50, 50)    => res4_4_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_4_branch2a             : (2, 256, 50, 50)     => res4_4_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_4_branch2a             : (2, 256, 50, 50)     => res4_4_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_4_branch2a             : (2, 256, 50, 50)     => res4_4_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_4_branch2b             : (2, 256, 50, 50)     => res4_4_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_4_branch2b             : (2, 256, 50, 50)     => res4_4_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_4_branch2b             : (2, 256, 50, 50)     => res4_4_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_4_branch2c             : (2, 1024, 50, 50)    => res4_4_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_4_branch2c_bn          : (2, 1024, 50, 50)    => res4_4_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_3_branch2c_bn          : (2, 1024, 50, 50)    => res4_4_branch2c_bn          : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_4_branch2c_bn          : (2, 1024, 50, 50)    => res4_4_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_4_branch2c_bn          : (2, 1024, 50, 50)    => res4_5_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_5_branch2a             : (2, 256, 50, 50)     => res4_5_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_5_branch2a             : (2, 256, 50, 50)     => res4_5_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_5_branch2a             : (2, 256, 50, 50)     => res4_5_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_5_branch2b             : (2, 256, 50, 50)     => res4_5_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_5_branch2b             : (2, 256, 50, 50)     => res4_5_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_5_branch2b             : (2, 256, 50, 50)     => res4_5_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_5_branch2c             : (2, 1024, 50, 50)    => res4_5_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_5_branch2c_bn          : (2, 1024, 50, 50)    => res4_5_sum                  : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_4_branch2c_bn          : (2, 1024, 50, 50)    => res4_5_sum                  : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_5_sum                  : (2, 1024, 50, 50)    => res4_5_sum                  : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_5_sum                  : (2, 1024, 50, 50)    => res5_0_branch2a             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_0_branch2a             : (2, 512, 25, 25)     => res5_0_branch2a             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_0_branch2a             : (2, 512, 25, 25)     => res5_0_branch2a             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_0_branch2a             : (2, 512, 25, 25)     => res5_0_branch2b             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_0_branch2b             : (2, 512, 25, 25)     => res5_0_branch2b             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_0_branch2b             : (2, 512, 25, 25)     => res5_0_branch2b             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_0_branch2b             : (2, 512, 25, 25)     => res5_0_branch2c             : (2, 2048, 25, 25)    ------- (op: Conv)
+INFO net.py: 240: res5_0_branch2c             : (2, 2048, 25, 25)    => res5_0_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_5_sum                  : (2, 1024, 50, 50)    => res5_0_branch1              : (2, 2048, 25, 25)    ------- (op: Conv)
+INFO net.py: 240: res5_0_branch1              : (2, 2048, 25, 25)    => res5_0_branch1_bn           : (2, 2048, 25, 25)    ------- (op: AffineChannel)
+INFO net.py: 240: res5_0_branch2c_bn          : (2, 2048, 25, 25)    => res5_0_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: Sum)
+INFO net.py: 240: res5_0_branch1_bn           : (2, 2048, 25, 25)    => res5_0_branch2c_bn          : (2, 2048, 25, 25)    ------|
+INFO net.py: 240: res5_0_branch2c_bn          : (2, 2048, 25, 25)    => res5_0_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: Relu)
+INFO net.py: 240: res5_0_branch2c_bn          : (2, 2048, 25, 25)    => res5_1_branch2a             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_1_branch2a             : (2, 512, 25, 25)     => res5_1_branch2a             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_1_branch2a             : (2, 512, 25, 25)     => res5_1_branch2a             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_1_branch2a             : (2, 512, 25, 25)     => res5_1_branch2b             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_1_branch2b             : (2, 512, 25, 25)     => res5_1_branch2b             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_1_branch2b             : (2, 512, 25, 25)     => res5_1_branch2b             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_1_branch2b             : (2, 512, 25, 25)     => res5_1_branch2c             : (2, 2048, 25, 25)    ------- (op: Conv)
+INFO net.py: 240: res5_1_branch2c             : (2, 2048, 25, 25)    => res5_1_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: AffineChannel)
+INFO net.py: 240: res5_1_branch2c_bn          : (2, 2048, 25, 25)    => res5_1_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: Sum)
+INFO net.py: 240: res5_0_branch2c_bn          : (2, 2048, 25, 25)    => res5_1_branch2c_bn          : (2, 2048, 25, 25)    ------|
+INFO net.py: 240: res5_1_branch2c_bn          : (2, 2048, 25, 25)    => res5_1_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: Relu)
+INFO net.py: 240: res5_1_branch2c_bn          : (2, 2048, 25, 25)    => res5_2_branch2a             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_2_branch2a             : (2, 512, 25, 25)     => res5_2_branch2a             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_2_branch2a             : (2, 512, 25, 25)     => res5_2_branch2a             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_2_branch2a             : (2, 512, 25, 25)     => res5_2_branch2b             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_2_branch2b             : (2, 512, 25, 25)     => res5_2_branch2b             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_2_branch2b             : (2, 512, 25, 25)     => res5_2_branch2b             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_2_branch2b             : (2, 512, 25, 25)     => res5_2_branch2c             : (2, 2048, 25, 25)    ------- (op: Conv)
+INFO net.py: 240: res5_2_branch2c             : (2, 2048, 25, 25)    => res5_2_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: AffineChannel)
+INFO net.py: 240: res5_2_branch2c_bn          : (2, 2048, 25, 25)    => res5_2_sum                  : (2, 2048, 25, 25)    ------- (op: Sum)
+INFO net.py: 240: res5_1_branch2c_bn          : (2, 2048, 25, 25)    => res5_2_sum                  : (2, 2048, 25, 25)    ------|
+INFO net.py: 240: res5_2_sum                  : (2, 2048, 25, 25)    => res5_2_sum                  : (2, 2048, 25, 25)    ------- (op: Relu)
+INFO net.py: 240: res5_2_sum                  : (2, 2048, 25, 25)    => fpn_inner_res5_2_sum        : (2, 256, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res4_5_sum                  : (2, 1024, 50, 50)    => fpn_inner_res4_5_sum_lateral: (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res5_2_sum        : (2, 256, 25, 25)     => fpn_inner_res4_5_sum_topdown: (2, 256, 50, 50)     ------- (op: UpsampleNearest)
+INFO net.py: 240: fpn_inner_res4_5_sum_lateral: (2, 256, 50, 50)     => fpn_inner_res4_5_sum        : (2, 256, 50, 50)     ------- (op: Sum)
+INFO net.py: 240: fpn_inner_res4_5_sum_topdown: (2, 256, 50, 50)     => fpn_inner_res4_5_sum        : (2, 256, 50, 50)     ------|
+INFO net.py: 240: res3_3_sum                  : (2, 512, 100, 100)   => fpn_inner_res3_3_sum_lateral: (2, 256, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res4_5_sum        : (2, 256, 50, 50)     => fpn_inner_res3_3_sum_topdown: (2, 256, 100, 100)   ------- (op: UpsampleNearest)
+INFO net.py: 240: fpn_inner_res3_3_sum_lateral: (2, 256, 100, 100)   => fpn_inner_res3_3_sum        : (2, 256, 100, 100)   ------- (op: Sum)
+INFO net.py: 240: fpn_inner_res3_3_sum_topdown: (2, 256, 100, 100)   => fpn_inner_res3_3_sum        : (2, 256, 100, 100)   ------|
+INFO net.py: 240: res2_2_sum                  : (2, 256, 200, 200)   => fpn_inner_res2_2_sum_lateral: (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res3_3_sum        : (2, 256, 100, 100)   => fpn_inner_res2_2_sum_topdown: (2, 256, 200, 200)   ------- (op: UpsampleNearest)
+INFO net.py: 240: fpn_inner_res2_2_sum_lateral: (2, 256, 200, 200)   => fpn_inner_res2_2_sum        : (2, 256, 200, 200)   ------- (op: Sum)
+INFO net.py: 240: fpn_inner_res2_2_sum_topdown: (2, 256, 200, 200)   => fpn_inner_res2_2_sum        : (2, 256, 200, 200)   ------|
+INFO net.py: 240: fpn_inner_res5_2_sum        : (2, 256, 25, 25)     => fpn_res5_2_sum              : (2, 256, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res4_5_sum        : (2, 256, 50, 50)     => fpn_res4_5_sum              : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res3_3_sum        : (2, 256, 100, 100)   => fpn_res3_3_sum              : (2, 256, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res2_2_sum        : (2, 256, 200, 200)   => fpn_res2_2_sum              : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: fpn_res5_2_sum              : (2, 256, 25, 25)     => fpn_res5_2_sum_subsampled_2x: (2, 256, 13, 13)     ------- (op: MaxPool)
+INFO net.py: 240: fpn_res2_2_sum              : (2, 256, 200, 200)   => conv_rpn_fpn2               : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn2               : (2, 256, 200, 200)   => conv_rpn_fpn2               : (2, 256, 200, 200)   ------- (op: Relu)
+INFO net.py: 240: conv_rpn_fpn2               : (2, 256, 200, 200)   => rpn_cls_logits_fpn2         : (2, 3, 200, 200)     ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn2               : (2, 256, 200, 200)   => rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: rpn_cls_logits_fpn2         : (2, 3, 200, 200)     => rpn_cls_probs_fpn2          : (2, 3, 200, 200)     ------- (op: Sigmoid)
+INFO net.py: 240: rpn_cls_probs_fpn2          : (2, 3, 200, 200)     => rpn_rois_fpn2               : (1819, 5)            ------- (op: Python:GenerateProposalsOp:gpu_0/rpn_cls_probs_fpn2,gpu_0/rpn_bbox_pred_fpn2,im_info)
+INFO net.py: 240: rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    => rpn_rois_fpn2               : (1819, 5)            ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rpn_rois_fpn2               : (1819, 5)            ------|
+INFO net.py: 240: fpn_res3_3_sum              : (2, 256, 100, 100)   => conv_rpn_fpn3               : (2, 256, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn3               : (2, 256, 100, 100)   => conv_rpn_fpn3               : (2, 256, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: conv_rpn_fpn3               : (2, 256, 100, 100)   => rpn_cls_logits_fpn3         : (2, 3, 100, 100)     ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn3               : (2, 256, 100, 100)   => rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    ------- (op: Conv)
+INFO net.py: 240: rpn_cls_logits_fpn3         : (2, 3, 100, 100)     => rpn_cls_probs_fpn3          : (2, 3, 100, 100)     ------- (op: Sigmoid)
+INFO net.py: 240: rpn_cls_probs_fpn3          : (2, 3, 100, 100)     => rpn_rois_fpn3               : (1846, 5)            ------- (op: Python:GenerateProposalsOp:gpu_0/rpn_cls_probs_fpn3,gpu_0/rpn_bbox_pred_fpn3,im_info)
+INFO net.py: 240: rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    => rpn_rois_fpn3               : (1846, 5)            ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rpn_rois_fpn3               : (1846, 5)            ------|
+INFO net.py: 240: fpn_res4_5_sum              : (2, 256, 50, 50)     => conv_rpn_fpn4               : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn4               : (2, 256, 50, 50)     => conv_rpn_fpn4               : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: conv_rpn_fpn4               : (2, 256, 50, 50)     => rpn_cls_logits_fpn4         : (2, 3, 50, 50)       ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn4               : (2, 256, 50, 50)     => rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      ------- (op: Conv)
+INFO net.py: 240: rpn_cls_logits_fpn4         : (2, 3, 50, 50)       => rpn_cls_probs_fpn4          : (2, 3, 50, 50)       ------- (op: Sigmoid)
+INFO net.py: 240: rpn_cls_probs_fpn4          : (2, 3, 50, 50)       => rpn_rois_fpn4               : (1667, 5)            ------- (op: Python:GenerateProposalsOp:gpu_0/rpn_cls_probs_fpn4,gpu_0/rpn_bbox_pred_fpn4,im_info)
+INFO net.py: 240: rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      => rpn_rois_fpn4               : (1667, 5)            ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rpn_rois_fpn4               : (1667, 5)            ------|
+INFO net.py: 240: fpn_res5_2_sum              : (2, 256, 25, 25)     => conv_rpn_fpn5               : (2, 256, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn5               : (2, 256, 25, 25)     => conv_rpn_fpn5               : (2, 256, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: conv_rpn_fpn5               : (2, 256, 25, 25)     => rpn_cls_logits_fpn5         : (2, 3, 25, 25)       ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn5               : (2, 256, 25, 25)     => rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      ------- (op: Conv)
+INFO net.py: 240: rpn_cls_logits_fpn5         : (2, 3, 25, 25)       => rpn_cls_probs_fpn5          : (2, 3, 25, 25)       ------- (op: Sigmoid)
+INFO net.py: 240: rpn_cls_probs_fpn5          : (2, 3, 25, 25)       => rpn_rois_fpn5               : (1227, 5)            ------- (op: Python:GenerateProposalsOp:gpu_0/rpn_cls_probs_fpn5,gpu_0/rpn_bbox_pred_fpn5,im_info)
+INFO net.py: 240: rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      => rpn_rois_fpn5               : (1227, 5)            ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rpn_rois_fpn5               : (1227, 5)            ------|
+INFO net.py: 240: fpn_res5_2_sum_subsampled_2x: (2, 256, 13, 13)     => conv_rpn_fpn6               : (2, 256, 13, 13)     ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn6               : (2, 256, 13, 13)     => conv_rpn_fpn6               : (2, 256, 13, 13)     ------- (op: Relu)
+INFO net.py: 240: conv_rpn_fpn6               : (2, 256, 13, 13)     => rpn_cls_logits_fpn6         : (2, 3, 13, 13)       ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn6               : (2, 256, 13, 13)     => rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      ------- (op: Conv)
+INFO net.py: 240: rpn_cls_logits_fpn6         : (2, 3, 13, 13)       => rpn_cls_probs_fpn6          : (2, 3, 13, 13)       ------- (op: Sigmoid)
+INFO net.py: 240: rpn_cls_probs_fpn6          : (2, 3, 13, 13)       => rpn_rois_fpn6               : (244, 5)             ------- (op: Python:GenerateProposalsOp:gpu_0/rpn_cls_probs_fpn6,gpu_0/rpn_bbox_pred_fpn6,im_info)
+INFO net.py: 240: rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      => rpn_rois_fpn6               : (244, 5)             ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rpn_rois_fpn6               : (244, 5)             ------|
+INFO net.py: 240: rpn_rois_fpn2               : (1819, 5)            => rois                        : (1024, 5)            ------- (op: Python:CollectAndDistributeFpnRpnProposalsOp:gpu_0/rpn_rois_fpn2,gpu_0/rpn_rois_fpn3,gpu_0/rpn_rois_fpn4,gpu_0/rpn_rois_fpn5,gpu_0/rpn_rois_fpn6,gpu_0/rpn_roi_probs_fpn2,gpu_0/rpn_roi_probs_fpn3,gpu_0/rpn_roi_probs_fpn4,gpu_0/rpn_roi_probs_fpn5,gpu_0/rpn_roi_probs_fpn6,gpu_0/roidb,gpu_0/im_info)
+INFO net.py: 240: rpn_rois_fpn3               : (1846, 5)            => rois                        : (1024, 5)            ------|
+INFO net.py: 240: rpn_rois_fpn4               : (1667, 5)            => rois                        : (1024, 5)            ------|
+INFO net.py: 240: rpn_rois_fpn5               : (1227, 5)            => rois                        : (1024, 5)            ------|
+INFO net.py: 240: rpn_rois_fpn6               : (244, 5)             => rois                        : (1024, 5)            ------|
+INFO net.py: 240: rpn_roi_probs_fpn2          : (1819, 1)            => rois                        : (1024, 5)            ------|
+INFO net.py: 240: rpn_roi_probs_fpn3          : (1846, 1)            => rois                        : (1024, 5)            ------|
+INFO net.py: 240: rpn_roi_probs_fpn4          : (1667, 1)            => rois                        : (1024, 5)            ------|
+INFO net.py: 240: rpn_roi_probs_fpn5          : (1227, 1)            => rois                        : (1024, 5)            ------|
+INFO net.py: 240: rpn_roi_probs_fpn6          : (244, 1)             => rois                        : (1024, 5)            ------|
+INFO net.py: 240: roidb                       : (85252,)             => rois                        : (1024, 5)            ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rois                        : (1024, 5)            ------|
+INFO net.py: 240: rpn_labels_int32_wide_fpn2  : (2, 3, 336, 336)     => rpn_labels_int32_fpn2       : (2, 3, 200, 200)     ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_cls_logits_fpn2         : (2, 3, 200, 200)     => rpn_labels_int32_fpn2       : (2, 3, 200, 200)     ------|
+INFO net.py: 240: rpn_bbox_targets_wide_fpn2  : (2, 12, 336, 336)    => rpn_bbox_targets_fpn2       : (2, 12, 200, 200)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    => rpn_bbox_targets_fpn2       : (2, 12, 200, 200)    ------|
+INFO net.py: 240: rpn_bbox_inside_weights_wide_fpn2: (2, 12, 336, 336)    => rpn_bbox_inside_weights_fpn2: (2, 12, 200, 200)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    => rpn_bbox_inside_weights_fpn2: (2, 12, 200, 200)    ------|
+INFO net.py: 240: rpn_bbox_outside_weights_wide_fpn2: (2, 12, 336, 336)    => rpn_bbox_outside_weights_fpn2: (2, 12, 200, 200)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    => rpn_bbox_outside_weights_fpn2: (2, 12, 200, 200)    ------|
+INFO net.py: 240: rpn_cls_logits_fpn2         : (2, 3, 200, 200)     => loss_rpn_cls_fpn2           : ()                   ------- (op: SigmoidCrossEntropyLoss)
+INFO net.py: 240: rpn_labels_int32_fpn2       : (2, 3, 200, 200)     => loss_rpn_cls_fpn2           : ()                   ------|
+INFO net.py: 240: rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    => loss_rpn_bbox_fpn2          : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: rpn_bbox_targets_fpn2       : (2, 12, 200, 200)    => loss_rpn_bbox_fpn2          : ()                   ------|
+INFO net.py: 240: rpn_bbox_inside_weights_fpn2: (2, 12, 200, 200)    => loss_rpn_bbox_fpn2          : ()                   ------|
+INFO net.py: 240: rpn_bbox_outside_weights_fpn2: (2, 12, 200, 200)    => loss_rpn_bbox_fpn2          : ()                   ------|
+INFO net.py: 240: rpn_labels_int32_wide_fpn3  : (2, 3, 168, 168)     => rpn_labels_int32_fpn3       : (2, 3, 100, 100)     ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_cls_logits_fpn3         : (2, 3, 100, 100)     => rpn_labels_int32_fpn3       : (2, 3, 100, 100)     ------|
+INFO net.py: 240: rpn_bbox_targets_wide_fpn3  : (2, 12, 168, 168)    => rpn_bbox_targets_fpn3       : (2, 12, 100, 100)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    => rpn_bbox_targets_fpn3       : (2, 12, 100, 100)    ------|
+INFO net.py: 240: rpn_bbox_inside_weights_wide_fpn3: (2, 12, 168, 168)    => rpn_bbox_inside_weights_fpn3: (2, 12, 100, 100)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    => rpn_bbox_inside_weights_fpn3: (2, 12, 100, 100)    ------|
+INFO net.py: 240: rpn_bbox_outside_weights_wide_fpn3: (2, 12, 168, 168)    => rpn_bbox_outside_weights_fpn3: (2, 12, 100, 100)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    => rpn_bbox_outside_weights_fpn3: (2, 12, 100, 100)    ------|
+INFO net.py: 240: rpn_cls_logits_fpn3         : (2, 3, 100, 100)     => loss_rpn_cls_fpn3           : ()                   ------- (op: SigmoidCrossEntropyLoss)
+INFO net.py: 240: rpn_labels_int32_fpn3       : (2, 3, 100, 100)     => loss_rpn_cls_fpn3           : ()                   ------|
+INFO net.py: 240: rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    => loss_rpn_bbox_fpn3          : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: rpn_bbox_targets_fpn3       : (2, 12, 100, 100)    => loss_rpn_bbox_fpn3          : ()                   ------|
+INFO net.py: 240: rpn_bbox_inside_weights_fpn3: (2, 12, 100, 100)    => loss_rpn_bbox_fpn3          : ()                   ------|
+INFO net.py: 240: rpn_bbox_outside_weights_fpn3: (2, 12, 100, 100)    => loss_rpn_bbox_fpn3          : ()                   ------|
+INFO net.py: 240: rpn_labels_int32_wide_fpn4  : (2, 3, 84, 84)       => rpn_labels_int32_fpn4       : (2, 3, 50, 50)       ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_cls_logits_fpn4         : (2, 3, 50, 50)       => rpn_labels_int32_fpn4       : (2, 3, 50, 50)       ------|
+INFO net.py: 240: rpn_bbox_targets_wide_fpn4  : (2, 12, 84, 84)      => rpn_bbox_targets_fpn4       : (2, 12, 50, 50)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      => rpn_bbox_targets_fpn4       : (2, 12, 50, 50)      ------|
+INFO net.py: 240: rpn_bbox_inside_weights_wide_fpn4: (2, 12, 84, 84)      => rpn_bbox_inside_weights_fpn4: (2, 12, 50, 50)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      => rpn_bbox_inside_weights_fpn4: (2, 12, 50, 50)      ------|
+INFO net.py: 240: rpn_bbox_outside_weights_wide_fpn4: (2, 12, 84, 84)      => rpn_bbox_outside_weights_fpn4: (2, 12, 50, 50)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      => rpn_bbox_outside_weights_fpn4: (2, 12, 50, 50)      ------|
+INFO net.py: 240: rpn_cls_logits_fpn4         : (2, 3, 50, 50)       => loss_rpn_cls_fpn4           : ()                   ------- (op: SigmoidCrossEntropyLoss)
+INFO net.py: 240: rpn_labels_int32_fpn4       : (2, 3, 50, 50)       => loss_rpn_cls_fpn4           : ()                   ------|
+INFO net.py: 240: rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      => loss_rpn_bbox_fpn4          : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: rpn_bbox_targets_fpn4       : (2, 12, 50, 50)      => loss_rpn_bbox_fpn4          : ()                   ------|
+INFO net.py: 240: rpn_bbox_inside_weights_fpn4: (2, 12, 50, 50)      => loss_rpn_bbox_fpn4          : ()                   ------|
+INFO net.py: 240: rpn_bbox_outside_weights_fpn4: (2, 12, 50, 50)      => loss_rpn_bbox_fpn4          : ()                   ------|
+INFO net.py: 240: rpn_labels_int32_wide_fpn5  : (2, 3, 42, 42)       => rpn_labels_int32_fpn5       : (2, 3, 25, 25)       ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_cls_logits_fpn5         : (2, 3, 25, 25)       => rpn_labels_int32_fpn5       : (2, 3, 25, 25)       ------|
+INFO net.py: 240: rpn_bbox_targets_wide_fpn5  : (2, 12, 42, 42)      => rpn_bbox_targets_fpn5       : (2, 12, 25, 25)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      => rpn_bbox_targets_fpn5       : (2, 12, 25, 25)      ------|
+INFO net.py: 240: rpn_bbox_inside_weights_wide_fpn5: (2, 12, 42, 42)      => rpn_bbox_inside_weights_fpn5: (2, 12, 25, 25)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      => rpn_bbox_inside_weights_fpn5: (2, 12, 25, 25)      ------|
+INFO net.py: 240: rpn_bbox_outside_weights_wide_fpn5: (2, 12, 42, 42)      => rpn_bbox_outside_weights_fpn5: (2, 12, 25, 25)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      => rpn_bbox_outside_weights_fpn5: (2, 12, 25, 25)      ------|
+INFO net.py: 240: rpn_cls_logits_fpn5         : (2, 3, 25, 25)       => loss_rpn_cls_fpn5           : ()                   ------- (op: SigmoidCrossEntropyLoss)
+INFO net.py: 240: rpn_labels_int32_fpn5       : (2, 3, 25, 25)       => loss_rpn_cls_fpn5           : ()                   ------|
+INFO net.py: 240: rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      => loss_rpn_bbox_fpn5          : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: rpn_bbox_targets_fpn5       : (2, 12, 25, 25)      => loss_rpn_bbox_fpn5          : ()                   ------|
+INFO net.py: 240: rpn_bbox_inside_weights_fpn5: (2, 12, 25, 25)      => loss_rpn_bbox_fpn5          : ()                   ------|
+INFO net.py: 240: rpn_bbox_outside_weights_fpn5: (2, 12, 25, 25)      => loss_rpn_bbox_fpn5          : ()                   ------|
+INFO net.py: 240: rpn_labels_int32_wide_fpn6  : (2, 3, 21, 21)       => rpn_labels_int32_fpn6       : (2, 3, 13, 13)       ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_cls_logits_fpn6         : (2, 3, 13, 13)       => rpn_labels_int32_fpn6       : (2, 3, 13, 13)       ------|
+INFO net.py: 240: rpn_bbox_targets_wide_fpn6  : (2, 12, 21, 21)      => rpn_bbox_targets_fpn6       : (2, 12, 13, 13)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      => rpn_bbox_targets_fpn6       : (2, 12, 13, 13)      ------|
+INFO net.py: 240: rpn_bbox_inside_weights_wide_fpn6: (2, 12, 21, 21)      => rpn_bbox_inside_weights_fpn6: (2, 12, 13, 13)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      => rpn_bbox_inside_weights_fpn6: (2, 12, 13, 13)      ------|
+INFO net.py: 240: rpn_bbox_outside_weights_wide_fpn6: (2, 12, 21, 21)      => rpn_bbox_outside_weights_fpn6: (2, 12, 13, 13)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      => rpn_bbox_outside_weights_fpn6: (2, 12, 13, 13)      ------|
+INFO net.py: 240: rpn_cls_logits_fpn6         : (2, 3, 13, 13)       => loss_rpn_cls_fpn6           : ()                   ------- (op: SigmoidCrossEntropyLoss)
+INFO net.py: 240: rpn_labels_int32_fpn6       : (2, 3, 13, 13)       => loss_rpn_cls_fpn6           : ()                   ------|
+INFO net.py: 240: rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      => loss_rpn_bbox_fpn6          : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: rpn_bbox_targets_fpn6       : (2, 12, 13, 13)      => loss_rpn_bbox_fpn6          : ()                   ------|
+INFO net.py: 240: rpn_bbox_inside_weights_fpn6: (2, 12, 13, 13)      => loss_rpn_bbox_fpn6          : ()                   ------|
+INFO net.py: 240: rpn_bbox_outside_weights_fpn6: (2, 12, 13, 13)      => loss_rpn_bbox_fpn6          : ()                   ------|
+INFO net.py: 240: fpn_res2_2_sum              : (2, 256, 200, 200)   => roi_feat_fpn2               : (1021, 256, 7, 7)    ------- (op: RoIAlign)
+INFO net.py: 240: rois_fpn2                   : (1021, 5)            => roi_feat_fpn2               : (1021, 256, 7, 7)    ------|
+INFO net.py: 240: fpn_res3_3_sum              : (2, 256, 100, 100)   => roi_feat_fpn3               : (3, 256, 7, 7)       ------- (op: RoIAlign)
+INFO net.py: 240: rois_fpn3                   : (3, 5)               => roi_feat_fpn3               : (3, 256, 7, 7)       ------|
+INFO net.py: 240: fpn_res4_5_sum              : (2, 256, 50, 50)     => roi_feat_fpn4               : (0, 256, 7, 7)       ------- (op: RoIAlign)
+INFO net.py: 240: rois_fpn4                   : (0, 5)               => roi_feat_fpn4               : (0, 256, 7, 7)       ------|
+INFO net.py: 240: fpn_res5_2_sum              : (2, 256, 25, 25)     => roi_feat_fpn5               : (0, 256, 7, 7)       ------- (op: RoIAlign)
+INFO net.py: 240: rois_fpn5                   : (0, 5)               => roi_feat_fpn5               : (0, 256, 7, 7)       ------|
+INFO net.py: 240: roi_feat_fpn2               : (1021, 256, 7, 7)    => roi_feat_shuffled           : (1024, 256, 7, 7)    ------- (op: Concat)
+INFO net.py: 240: roi_feat_fpn3               : (3, 256, 7, 7)       => roi_feat_shuffled           : (1024, 256, 7, 7)    ------|
+INFO net.py: 240: roi_feat_fpn4               : (0, 256, 7, 7)       => roi_feat_shuffled           : (1024, 256, 7, 7)    ------|
+INFO net.py: 240: roi_feat_fpn5               : (0, 256, 7, 7)       => roi_feat_shuffled           : (1024, 256, 7, 7)    ------|
+INFO net.py: 240: roi_feat_shuffled           : (1024, 256, 7, 7)    => roi_feat                    : (1024, 256, 7, 7)    ------- (op: BatchPermutation)
+INFO net.py: 240: rois_idx_restore_int32      : (1024,)              => roi_feat                    : (1024, 256, 7, 7)    ------|
+INFO net.py: 240: roi_feat                    : (1024, 256, 7, 7)    => fc6                         : (1024, 1024)         ------- (op: FC)
+INFO net.py: 240: fc6                         : (1024, 1024)         => fc6                         : (1024, 1024)         ------- (op: Relu)
+INFO net.py: 240: fc6                         : (1024, 1024)         => fc7                         : (1024, 1024)         ------- (op: FC)
+INFO net.py: 240: fc7                         : (1024, 1024)         => fc7                         : (1024, 1024)         ------- (op: Relu)
+INFO net.py: 240: fc7                         : (1024, 1024)         => cls_score                   : (1024, 2)            ------- (op: FC)
+INFO net.py: 240: fc7                         : (1024, 1024)         => bbox_pred                   : (1024, 8)            ------- (op: FC)
+INFO net.py: 240: cls_score                   : (1024, 2)            => cls_prob                    : (1024, 2)            ------- (op: SoftmaxWithLoss)
+INFO net.py: 240: labels_int32                : (1024,)              => cls_prob                    : (1024, 2)            ------|
+INFO net.py: 240: bbox_pred                   : (1024, 8)            => loss_bbox                   : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: bbox_targets                : (1024, 8)            => loss_bbox                   : ()                   ------|
+INFO net.py: 240: bbox_inside_weights         : (1024, 8)            => loss_bbox                   : ()                   ------|
+INFO net.py: 240: bbox_outside_weights        : (1024, 8)            => loss_bbox                   : ()                   ------|
+INFO net.py: 240: cls_prob                    : (1024, 2)            => accuracy_cls                : ()                   ------- (op: Accuracy)
+INFO net.py: 240: labels_int32                : (1024,)              => accuracy_cls                : ()                   ------|
+INFO net.py: 244: End of model: generalized_rcnn
+json_stats: {"accuracy_cls": 0.579102, "eta": "6 days, 1:10:55", "iter": 0, "loss": 1.684190, "loss_bbox": 0.113346, "loss_cls": 0.676407, "loss_rpn_bbox_fpn2": 0.139721, "loss_rpn_bbox_fpn3": 0.039590, "loss_rpn_bbox_fpn4": 0.000000, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.530474, "loss_rpn_cls_fpn3": 0.165412, "loss_rpn_cls_fpn4": 0.013759, "loss_rpn_cls_fpn5": 0.005481, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.006667, "mb_qsize": 64, "mem": 4751, "time": 5.807286}
+json_stats: {"accuracy_cls": 0.806592, "eta": "15:59:03", "iter": 20, "loss": 1.794075, "loss_bbox": 0.245858, "loss_cls": 0.716452, "loss_rpn_bbox_fpn2": 0.212072, "loss_rpn_bbox_fpn3": 0.034553, "loss_rpn_bbox_fpn4": 0.000327, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.339455, "loss_rpn_cls_fpn3": 0.121085, "loss_rpn_cls_fpn4": 0.021170, "loss_rpn_cls_fpn5": 0.002551, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.007200, "mb_qsize": 64, "mem": 6026, "time": 0.639515}
+json_stats: {"accuracy_cls": 0.808542, "eta": "8:46:06", "iter": 40, "loss": 1.366286, "loss_bbox": 0.346562, "loss_cls": 0.504909, "loss_rpn_bbox_fpn2": 0.136872, "loss_rpn_bbox_fpn3": 0.026030, "loss_rpn_bbox_fpn4": 0.004666, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.177300, "loss_rpn_cls_fpn3": 0.053662, "loss_rpn_cls_fpn4": 0.021233, "loss_rpn_cls_fpn5": 0.003104, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.007733, "mb_qsize": 64, "mem": 6076, "time": 0.350892}
+json_stats: {"accuracy_cls": 0.794411, "eta": "9:02:09", "iter": 60, "loss": 1.484625, "loss_bbox": 0.358207, "loss_cls": 0.507969, "loss_rpn_bbox_fpn2": 0.161157, "loss_rpn_bbox_fpn3": 0.034260, "loss_rpn_bbox_fpn4": 0.006698, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.217535, "loss_rpn_cls_fpn3": 0.062225, "loss_rpn_cls_fpn4": 0.024624, "loss_rpn_cls_fpn5": 0.004434, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.008267, "mb_qsize": 64, "mem": 6078, "time": 0.361682}
+json_stats: {"accuracy_cls": 0.810059, "eta": "9:02:56", "iter": 80, "loss": 1.232864, "loss_bbox": 0.334650, "loss_cls": 0.422719, "loss_rpn_bbox_fpn2": 0.158664, "loss_rpn_bbox_fpn3": 0.024947, "loss_rpn_bbox_fpn4": 0.003969, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.182006, "loss_rpn_cls_fpn3": 0.042364, "loss_rpn_cls_fpn4": 0.018450, "loss_rpn_cls_fpn5": 0.002630, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.008800, "mb_qsize": 64, "mem": 6080, "time": 0.362278}
+json_stats: {"accuracy_cls": 0.814453, "eta": "8:59:09", "iter": 100, "loss": 1.236353, "loss_bbox": 0.329077, "loss_cls": 0.409201, "loss_rpn_bbox_fpn2": 0.097768, "loss_rpn_bbox_fpn3": 0.030681, "loss_rpn_bbox_fpn4": 0.005549, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.209698, "loss_rpn_cls_fpn3": 0.053227, "loss_rpn_cls_fpn4": 0.014539, "loss_rpn_cls_fpn5": 0.001325, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.009333, "mb_qsize": 64, "mem": 6083, "time": 0.359837}
+json_stats: {"accuracy_cls": 0.828613, "eta": "9:01:30", "iter": 120, "loss": 1.110884, "loss_bbox": 0.313228, "loss_cls": 0.385328, "loss_rpn_bbox_fpn2": 0.127433, "loss_rpn_bbox_fpn3": 0.028539, "loss_rpn_bbox_fpn4": 0.001779, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.169131, "loss_rpn_cls_fpn3": 0.041170, "loss_rpn_cls_fpn4": 0.010158, "loss_rpn_cls_fpn5": 0.002811, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.009867, "mb_qsize": 64, "mem": 6083, "time": 0.361485}
+json_stats: {"accuracy_cls": 0.833984, "eta": "9:00:10", "iter": 140, "loss": 1.100199, "loss_bbox": 0.289271, "loss_cls": 0.367300, "loss_rpn_bbox_fpn2": 0.154649, "loss_rpn_bbox_fpn3": 0.027378, "loss_rpn_bbox_fpn4": 0.003118, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.151065, "loss_rpn_cls_fpn3": 0.042114, "loss_rpn_cls_fpn4": 0.014472, "loss_rpn_cls_fpn5": 0.002619, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.010400, "mb_qsize": 64, "mem": 6085, "time": 0.360675}
+json_stats: {"accuracy_cls": 0.811523, "eta": "9:05:02", "iter": 160, "loss": 1.256808, "loss_bbox": 0.335475, "loss_cls": 0.411868, "loss_rpn_bbox_fpn2": 0.171613, "loss_rpn_bbox_fpn3": 0.033898, "loss_rpn_bbox_fpn4": 0.008814, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.152463, "loss_rpn_cls_fpn3": 0.053482, "loss_rpn_cls_fpn4": 0.013788, "loss_rpn_cls_fpn5": 0.002750, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.010933, "mb_qsize": 64, "mem": 7195, "time": 0.364012}
+json_stats: {"accuracy_cls": 0.807129, "eta": "9:01:43", "iter": 180, "loss": 1.222035, "loss_bbox": 0.353819, "loss_cls": 0.423297, "loss_rpn_bbox_fpn2": 0.123283, "loss_rpn_bbox_fpn3": 0.023290, "loss_rpn_bbox_fpn4": 0.015227, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.127490, "loss_rpn_cls_fpn3": 0.048908, "loss_rpn_cls_fpn4": 0.012801, "loss_rpn_cls_fpn5": 0.002913, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.011467, "mb_qsize": 64, "mem": 7196, "time": 0.361876}
+json_stats: {"accuracy_cls": 0.833984, "eta": "8:59:33", "iter": 200, "loss": 1.150109, "loss_bbox": 0.331569, "loss_cls": 0.368947, "loss_rpn_bbox_fpn2": 0.102719, "loss_rpn_bbox_fpn3": 0.037254, "loss_rpn_bbox_fpn4": 0.000000, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.123083, "loss_rpn_cls_fpn3": 0.025710, "loss_rpn_cls_fpn4": 0.005983, "loss_rpn_cls_fpn5": 0.003444, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.012000, "mb_qsize": 64, "mem": 7198, "time": 0.360503}
+json_stats: {"accuracy_cls": 0.854980, "eta": "9:02:40", "iter": 220, "loss": 0.928618, "loss_bbox": 0.277020, "loss_cls": 0.328285, "loss_rpn_bbox_fpn2": 0.115199, "loss_rpn_bbox_fpn3": 0.036654, "loss_rpn_bbox_fpn4": 0.003227, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.098345, "loss_rpn_cls_fpn3": 0.054972, "loss_rpn_cls_fpn4": 0.014030, "loss_rpn_cls_fpn5": 0.003932, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.012533, "mb_qsize": 64, "mem": 7203, "time": 0.362670}
+json_stats: {"accuracy_cls": 0.856934, "eta": "9:02:14", "iter": 240, "loss": 0.949742, "loss_bbox": 0.287177, "loss_cls": 0.362950, "loss_rpn_bbox_fpn2": 0.109905, "loss_rpn_bbox_fpn3": 0.031327, "loss_rpn_bbox_fpn4": 0.001740, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.091503, "loss_rpn_cls_fpn3": 0.030449, "loss_rpn_cls_fpn4": 0.004456, "loss_rpn_cls_fpn5": 0.003858, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.013067, "mb_qsize": 64, "mem": 7203, "time": 0.362460}
+json_stats: {"accuracy_cls": 0.837512, "eta": "9:04:42", "iter": 260, "loss": 1.082737, "loss_bbox": 0.299374, "loss_cls": 0.380986, "loss_rpn_bbox_fpn2": 0.128785, "loss_rpn_bbox_fpn3": 0.026869, "loss_rpn_bbox_fpn4": 0.011047, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.118895, "loss_rpn_cls_fpn3": 0.028114, "loss_rpn_cls_fpn4": 0.011513, "loss_rpn_cls_fpn5": 0.002802, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.013600, "mb_qsize": 64, "mem": 7203, "time": 0.364188}
+json_stats: {"accuracy_cls": 0.850586, "eta": "9:06:19", "iter": 280, "loss": 0.940677, "loss_bbox": 0.285237, "loss_cls": 0.339610, "loss_rpn_bbox_fpn2": 0.117729, "loss_rpn_bbox_fpn3": 0.020965, "loss_rpn_bbox_fpn4": 0.003938, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.144353, "loss_rpn_cls_fpn3": 0.028828, "loss_rpn_cls_fpn4": 0.005957, "loss_rpn_cls_fpn5": 0.001283, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.014133, "mb_qsize": 64, "mem": 7208, "time": 0.365358}
+json_stats: {"accuracy_cls": 0.839844, "eta": "9:09:54", "iter": 300, "loss": 1.019511, "loss_bbox": 0.289079, "loss_cls": 0.357012, "loss_rpn_bbox_fpn2": 0.130306, "loss_rpn_bbox_fpn3": 0.032428, "loss_rpn_bbox_fpn4": 0.002403, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.127343, "loss_rpn_cls_fpn3": 0.044389, "loss_rpn_cls_fpn4": 0.004542, "loss_rpn_cls_fpn5": 0.002840, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.014667, "mb_qsize": 64, "mem": 7215, "time": 0.367831}
+json_stats: {"accuracy_cls": 0.841894, "eta": "9:11:07", "iter": 320, "loss": 1.124492, "loss_bbox": 0.323303, "loss_cls": 0.345763, "loss_rpn_bbox_fpn2": 0.158852, "loss_rpn_bbox_fpn3": 0.038780, "loss_rpn_bbox_fpn4": 0.009212, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.174975, "loss_rpn_cls_fpn3": 0.040677, "loss_rpn_cls_fpn4": 0.011091, "loss_rpn_cls_fpn5": 0.002668, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.015200, "mb_qsize": 64, "mem": 7215, "time": 0.368724}
+json_stats: {"accuracy_cls": 0.850016, "eta": "9:13:46", "iter": 340, "loss": 1.020178, "loss_bbox": 0.301650, "loss_cls": 0.338225, "loss_rpn_bbox_fpn2": 0.160122, "loss_rpn_bbox_fpn3": 0.051158, "loss_rpn_bbox_fpn4": 0.000240, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.125529, "loss_rpn_cls_fpn3": 0.034986, "loss_rpn_cls_fpn4": 0.003398, "loss_rpn_cls_fpn5": 0.001418, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.015733, "mb_qsize": 64, "mem": 7220, "time": 0.370584}
+json_stats: {"accuracy_cls": 0.829879, "eta": "9:18:55", "iter": 360, "loss": 1.100042, "loss_bbox": 0.301600, "loss_cls": 0.388799, "loss_rpn_bbox_fpn2": 0.136401, "loss_rpn_bbox_fpn3": 0.042050, "loss_rpn_bbox_fpn4": 0.000858, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.117364, "loss_rpn_cls_fpn3": 0.037472, "loss_rpn_cls_fpn4": 0.006167, "loss_rpn_cls_fpn5": 0.002462, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.016267, "mb_qsize": 64, "mem": 7221, "time": 0.374118}
+json_stats: {"accuracy_cls": 0.855387, "eta": "9:18:01", "iter": 380, "loss": 1.082356, "loss_bbox": 0.334721, "loss_cls": 0.342399, "loss_rpn_bbox_fpn2": 0.149837, "loss_rpn_bbox_fpn3": 0.027559, "loss_rpn_bbox_fpn4": 0.004456, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.159455, "loss_rpn_cls_fpn3": 0.038472, "loss_rpn_cls_fpn4": 0.010556, "loss_rpn_cls_fpn5": 0.002041, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.016800, "mb_qsize": 64, "mem": 7226, "time": 0.373589}
+json_stats: {"accuracy_cls": 0.859751, "eta": "9:18:10", "iter": 400, "loss": 1.115132, "loss_bbox": 0.279959, "loss_cls": 0.323120, "loss_rpn_bbox_fpn2": 0.192741, "loss_rpn_bbox_fpn3": 0.023221, "loss_rpn_bbox_fpn4": 0.000255, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.190264, "loss_rpn_cls_fpn3": 0.028991, "loss_rpn_cls_fpn4": 0.009758, "loss_rpn_cls_fpn5": 0.003577, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.017333, "mb_qsize": 64, "mem": 7232, "time": 0.373774}
+json_stats: {"accuracy_cls": 0.883642, "eta": "9:20:04", "iter": 420, "loss": 1.038032, "loss_bbox": 0.248683, "loss_cls": 0.274469, "loss_rpn_bbox_fpn2": 0.230052, "loss_rpn_bbox_fpn3": 0.028050, "loss_rpn_bbox_fpn4": 0.005146, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.168009, "loss_rpn_cls_fpn3": 0.046036, "loss_rpn_cls_fpn4": 0.017090, "loss_rpn_cls_fpn5": 0.002645, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.017867, "mb_qsize": 64, "mem": 7235, "time": 0.375135}
+json_stats: {"accuracy_cls": 0.844639, "eta": "9:21:43", "iter": 440, "loss": 1.357161, "loss_bbox": 0.296851, "loss_cls": 0.357030, "loss_rpn_bbox_fpn2": 0.170387, "loss_rpn_bbox_fpn3": 0.027736, "loss_rpn_bbox_fpn4": 0.004069, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.239150, "loss_rpn_cls_fpn3": 0.052054, "loss_rpn_cls_fpn4": 0.016617, "loss_rpn_cls_fpn5": 0.002911, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.018400, "mb_qsize": 64, "mem": 7239, "time": 0.376329}
+json_stats: {"accuracy_cls": 0.810547, "eta": "9:20:42", "iter": 460, "loss": 1.471504, "loss_bbox": 0.283817, "loss_cls": 0.447677, "loss_rpn_bbox_fpn2": 0.182603, "loss_rpn_bbox_fpn3": 0.043807, "loss_rpn_bbox_fpn4": 0.006805, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.206725, "loss_rpn_cls_fpn3": 0.090028, "loss_rpn_cls_fpn4": 0.017188, "loss_rpn_cls_fpn5": 0.003757, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.018933, "mb_qsize": 64, "mem": 7239, "time": 0.375722}
+json_stats: {"accuracy_cls": 0.866699, "eta": "9:18:55", "iter": 480, "loss": 1.261441, "loss_bbox": 0.229998, "loss_cls": 0.301991, "loss_rpn_bbox_fpn2": 0.169916, "loss_rpn_bbox_fpn3": 0.041246, "loss_rpn_bbox_fpn4": 0.013392, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.244501, "loss_rpn_cls_fpn3": 0.065299, "loss_rpn_cls_fpn4": 0.012405, "loss_rpn_cls_fpn5": 0.002804, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.019467, "mb_qsize": 64, "mem": 7240, "time": 0.374614}
+json_stats: {"accuracy_cls": 0.856445, "eta": "9:19:26", "iter": 500, "loss": 0.928604, "loss_bbox": 0.112506, "loss_cls": 0.260019, "loss_rpn_bbox_fpn2": 0.168845, "loss_rpn_bbox_fpn3": 0.028388, "loss_rpn_bbox_fpn4": 0.000202, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.160444, "loss_rpn_cls_fpn3": 0.050824, "loss_rpn_cls_fpn4": 0.011038, "loss_rpn_cls_fpn5": 0.002023, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.020000, "mb_qsize": 64, "mem": 7240, "time": 0.375042}
+json_stats: {"accuracy_cls": 0.919922, "eta": "9:18:25", "iter": 520, "loss": 1.010297, "loss_bbox": 0.159359, "loss_cls": 0.228686, "loss_rpn_bbox_fpn2": 0.129318, "loss_rpn_bbox_fpn3": 0.040933, "loss_rpn_bbox_fpn4": 0.001866, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.226945, "loss_rpn_cls_fpn3": 0.069581, "loss_rpn_cls_fpn4": 0.009256, "loss_rpn_cls_fpn5": 0.004120, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.020000, "mb_qsize": 64, "mem": 7240, "time": 0.374450}
+json_stats: {"accuracy_cls": 0.870605, "eta": "9:18:08", "iter": 540, "loss": 1.167067, "loss_bbox": 0.233290, "loss_cls": 0.306918, "loss_rpn_bbox_fpn2": 0.194190, "loss_rpn_bbox_fpn3": 0.026667, "loss_rpn_bbox_fpn4": 0.002926, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.190757, "loss_rpn_cls_fpn3": 0.050638, "loss_rpn_cls_fpn4": 0.012024, "loss_rpn_cls_fpn5": 0.004290, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.020000, "mb_qsize": 64, "mem": 7242, "time": 0.374341}
+json_stats: {"accuracy_cls": 0.864746, "eta": "9:17:08", "iter": 560, "loss": 1.043260, "loss_bbox": 0.278399, "loss_cls": 0.310137, "loss_rpn_bbox_fpn2": 0.128348, "loss_rpn_bbox_fpn3": 0.030345, "loss_rpn_bbox_fpn4": 0.001283, "loss_rpn_bbox_fpn5": 0.000000, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.180384, "loss_rpn_cls_fpn3": 0.061744, "loss_rpn_cls_fpn4": 0.010641, "loss_rpn_cls_fpn5": 0.003861, "loss_rpn_cls_fpn6": 0.000000, "lr": 0.020000, "mb_qsize": 64, "mem": 7243, "time": 0.373754}
