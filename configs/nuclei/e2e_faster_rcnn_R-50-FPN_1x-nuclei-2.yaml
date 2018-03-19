@@ -7,7 +7,7 @@ NUM_GPUS: 1
 SOLVER:
   WEIGHT_DECAY: 0.0001
   LR_POLICY: steps_with_decay
-  BASE_LR: 0.005
+  BASE_LR: 0.001
   GAMMA: 0.1
   MAX_ITER: 90000
   STEPS: [0, 60000, 80000]
@@ -15,6 +15,7 @@ FPN:
   FPN_ON: True
   MULTILEVEL_ROIS: True
   MULTILEVEL_RPN: True
+  RPN_ANCHOR_START_SIZE: 8
 FAST_RCNN:
   ROI_BOX_HEAD: fast_rcnn_heads.add_roi_2mlp_head
   ROI_XFORM_METHOD: RoIAlign
