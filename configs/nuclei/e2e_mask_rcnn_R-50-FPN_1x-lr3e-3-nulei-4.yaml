@@ -8,10 +8,10 @@ NUM_GPUS: 1
 SOLVER:
   WEIGHT_DECAY: 0.0001
   LR_POLICY: steps_with_decay
-  BASE_LR: 0.001
+  BASE_LR: 0.003
   GAMMA: 0.1
   MAX_ITER: 90000
-  STEPS: [0, 60000, 80000]
+  STEPS: [0, 30000, 60000]
 FPN:
   FPN_ON: True
   MULTILEVEL_ROIS: True
@@ -24,9 +24,9 @@ FAST_RCNN:
   ROI_XFORM_SAMPLING_RATIO: 2
 MRCNN:
   ROI_MASK_HEAD: mask_rcnn_heads.mask_rcnn_fcn_head_v1up4convs
-  RESOLUTION: 14  # (output mask resolution) default 14
+  RESOLUTION: 28  # (output mask resolution) default 14
   ROI_XFORM_METHOD: RoIAlign
-  ROI_XFORM_RESOLUTION: 7  # default 7
+  ROI_XFORM_RESOLUTION: 14  # default 7
   ROI_XFORM_SAMPLING_RATIO: 2  # default 0
   DILATION: 1  # default 2
   CONV_INIT: MSRAFill  # default GaussianFill

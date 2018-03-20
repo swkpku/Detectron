@@ -1,0 +1,954 @@
+Found Detectron ops lib: /usr/local/lib/libcaffe2_detectron_ops_gpu.so
+Found Detectron ops lib: /usr/local/lib/libcaffe2_detectron_ops_gpu.so
+INFO train_net.py: 104: Called with args:
+INFO train_net.py: 105: Namespace(cfg_file='configs/nuclei/e2e_faster_rcnn_R-50-FPN_1x-nuclei-2.yaml', multi_gpu_testing=False, opts=['OUTPUT_DIR', '/tmp/detectron-faster-rcnn-r50-nuclei-2'], skip_test=False)
+INFO train_net.py: 111: Training with config:
+INFO train_net.py: 112: {'BBOX_XFORM_CLIP': 4.135166556742356,
+ 'CLUSTER': {'ON_CLUSTER': False},
+ 'DATA_LOADER': {'NUM_THREADS': 4},
+ 'DEDUP_BOXES': 0.0625,
+ 'DOWNLOAD_CACHE': '/tmp/detectron-download-cache',
+ 'EPS': 1e-14,
+ 'EXPECTED_RESULTS': [],
+ 'EXPECTED_RESULTS_ATOL': 0.005,
+ 'EXPECTED_RESULTS_EMAIL': '',
+ 'EXPECTED_RESULTS_RTOL': 0.1,
+ 'FAST_RCNN': {'MLP_HEAD_DIM': 1024,
+               'ROI_BOX_HEAD': 'fast_rcnn_heads.add_roi_2mlp_head',
+               'ROI_XFORM_METHOD': 'RoIAlign',
+               'ROI_XFORM_RESOLUTION': 7,
+               'ROI_XFORM_SAMPLING_RATIO': 2},
+ 'FPN': {'COARSEST_STRIDE': 32,
+         'DIM': 256,
+         'EXTRA_CONV_LEVELS': False,
+         'FPN_ON': True,
+         'MULTILEVEL_ROIS': True,
+         'MULTILEVEL_RPN': True,
+         'ROI_CANONICAL_LEVEL': 4,
+         'ROI_CANONICAL_SCALE': 224,
+         'ROI_MAX_LEVEL': 5,
+         'ROI_MIN_LEVEL': 2,
+         'RPN_ANCHOR_START_SIZE': 8,
+         'RPN_ASPECT_RATIOS': (0.5, 1, 2),
+         'RPN_MAX_LEVEL': 6,
+         'RPN_MIN_LEVEL': 2,
+         'ZERO_INIT_LATERAL': False},
+ 'KRCNN': {'CONV_HEAD_DIM': 256,
+           'CONV_HEAD_KERNEL': 3,
+           'CONV_INIT': 'GaussianFill',
+           'DECONV_DIM': 256,
+           'DECONV_KERNEL': 4,
+           'DILATION': 1,
+           'HEATMAP_SIZE': -1,
+           'INFERENCE_MIN_SIZE': 0,
+           'KEYPOINT_CONFIDENCE': 'bbox',
+           'LOSS_WEIGHT': 1.0,
+           'MIN_KEYPOINT_COUNT_FOR_VALID_MINIBATCH': 20,
+           'NMS_OKS': False,
+           'NORMALIZE_BY_VISIBLE_KEYPOINTS': True,
+           'NUM_KEYPOINTS': -1,
+           'NUM_STACKED_CONVS': 8,
+           'ROI_KEYPOINTS_HEAD': '',
+           'ROI_XFORM_METHOD': 'RoIAlign',
+           'ROI_XFORM_RESOLUTION': 7,
+           'ROI_XFORM_SAMPLING_RATIO': 0,
+           'UP_SCALE': -1,
+           'USE_DECONV': False,
+           'USE_DECONV_OUTPUT': False},
+ 'MATLAB': 'matlab',
+ 'MEMONGER': True,
+ 'MEMONGER_SHARE_ACTIVATIONS': False,
+ 'MODEL': {'BBOX_REG_WEIGHTS': (10.0, 10.0, 5.0, 5.0),
+           'CLS_AGNOSTIC_BBOX_REG': False,
+           'CONV_BODY': 'FPN.add_fpn_ResNet50_conv5_body',
+           'EXECUTION_TYPE': 'dag',
+           'FASTER_RCNN': True,
+           'KEYPOINTS_ON': False,
+           'MASK_ON': False,
+           'NUM_CLASSES': 2,
+           'RPN_ONLY': False,
+           'TYPE': 'generalized_rcnn'},
+ 'MRCNN': {'CLS_SPECIFIC_MASK': True,
+           'CONV_INIT': 'GaussianFill',
+           'DILATION': 2,
+           'DIM_REDUCED': 256,
+           'RESOLUTION': 14,
+           'ROI_MASK_HEAD': '',
+           'ROI_XFORM_METHOD': 'RoIAlign',
+           'ROI_XFORM_RESOLUTION': 7,
+           'ROI_XFORM_SAMPLING_RATIO': 0,
+           'THRESH_BINARIZE': 0.5,
+           'UPSAMPLE_RATIO': 1,
+           'USE_FC_OUTPUT': False,
+           'WEIGHT_LOSS_MASK': 1.0},
+ 'NUM_GPUS': 1,
+ 'OUTPUT_DIR': '/tmp/detectron-faster-rcnn-r50-nuclei-2',
+ 'PIXEL_MEANS': array([[[102.9801, 115.9465, 122.7717]]]),
+ 'RESNETS': {'NUM_GROUPS': 1,
+             'RES5_DILATION': 1,
+             'STRIDE_1X1': True,
+             'TRANS_FUNC': 'bottleneck_transformation',
+             'WIDTH_PER_GROUP': 64},
+ 'RETINANET': {'ANCHOR_SCALE': 4,
+               'ASPECT_RATIOS': (0.5, 1.0, 2.0),
+               'BBOX_REG_BETA': 0.11,
+               'BBOX_REG_WEIGHT': 1.0,
+               'CLASS_SPECIFIC_BBOX': False,
+               'INFERENCE_TH': 0.05,
+               'LOSS_ALPHA': 0.25,
+               'LOSS_GAMMA': 2.0,
+               'NEGATIVE_OVERLAP': 0.4,
+               'NUM_CONVS': 4,
+               'POSITIVE_OVERLAP': 0.5,
+               'PRE_NMS_TOP_N': 1000,
+               'PRIOR_PROB': 0.01,
+               'RETINANET_ON': False,
+               'SCALES_PER_OCTAVE': 3,
+               'SHARE_CLS_BBOX_TOWER': False,
+               'SOFTMAX': False},
+ 'RFCN': {'PS_GRID_SIZE': 3},
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/swk/Documents/ML/Detectron',
+ 'RPN': {'ASPECT_RATIOS': (0.5, 1, 2),
+         'RPN_ON': True,
+         'SIZES': (64, 128, 256, 512),
+         'STRIDE': 16},
+ 'SOLVER': {'BASE_LR': 0.001,
+            'GAMMA': 0.1,
+            'LOG_LR_CHANGE_THRESHOLD': 1.1,
+            'LRS': [],
+            'LR_POLICY': 'steps_with_decay',
+            'MAX_ITER': 90000,
+            'MOMENTUM': 0.9,
+            'SCALE_MOMENTUM': True,
+            'SCALE_MOMENTUM_THRESHOLD': 1.1,
+            'STEPS': [0, 60000, 80000],
+            'STEP_SIZE': 30000,
+            'WARM_UP_FACTOR': 0.3333333333333333,
+            'WARM_UP_ITERS': 500,
+            'WARM_UP_METHOD': u'linear',
+            'WEIGHT_DECAY': 0.0001},
+ 'TEST': {'BBOX_AUG': {'AREA_TH_HI': 32400,
+                       'AREA_TH_LO': 2500,
+                       'ASPECT_RATIOS': (),
+                       'ASPECT_RATIO_H_FLIP': False,
+                       'COORD_HEUR': 'UNION',
+                       'ENABLED': False,
+                       'H_FLIP': False,
+                       'MAX_SIZE': 4000,
+                       'SCALES': (),
+                       'SCALE_H_FLIP': False,
+                       'SCALE_SIZE_DEP': False,
+                       'SCORE_HEUR': 'UNION'},
+          'BBOX_REG': True,
+          'BBOX_VOTE': {'ENABLED': False,
+                        'SCORING_METHOD': 'ID',
+                        'SCORING_METHOD_BETA': 1.0,
+                        'VOTE_TH': 0.8},
+          'COMPETITION_MODE': True,
+          'DATASET': '',
+          'DATASETS': ('dsb_2018_val',),
+          'DETECTIONS_PER_IM': 100,
+          'FORCE_JSON_DATASET_EVAL': False,
+          'KPS_AUG': {'AREA_TH': 32400,
+                      'ASPECT_RATIOS': (),
+                      'ASPECT_RATIO_H_FLIP': False,
+                      'ENABLED': False,
+                      'HEUR': 'HM_AVG',
+                      'H_FLIP': False,
+                      'MAX_SIZE': 4000,
+                      'SCALES': (),
+                      'SCALE_H_FLIP': False,
+                      'SCALE_SIZE_DEP': False},
+          'MASK_AUG': {'AREA_TH': 32400,
+                       'ASPECT_RATIOS': (),
+                       'ASPECT_RATIO_H_FLIP': False,
+                       'ENABLED': False,
+                       'HEUR': 'SOFT_AVG',
+                       'H_FLIP': False,
+                       'MAX_SIZE': 4000,
+                       'SCALES': (),
+                       'SCALE_H_FLIP': False,
+                       'SCALE_SIZE_DEP': False},
+          'MAX_SIZE': 1333,
+          'NMS': 0.5,
+          'PRECOMPUTED_PROPOSALS': False,
+          'PROPOSAL_FILE': '',
+          'PROPOSAL_FILES': (),
+          'PROPOSAL_LIMIT': 2000,
+          'RPN_MIN_SIZE': 0,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 1000,
+          'RPN_PRE_NMS_TOP_N': 1000,
+          'SCALES': (800,),
+          'SCORE_THRESH': 0.05,
+          'SOFT_NMS': {'ENABLED': False, 'METHOD': 'linear', 'SIGMA': 0.5},
+          'WEIGHTS': ''},
+ 'TRAIN': {'ASPECT_GROUPING': True,
+           'AUTO_RESUME': True,
+           'BATCH_SIZE_PER_IM': 512,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'CROWD_FILTER_THRESH': 0.7,
+           'DATASETS': ('dsb_2018_train',),
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'FREEZE_CONV_BODY': False,
+           'GT_MIN_AREA': -1,
+           'IMS_PER_BATCH': 2,
+           'MAX_SIZE': 1333,
+           'PROPOSAL_FILES': (),
+           'RPN_BATCH_SIZE_PER_IM': 256,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 0,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 2000,
+           'RPN_STRADDLE_THRESH': 0,
+           'SCALES': (800,),
+           'SNAPSHOT_ITERS': 20000,
+           'USE_FLIPPED': True,
+           'WEIGHTS': u'/tmp/detectron-download-cache/ImageNetPretrained/MSRA/R-50.pkl'},
+ 'USE_NCCL': False,
+ 'VIS': False,
+ 'VIS_TH': 0.9}
+INFO train_net.py: 205: Building model: generalized_rcnn
+WARNING cnn.py:  40: [====DEPRECATE WARNING====]: you are creating an object from CNNModelHelper class which will be deprecated soon. Please use ModelHelper object with brew module. For more information, please refer to caffe2.ai and python/brew.py, python/brew_test.py for more information.
+WARNING memonger.py:  70: NOTE: Executing memonger to optimize gradient memory
+INFO memonger.py: 112: Memonger memory optimization took 0.0218868255615 secs
+INFO train_net.py: 253: Loading dataset: ('dsb_2018_train',)
+loading annotations into memory...
+Done (t=2.06s)
+creating index...
+index created!
+INFO roidb.py:  49: Appending horizontally-flipped training examples...
+INFO roidb.py:  51: Loaded dataset: dsb_2018_train
+INFO roidb.py: 135: Filtered 0 roidb entries: 1072 -> 1072
+INFO roidb.py:  67: Computing bounding-box regression targets...
+INFO roidb.py:  69: done
+INFO train_net.py: 257: 1072 roidb entries
+INFO net.py:  57: Loading weights from: /tmp/detectron-download-cache/ImageNetPretrained/MSRA/R-50.pkl
+INFO net.py:  86: fpn_inner_res5_2_sum_w not found
+INFO net.py:  86: fpn_inner_res5_2_sum_b not found
+INFO net.py:  86: fpn_inner_res4_5_sum_lateral_w not found
+INFO net.py:  86: fpn_inner_res4_5_sum_lateral_b not found
+INFO net.py:  86: fpn_inner_res3_3_sum_lateral_w not found
+INFO net.py:  86: fpn_inner_res3_3_sum_lateral_b not found
+INFO net.py:  86: fpn_inner_res2_2_sum_lateral_w not found
+INFO net.py:  86: fpn_inner_res2_2_sum_lateral_b not found
+INFO net.py:  86: fpn_res5_2_sum_w not found
+INFO net.py:  86: fpn_res5_2_sum_b not found
+INFO net.py:  86: fpn_res4_5_sum_w not found
+INFO net.py:  86: fpn_res4_5_sum_b not found
+INFO net.py:  86: fpn_res3_3_sum_w not found
+INFO net.py:  86: fpn_res3_3_sum_b not found
+INFO net.py:  86: fpn_res2_2_sum_w not found
+INFO net.py:  86: fpn_res2_2_sum_b not found
+INFO net.py:  86: conv_rpn_fpn2_w not found
+INFO net.py:  86: conv_rpn_fpn2_b not found
+INFO net.py:  86: rpn_cls_logits_fpn2_w not found
+INFO net.py:  86: rpn_cls_logits_fpn2_b not found
+INFO net.py:  86: rpn_bbox_pred_fpn2_w not found
+INFO net.py:  86: rpn_bbox_pred_fpn2_b not found
+INFO net.py:  86: fc6_w not found
+INFO net.py:  86: fc6_b not found
+INFO net.py:  86: fc7_w not found
+INFO net.py:  86: fc7_b not found
+INFO net.py:  86: cls_score_w not found
+INFO net.py:  86: cls_score_b not found
+INFO net.py:  86: bbox_pred_w not found
+INFO net.py:  86: bbox_pred_b not found
+INFO train_net.py: 241: Outputs saved to: /tmp/detectron-faster-rcnn-r50-nuclei-2/train/dsb_2018_train/generalized_rcnn
+INFO loader.py: 227: Pre-filling mini-batch queue...
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [1/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [1/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [0/64]
+INFO loader.py: 232:   [2/64]
+INFO loader.py: 232:   [2/64]
+INFO loader.py: 232:   [2/64]
+INFO loader.py: 232:   [4/64]
+INFO loader.py: 232:   [4/64]
+INFO loader.py: 232:   [4/64]
+INFO loader.py: 232:   [5/64]
+INFO loader.py: 232:   [5/64]
+INFO loader.py: 232:   [5/64]
+INFO loader.py: 232:   [6/64]
+INFO loader.py: 232:   [7/64]
+INFO loader.py: 232:   [7/64]
+INFO loader.py: 232:   [7/64]
+INFO loader.py: 232:   [8/64]
+INFO loader.py: 232:   [8/64]
+INFO loader.py: 232:   [9/64]
+INFO loader.py: 232:   [9/64]
+INFO loader.py: 232:   [10/64]
+INFO loader.py: 232:   [11/64]
+INFO loader.py: 232:   [11/64]
+INFO loader.py: 232:   [12/64]
+INFO loader.py: 232:   [12/64]
+INFO loader.py: 232:   [12/64]
+INFO loader.py: 232:   [12/64]
+INFO loader.py: 232:   [13/64]
+INFO loader.py: 232:   [14/64]
+INFO loader.py: 232:   [14/64]
+INFO loader.py: 232:   [15/64]
+INFO loader.py: 232:   [15/64]
+INFO loader.py: 232:   [16/64]
+INFO loader.py: 232:   [18/64]
+INFO loader.py: 232:   [19/64]
+INFO loader.py: 232:   [19/64]
+INFO loader.py: 232:   [19/64]
+INFO loader.py: 232:   [20/64]
+INFO loader.py: 232:   [21/64]
+INFO loader.py: 232:   [23/64]
+INFO loader.py: 232:   [23/64]
+INFO loader.py: 232:   [23/64]
+INFO loader.py: 232:   [23/64]
+INFO loader.py: 232:   [24/64]
+INFO loader.py: 232:   [25/64]
+INFO loader.py: 232:   [25/64]
+INFO loader.py: 232:   [26/64]
+INFO loader.py: 232:   [26/64]
+INFO loader.py: 232:   [27/64]
+INFO loader.py: 232:   [27/64]
+INFO loader.py: 232:   [27/64]
+INFO loader.py: 232:   [28/64]
+INFO loader.py: 232:   [29/64]
+INFO loader.py: 232:   [30/64]
+INFO loader.py: 232:   [30/64]
+INFO loader.py: 232:   [30/64]
+INFO loader.py: 232:   [30/64]
+INFO loader.py: 232:   [31/64]
+INFO loader.py: 232:   [32/64]
+INFO loader.py: 232:   [32/64]
+INFO loader.py: 232:   [32/64]
+INFO loader.py: 232:   [32/64]
+INFO loader.py: 232:   [32/64]
+INFO loader.py: 232:   [33/64]
+INFO loader.py: 232:   [34/64]
+INFO loader.py: 232:   [34/64]
+INFO loader.py: 232:   [34/64]
+INFO loader.py: 232:   [35/64]
+INFO loader.py: 232:   [36/64]
+INFO loader.py: 232:   [36/64]
+INFO loader.py: 232:   [37/64]
+INFO loader.py: 232:   [37/64]
+INFO loader.py: 232:   [38/64]
+INFO loader.py: 232:   [39/64]
+INFO loader.py: 232:   [39/64]
+INFO loader.py: 232:   [40/64]
+INFO loader.py: 232:   [40/64]
+INFO loader.py: 232:   [40/64]
+INFO loader.py: 232:   [40/64]
+INFO loader.py: 232:   [41/64]
+INFO loader.py: 232:   [42/64]
+INFO loader.py: 232:   [43/64]
+INFO loader.py: 232:   [43/64]
+INFO loader.py: 232:   [43/64]
+INFO loader.py: 232:   [43/64]
+INFO loader.py: 232:   [44/64]
+INFO loader.py: 232:   [44/64]
+INFO loader.py: 232:   [44/64]
+INFO loader.py: 232:   [45/64]
+INFO loader.py: 232:   [46/64]
+INFO loader.py: 232:   [48/64]
+INFO loader.py: 232:   [48/64]
+INFO loader.py: 232:   [50/64]
+INFO loader.py: 232:   [50/64]
+INFO loader.py: 232:   [50/64]
+INFO loader.py: 232:   [50/64]
+INFO loader.py: 232:   [51/64]
+INFO loader.py: 232:   [52/64]
+INFO loader.py: 232:   [53/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [54/64]
+INFO loader.py: 232:   [55/64]
+INFO loader.py: 232:   [57/64]
+INFO loader.py: 232:   [57/64]
+INFO loader.py: 232:   [57/64]
+INFO loader.py: 232:   [59/64]
+INFO loader.py: 232:   [59/64]
+INFO loader.py: 232:   [59/64]
+INFO loader.py: 232:   [59/64]
+INFO loader.py: 232:   [60/64]
+INFO loader.py: 232:   [61/64]
+INFO loader.py: 232:   [61/64]
+INFO loader.py: 232:   [62/64]
+INFO loader.py: 232:   [62/64]
+INFO loader.py: 232:   [62/64]
+INFO loader.py: 232:   [62/64]
+INFO loader.py: 232:   [63/64]
+INFO detector.py: 436: Changing learning rate 0.000000 -> 0.000333 at iter 0
+INFO net.py: 210: Printing model: generalized_rcnn
+INFO net.py: 240: data                        : (2, 3, 800, 800)     => conv1                       : (2, 64, 400, 400)    ------- (op: Conv)
+INFO net.py: 240: conv1                       : (2, 64, 400, 400)    => conv1                       : (2, 64, 400, 400)    ------- (op: AffineChannel)
+INFO net.py: 240: conv1                       : (2, 64, 400, 400)    => conv1                       : (2, 64, 400, 400)    ------- (op: Relu)
+INFO net.py: 240: conv1                       : (2, 64, 400, 400)    => pool1                       : (2, 64, 200, 200)    ------- (op: MaxPool)
+INFO net.py: 240: pool1                       : (2, 64, 200, 200)    => res2_0_branch2a             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_0_branch2a             : (2, 64, 200, 200)    => res2_0_branch2a             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_0_branch2a             : (2, 64, 200, 200)    => res2_0_branch2a             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_0_branch2a             : (2, 64, 200, 200)    => res2_0_branch2b             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_0_branch2b             : (2, 64, 200, 200)    => res2_0_branch2b             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_0_branch2b             : (2, 64, 200, 200)    => res2_0_branch2b             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_0_branch2b             : (2, 64, 200, 200)    => res2_0_branch2c             : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: res2_0_branch2c             : (2, 256, 200, 200)   => res2_0_branch2c_bn          : (2, 256, 200, 200)   ------- (op: AffineChannel)
+INFO net.py: 240: pool1                       : (2, 64, 200, 200)    => res2_0_branch1              : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: res2_0_branch1              : (2, 256, 200, 200)   => res2_0_branch1_bn           : (2, 256, 200, 200)   ------- (op: AffineChannel)
+INFO net.py: 240: res2_0_branch2c_bn          : (2, 256, 200, 200)   => res2_0_branch2c_bn          : (2, 256, 200, 200)   ------- (op: Sum)
+INFO net.py: 240: res2_0_branch1_bn           : (2, 256, 200, 200)   => res2_0_branch2c_bn          : (2, 256, 200, 200)   ------|
+INFO net.py: 240: res2_0_branch2c_bn          : (2, 256, 200, 200)   => res2_0_branch2c_bn          : (2, 256, 200, 200)   ------- (op: Relu)
+INFO net.py: 240: res2_0_branch2c_bn          : (2, 256, 200, 200)   => res2_1_branch2a             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_1_branch2a             : (2, 64, 200, 200)    => res2_1_branch2a             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_1_branch2a             : (2, 64, 200, 200)    => res2_1_branch2a             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_1_branch2a             : (2, 64, 200, 200)    => res2_1_branch2b             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_1_branch2b             : (2, 64, 200, 200)    => res2_1_branch2b             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_1_branch2b             : (2, 64, 200, 200)    => res2_1_branch2b             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_1_branch2b             : (2, 64, 200, 200)    => res2_1_branch2c             : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: res2_1_branch2c             : (2, 256, 200, 200)   => res2_1_branch2c_bn          : (2, 256, 200, 200)   ------- (op: AffineChannel)
+INFO net.py: 240: res2_1_branch2c_bn          : (2, 256, 200, 200)   => res2_1_branch2c_bn          : (2, 256, 200, 200)   ------- (op: Sum)
+INFO net.py: 240: res2_0_branch2c_bn          : (2, 256, 200, 200)   => res2_1_branch2c_bn          : (2, 256, 200, 200)   ------|
+INFO net.py: 240: res2_1_branch2c_bn          : (2, 256, 200, 200)   => res2_1_branch2c_bn          : (2, 256, 200, 200)   ------- (op: Relu)
+INFO net.py: 240: res2_1_branch2c_bn          : (2, 256, 200, 200)   => res2_2_branch2a             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_2_branch2a             : (2, 64, 200, 200)    => res2_2_branch2a             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_2_branch2a             : (2, 64, 200, 200)    => res2_2_branch2a             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_2_branch2a             : (2, 64, 200, 200)    => res2_2_branch2b             : (2, 64, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: res2_2_branch2b             : (2, 64, 200, 200)    => res2_2_branch2b             : (2, 64, 200, 200)    ------- (op: AffineChannel)
+INFO net.py: 240: res2_2_branch2b             : (2, 64, 200, 200)    => res2_2_branch2b             : (2, 64, 200, 200)    ------- (op: Relu)
+INFO net.py: 240: res2_2_branch2b             : (2, 64, 200, 200)    => res2_2_branch2c             : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: res2_2_branch2c             : (2, 256, 200, 200)   => res2_2_branch2c_bn          : (2, 256, 200, 200)   ------- (op: AffineChannel)
+INFO net.py: 240: res2_2_branch2c_bn          : (2, 256, 200, 200)   => res2_2_sum                  : (2, 256, 200, 200)   ------- (op: Sum)
+INFO net.py: 240: res2_1_branch2c_bn          : (2, 256, 200, 200)   => res2_2_sum                  : (2, 256, 200, 200)   ------|
+INFO net.py: 240: res2_2_sum                  : (2, 256, 200, 200)   => res2_2_sum                  : (2, 256, 200, 200)   ------- (op: Relu)
+INFO net.py: 240: res2_2_sum                  : (2, 256, 200, 200)   => res2_2_sum                  : (2, 256, 200, 200)   ------- (op: StopGradient)
+INFO net.py: 240: res2_2_sum                  : (2, 256, 200, 200)   => res3_0_branch2a             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_0_branch2a             : (2, 128, 100, 100)   => res3_0_branch2a             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_0_branch2a             : (2, 128, 100, 100)   => res3_0_branch2a             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_0_branch2a             : (2, 128, 100, 100)   => res3_0_branch2b             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_0_branch2b             : (2, 128, 100, 100)   => res3_0_branch2b             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_0_branch2b             : (2, 128, 100, 100)   => res3_0_branch2b             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_0_branch2b             : (2, 128, 100, 100)   => res3_0_branch2c             : (2, 512, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_0_branch2c             : (2, 512, 100, 100)   => res3_0_branch2c_bn          : (2, 512, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res2_2_sum                  : (2, 256, 200, 200)   => res3_0_branch1              : (2, 512, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_0_branch1              : (2, 512, 100, 100)   => res3_0_branch1_bn           : (2, 512, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_0_branch2c_bn          : (2, 512, 100, 100)   => res3_0_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Sum)
+INFO net.py: 240: res3_0_branch1_bn           : (2, 512, 100, 100)   => res3_0_branch2c_bn          : (2, 512, 100, 100)   ------|
+INFO net.py: 240: res3_0_branch2c_bn          : (2, 512, 100, 100)   => res3_0_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_0_branch2c_bn          : (2, 512, 100, 100)   => res3_1_branch2a             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_1_branch2a             : (2, 128, 100, 100)   => res3_1_branch2a             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_1_branch2a             : (2, 128, 100, 100)   => res3_1_branch2a             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_1_branch2a             : (2, 128, 100, 100)   => res3_1_branch2b             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_1_branch2b             : (2, 128, 100, 100)   => res3_1_branch2b             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_1_branch2b             : (2, 128, 100, 100)   => res3_1_branch2b             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_1_branch2b             : (2, 128, 100, 100)   => res3_1_branch2c             : (2, 512, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_1_branch2c             : (2, 512, 100, 100)   => res3_1_branch2c_bn          : (2, 512, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_1_branch2c_bn          : (2, 512, 100, 100)   => res3_1_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Sum)
+INFO net.py: 240: res3_0_branch2c_bn          : (2, 512, 100, 100)   => res3_1_branch2c_bn          : (2, 512, 100, 100)   ------|
+INFO net.py: 240: res3_1_branch2c_bn          : (2, 512, 100, 100)   => res3_1_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_1_branch2c_bn          : (2, 512, 100, 100)   => res3_2_branch2a             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_2_branch2a             : (2, 128, 100, 100)   => res3_2_branch2a             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_2_branch2a             : (2, 128, 100, 100)   => res3_2_branch2a             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_2_branch2a             : (2, 128, 100, 100)   => res3_2_branch2b             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_2_branch2b             : (2, 128, 100, 100)   => res3_2_branch2b             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_2_branch2b             : (2, 128, 100, 100)   => res3_2_branch2b             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_2_branch2b             : (2, 128, 100, 100)   => res3_2_branch2c             : (2, 512, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_2_branch2c             : (2, 512, 100, 100)   => res3_2_branch2c_bn          : (2, 512, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_2_branch2c_bn          : (2, 512, 100, 100)   => res3_2_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Sum)
+INFO net.py: 240: res3_1_branch2c_bn          : (2, 512, 100, 100)   => res3_2_branch2c_bn          : (2, 512, 100, 100)   ------|
+INFO net.py: 240: res3_2_branch2c_bn          : (2, 512, 100, 100)   => res3_2_branch2c_bn          : (2, 512, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_2_branch2c_bn          : (2, 512, 100, 100)   => res3_3_branch2a             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_3_branch2a             : (2, 128, 100, 100)   => res3_3_branch2a             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_3_branch2a             : (2, 128, 100, 100)   => res3_3_branch2a             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_3_branch2a             : (2, 128, 100, 100)   => res3_3_branch2b             : (2, 128, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_3_branch2b             : (2, 128, 100, 100)   => res3_3_branch2b             : (2, 128, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_3_branch2b             : (2, 128, 100, 100)   => res3_3_branch2b             : (2, 128, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_3_branch2b             : (2, 128, 100, 100)   => res3_3_branch2c             : (2, 512, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: res3_3_branch2c             : (2, 512, 100, 100)   => res3_3_branch2c_bn          : (2, 512, 100, 100)   ------- (op: AffineChannel)
+INFO net.py: 240: res3_3_branch2c_bn          : (2, 512, 100, 100)   => res3_3_sum                  : (2, 512, 100, 100)   ------- (op: Sum)
+INFO net.py: 240: res3_2_branch2c_bn          : (2, 512, 100, 100)   => res3_3_sum                  : (2, 512, 100, 100)   ------|
+INFO net.py: 240: res3_3_sum                  : (2, 512, 100, 100)   => res3_3_sum                  : (2, 512, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: res3_3_sum                  : (2, 512, 100, 100)   => res4_0_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_0_branch2a             : (2, 256, 50, 50)     => res4_0_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_0_branch2a             : (2, 256, 50, 50)     => res4_0_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_0_branch2a             : (2, 256, 50, 50)     => res4_0_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_0_branch2b             : (2, 256, 50, 50)     => res4_0_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_0_branch2b             : (2, 256, 50, 50)     => res4_0_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_0_branch2b             : (2, 256, 50, 50)     => res4_0_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_0_branch2c             : (2, 1024, 50, 50)    => res4_0_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res3_3_sum                  : (2, 512, 100, 100)   => res4_0_branch1              : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_0_branch1              : (2, 1024, 50, 50)    => res4_0_branch1_bn           : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_0_branch2c_bn          : (2, 1024, 50, 50)    => res4_0_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_0_branch1_bn           : (2, 1024, 50, 50)    => res4_0_branch2c_bn          : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_0_branch2c_bn          : (2, 1024, 50, 50)    => res4_0_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_0_branch2c_bn          : (2, 1024, 50, 50)    => res4_1_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_1_branch2a             : (2, 256, 50, 50)     => res4_1_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_1_branch2a             : (2, 256, 50, 50)     => res4_1_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_1_branch2a             : (2, 256, 50, 50)     => res4_1_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_1_branch2b             : (2, 256, 50, 50)     => res4_1_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_1_branch2b             : (2, 256, 50, 50)     => res4_1_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_1_branch2b             : (2, 256, 50, 50)     => res4_1_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_1_branch2c             : (2, 1024, 50, 50)    => res4_1_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_1_branch2c_bn          : (2, 1024, 50, 50)    => res4_1_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_0_branch2c_bn          : (2, 1024, 50, 50)    => res4_1_branch2c_bn          : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_1_branch2c_bn          : (2, 1024, 50, 50)    => res4_1_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_1_branch2c_bn          : (2, 1024, 50, 50)    => res4_2_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_2_branch2a             : (2, 256, 50, 50)     => res4_2_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_2_branch2a             : (2, 256, 50, 50)     => res4_2_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_2_branch2a             : (2, 256, 50, 50)     => res4_2_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_2_branch2b             : (2, 256, 50, 50)     => res4_2_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_2_branch2b             : (2, 256, 50, 50)     => res4_2_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_2_branch2b             : (2, 256, 50, 50)     => res4_2_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_2_branch2c             : (2, 1024, 50, 50)    => res4_2_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_2_branch2c_bn          : (2, 1024, 50, 50)    => res4_2_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_1_branch2c_bn          : (2, 1024, 50, 50)    => res4_2_branch2c_bn          : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_2_branch2c_bn          : (2, 1024, 50, 50)    => res4_2_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_2_branch2c_bn          : (2, 1024, 50, 50)    => res4_3_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_3_branch2a             : (2, 256, 50, 50)     => res4_3_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_3_branch2a             : (2, 256, 50, 50)     => res4_3_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_3_branch2a             : (2, 256, 50, 50)     => res4_3_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_3_branch2b             : (2, 256, 50, 50)     => res4_3_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_3_branch2b             : (2, 256, 50, 50)     => res4_3_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_3_branch2b             : (2, 256, 50, 50)     => res4_3_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_3_branch2c             : (2, 1024, 50, 50)    => res4_3_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_3_branch2c_bn          : (2, 1024, 50, 50)    => res4_3_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_2_branch2c_bn          : (2, 1024, 50, 50)    => res4_3_branch2c_bn          : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_3_branch2c_bn          : (2, 1024, 50, 50)    => res4_3_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_3_branch2c_bn          : (2, 1024, 50, 50)    => res4_4_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_4_branch2a             : (2, 256, 50, 50)     => res4_4_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_4_branch2a             : (2, 256, 50, 50)     => res4_4_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_4_branch2a             : (2, 256, 50, 50)     => res4_4_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_4_branch2b             : (2, 256, 50, 50)     => res4_4_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_4_branch2b             : (2, 256, 50, 50)     => res4_4_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_4_branch2b             : (2, 256, 50, 50)     => res4_4_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_4_branch2c             : (2, 1024, 50, 50)    => res4_4_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_4_branch2c_bn          : (2, 1024, 50, 50)    => res4_4_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_3_branch2c_bn          : (2, 1024, 50, 50)    => res4_4_branch2c_bn          : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_4_branch2c_bn          : (2, 1024, 50, 50)    => res4_4_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_4_branch2c_bn          : (2, 1024, 50, 50)    => res4_5_branch2a             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_5_branch2a             : (2, 256, 50, 50)     => res4_5_branch2a             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_5_branch2a             : (2, 256, 50, 50)     => res4_5_branch2a             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_5_branch2a             : (2, 256, 50, 50)     => res4_5_branch2b             : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: res4_5_branch2b             : (2, 256, 50, 50)     => res4_5_branch2b             : (2, 256, 50, 50)     ------- (op: AffineChannel)
+INFO net.py: 240: res4_5_branch2b             : (2, 256, 50, 50)     => res4_5_branch2b             : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: res4_5_branch2b             : (2, 256, 50, 50)     => res4_5_branch2c             : (2, 1024, 50, 50)    ------- (op: Conv)
+INFO net.py: 240: res4_5_branch2c             : (2, 1024, 50, 50)    => res4_5_branch2c_bn          : (2, 1024, 50, 50)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_5_branch2c_bn          : (2, 1024, 50, 50)    => res4_5_sum                  : (2, 1024, 50, 50)    ------- (op: Sum)
+INFO net.py: 240: res4_4_branch2c_bn          : (2, 1024, 50, 50)    => res4_5_sum                  : (2, 1024, 50, 50)    ------|
+INFO net.py: 240: res4_5_sum                  : (2, 1024, 50, 50)    => res4_5_sum                  : (2, 1024, 50, 50)    ------- (op: Relu)
+INFO net.py: 240: res4_5_sum                  : (2, 1024, 50, 50)    => res5_0_branch2a             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_0_branch2a             : (2, 512, 25, 25)     => res5_0_branch2a             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_0_branch2a             : (2, 512, 25, 25)     => res5_0_branch2a             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_0_branch2a             : (2, 512, 25, 25)     => res5_0_branch2b             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_0_branch2b             : (2, 512, 25, 25)     => res5_0_branch2b             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_0_branch2b             : (2, 512, 25, 25)     => res5_0_branch2b             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_0_branch2b             : (2, 512, 25, 25)     => res5_0_branch2c             : (2, 2048, 25, 25)    ------- (op: Conv)
+INFO net.py: 240: res5_0_branch2c             : (2, 2048, 25, 25)    => res5_0_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: AffineChannel)
+INFO net.py: 240: res4_5_sum                  : (2, 1024, 50, 50)    => res5_0_branch1              : (2, 2048, 25, 25)    ------- (op: Conv)
+INFO net.py: 240: res5_0_branch1              : (2, 2048, 25, 25)    => res5_0_branch1_bn           : (2, 2048, 25, 25)    ------- (op: AffineChannel)
+INFO net.py: 240: res5_0_branch2c_bn          : (2, 2048, 25, 25)    => res5_0_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: Sum)
+INFO net.py: 240: res5_0_branch1_bn           : (2, 2048, 25, 25)    => res5_0_branch2c_bn          : (2, 2048, 25, 25)    ------|
+INFO net.py: 240: res5_0_branch2c_bn          : (2, 2048, 25, 25)    => res5_0_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: Relu)
+INFO net.py: 240: res5_0_branch2c_bn          : (2, 2048, 25, 25)    => res5_1_branch2a             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_1_branch2a             : (2, 512, 25, 25)     => res5_1_branch2a             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_1_branch2a             : (2, 512, 25, 25)     => res5_1_branch2a             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_1_branch2a             : (2, 512, 25, 25)     => res5_1_branch2b             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_1_branch2b             : (2, 512, 25, 25)     => res5_1_branch2b             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_1_branch2b             : (2, 512, 25, 25)     => res5_1_branch2b             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_1_branch2b             : (2, 512, 25, 25)     => res5_1_branch2c             : (2, 2048, 25, 25)    ------- (op: Conv)
+INFO net.py: 240: res5_1_branch2c             : (2, 2048, 25, 25)    => res5_1_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: AffineChannel)
+INFO net.py: 240: res5_1_branch2c_bn          : (2, 2048, 25, 25)    => res5_1_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: Sum)
+INFO net.py: 240: res5_0_branch2c_bn          : (2, 2048, 25, 25)    => res5_1_branch2c_bn          : (2, 2048, 25, 25)    ------|
+INFO net.py: 240: res5_1_branch2c_bn          : (2, 2048, 25, 25)    => res5_1_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: Relu)
+INFO net.py: 240: res5_1_branch2c_bn          : (2, 2048, 25, 25)    => res5_2_branch2a             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_2_branch2a             : (2, 512, 25, 25)     => res5_2_branch2a             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_2_branch2a             : (2, 512, 25, 25)     => res5_2_branch2a             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_2_branch2a             : (2, 512, 25, 25)     => res5_2_branch2b             : (2, 512, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res5_2_branch2b             : (2, 512, 25, 25)     => res5_2_branch2b             : (2, 512, 25, 25)     ------- (op: AffineChannel)
+INFO net.py: 240: res5_2_branch2b             : (2, 512, 25, 25)     => res5_2_branch2b             : (2, 512, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: res5_2_branch2b             : (2, 512, 25, 25)     => res5_2_branch2c             : (2, 2048, 25, 25)    ------- (op: Conv)
+INFO net.py: 240: res5_2_branch2c             : (2, 2048, 25, 25)    => res5_2_branch2c_bn          : (2, 2048, 25, 25)    ------- (op: AffineChannel)
+INFO net.py: 240: res5_2_branch2c_bn          : (2, 2048, 25, 25)    => res5_2_sum                  : (2, 2048, 25, 25)    ------- (op: Sum)
+INFO net.py: 240: res5_1_branch2c_bn          : (2, 2048, 25, 25)    => res5_2_sum                  : (2, 2048, 25, 25)    ------|
+INFO net.py: 240: res5_2_sum                  : (2, 2048, 25, 25)    => res5_2_sum                  : (2, 2048, 25, 25)    ------- (op: Relu)
+INFO net.py: 240: res5_2_sum                  : (2, 2048, 25, 25)    => fpn_inner_res5_2_sum        : (2, 256, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: res4_5_sum                  : (2, 1024, 50, 50)    => fpn_inner_res4_5_sum_lateral: (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res5_2_sum        : (2, 256, 25, 25)     => fpn_inner_res4_5_sum_topdown: (2, 256, 50, 50)     ------- (op: UpsampleNearest)
+INFO net.py: 240: fpn_inner_res4_5_sum_lateral: (2, 256, 50, 50)     => fpn_inner_res4_5_sum        : (2, 256, 50, 50)     ------- (op: Sum)
+INFO net.py: 240: fpn_inner_res4_5_sum_topdown: (2, 256, 50, 50)     => fpn_inner_res4_5_sum        : (2, 256, 50, 50)     ------|
+INFO net.py: 240: res3_3_sum                  : (2, 512, 100, 100)   => fpn_inner_res3_3_sum_lateral: (2, 256, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res4_5_sum        : (2, 256, 50, 50)     => fpn_inner_res3_3_sum_topdown: (2, 256, 100, 100)   ------- (op: UpsampleNearest)
+INFO net.py: 240: fpn_inner_res3_3_sum_lateral: (2, 256, 100, 100)   => fpn_inner_res3_3_sum        : (2, 256, 100, 100)   ------- (op: Sum)
+INFO net.py: 240: fpn_inner_res3_3_sum_topdown: (2, 256, 100, 100)   => fpn_inner_res3_3_sum        : (2, 256, 100, 100)   ------|
+INFO net.py: 240: res2_2_sum                  : (2, 256, 200, 200)   => fpn_inner_res2_2_sum_lateral: (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res3_3_sum        : (2, 256, 100, 100)   => fpn_inner_res2_2_sum_topdown: (2, 256, 200, 200)   ------- (op: UpsampleNearest)
+INFO net.py: 240: fpn_inner_res2_2_sum_lateral: (2, 256, 200, 200)   => fpn_inner_res2_2_sum        : (2, 256, 200, 200)   ------- (op: Sum)
+INFO net.py: 240: fpn_inner_res2_2_sum_topdown: (2, 256, 200, 200)   => fpn_inner_res2_2_sum        : (2, 256, 200, 200)   ------|
+INFO net.py: 240: fpn_inner_res5_2_sum        : (2, 256, 25, 25)     => fpn_res5_2_sum              : (2, 256, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res4_5_sum        : (2, 256, 50, 50)     => fpn_res4_5_sum              : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res3_3_sum        : (2, 256, 100, 100)   => fpn_res3_3_sum              : (2, 256, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: fpn_inner_res2_2_sum        : (2, 256, 200, 200)   => fpn_res2_2_sum              : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: fpn_res5_2_sum              : (2, 256, 25, 25)     => fpn_res5_2_sum_subsampled_2x: (2, 256, 13, 13)     ------- (op: MaxPool)
+INFO net.py: 240: fpn_res2_2_sum              : (2, 256, 200, 200)   => conv_rpn_fpn2               : (2, 256, 200, 200)   ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn2               : (2, 256, 200, 200)   => conv_rpn_fpn2               : (2, 256, 200, 200)   ------- (op: Relu)
+INFO net.py: 240: conv_rpn_fpn2               : (2, 256, 200, 200)   => rpn_cls_logits_fpn2         : (2, 3, 200, 200)     ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn2               : (2, 256, 200, 200)   => rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    ------- (op: Conv)
+INFO net.py: 240: rpn_cls_logits_fpn2         : (2, 3, 200, 200)     => rpn_cls_probs_fpn2          : (2, 3, 200, 200)     ------- (op: Sigmoid)
+INFO net.py: 240: rpn_cls_probs_fpn2          : (2, 3, 200, 200)     => rpn_rois_fpn2               : (4000, 5)            ------- (op: Python:GenerateProposalsOp:gpu_0/rpn_cls_probs_fpn2,gpu_0/rpn_bbox_pred_fpn2,im_info)
+INFO net.py: 240: rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    => rpn_rois_fpn2               : (4000, 5)            ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rpn_rois_fpn2               : (4000, 5)            ------|
+INFO net.py: 240: fpn_res3_3_sum              : (2, 256, 100, 100)   => conv_rpn_fpn3               : (2, 256, 100, 100)   ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn3               : (2, 256, 100, 100)   => conv_rpn_fpn3               : (2, 256, 100, 100)   ------- (op: Relu)
+INFO net.py: 240: conv_rpn_fpn3               : (2, 256, 100, 100)   => rpn_cls_logits_fpn3         : (2, 3, 100, 100)     ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn3               : (2, 256, 100, 100)   => rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    ------- (op: Conv)
+INFO net.py: 240: rpn_cls_logits_fpn3         : (2, 3, 100, 100)     => rpn_cls_probs_fpn3          : (2, 3, 100, 100)     ------- (op: Sigmoid)
+INFO net.py: 240: rpn_cls_probs_fpn3          : (2, 3, 100, 100)     => rpn_rois_fpn3               : (3999, 5)            ------- (op: Python:GenerateProposalsOp:gpu_0/rpn_cls_probs_fpn3,gpu_0/rpn_bbox_pred_fpn3,im_info)
+INFO net.py: 240: rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    => rpn_rois_fpn3               : (3999, 5)            ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rpn_rois_fpn3               : (3999, 5)            ------|
+INFO net.py: 240: fpn_res4_5_sum              : (2, 256, 50, 50)     => conv_rpn_fpn4               : (2, 256, 50, 50)     ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn4               : (2, 256, 50, 50)     => conv_rpn_fpn4               : (2, 256, 50, 50)     ------- (op: Relu)
+INFO net.py: 240: conv_rpn_fpn4               : (2, 256, 50, 50)     => rpn_cls_logits_fpn4         : (2, 3, 50, 50)       ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn4               : (2, 256, 50, 50)     => rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      ------- (op: Conv)
+INFO net.py: 240: rpn_cls_logits_fpn4         : (2, 3, 50, 50)       => rpn_cls_probs_fpn4          : (2, 3, 50, 50)       ------- (op: Sigmoid)
+INFO net.py: 240: rpn_cls_probs_fpn4          : (2, 3, 50, 50)       => rpn_rois_fpn4               : (3987, 5)            ------- (op: Python:GenerateProposalsOp:gpu_0/rpn_cls_probs_fpn4,gpu_0/rpn_bbox_pred_fpn4,im_info)
+INFO net.py: 240: rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      => rpn_rois_fpn4               : (3987, 5)            ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rpn_rois_fpn4               : (3987, 5)            ------|
+INFO net.py: 240: fpn_res5_2_sum              : (2, 256, 25, 25)     => conv_rpn_fpn5               : (2, 256, 25, 25)     ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn5               : (2, 256, 25, 25)     => conv_rpn_fpn5               : (2, 256, 25, 25)     ------- (op: Relu)
+INFO net.py: 240: conv_rpn_fpn5               : (2, 256, 25, 25)     => rpn_cls_logits_fpn5         : (2, 3, 25, 25)       ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn5               : (2, 256, 25, 25)     => rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      ------- (op: Conv)
+INFO net.py: 240: rpn_cls_logits_fpn5         : (2, 3, 25, 25)       => rpn_cls_probs_fpn5          : (2, 3, 25, 25)       ------- (op: Sigmoid)
+INFO net.py: 240: rpn_cls_probs_fpn5          : (2, 3, 25, 25)       => rpn_rois_fpn5               : (3696, 5)            ------- (op: Python:GenerateProposalsOp:gpu_0/rpn_cls_probs_fpn5,gpu_0/rpn_bbox_pred_fpn5,im_info)
+INFO net.py: 240: rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      => rpn_rois_fpn5               : (3696, 5)            ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rpn_rois_fpn5               : (3696, 5)            ------|
+INFO net.py: 240: fpn_res5_2_sum_subsampled_2x: (2, 256, 13, 13)     => conv_rpn_fpn6               : (2, 256, 13, 13)     ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn6               : (2, 256, 13, 13)     => conv_rpn_fpn6               : (2, 256, 13, 13)     ------- (op: Relu)
+INFO net.py: 240: conv_rpn_fpn6               : (2, 256, 13, 13)     => rpn_cls_logits_fpn6         : (2, 3, 13, 13)       ------- (op: Conv)
+INFO net.py: 240: conv_rpn_fpn6               : (2, 256, 13, 13)     => rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      ------- (op: Conv)
+INFO net.py: 240: rpn_cls_logits_fpn6         : (2, 3, 13, 13)       => rpn_cls_probs_fpn6          : (2, 3, 13, 13)       ------- (op: Sigmoid)
+INFO net.py: 240: rpn_cls_probs_fpn6          : (2, 3, 13, 13)       => rpn_rois_fpn6               : (977, 5)             ------- (op: Python:GenerateProposalsOp:gpu_0/rpn_cls_probs_fpn6,gpu_0/rpn_bbox_pred_fpn6,im_info)
+INFO net.py: 240: rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      => rpn_rois_fpn6               : (977, 5)             ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rpn_rois_fpn6               : (977, 5)             ------|
+INFO net.py: 240: rpn_rois_fpn2               : (4000, 5)            => rois                        : (786, 5)             ------- (op: Python:CollectAndDistributeFpnRpnProposalsOp:gpu_0/rpn_rois_fpn2,gpu_0/rpn_rois_fpn3,gpu_0/rpn_rois_fpn4,gpu_0/rpn_rois_fpn5,gpu_0/rpn_rois_fpn6,gpu_0/rpn_roi_probs_fpn2,gpu_0/rpn_roi_probs_fpn3,gpu_0/rpn_roi_probs_fpn4,gpu_0/rpn_roi_probs_fpn5,gpu_0/rpn_roi_probs_fpn6,gpu_0/roidb,gpu_0/im_info)
+INFO net.py: 240: rpn_rois_fpn3               : (3999, 5)            => rois                        : (786, 5)             ------|
+INFO net.py: 240: rpn_rois_fpn4               : (3987, 5)            => rois                        : (786, 5)             ------|
+INFO net.py: 240: rpn_rois_fpn5               : (3696, 5)            => rois                        : (786, 5)             ------|
+INFO net.py: 240: rpn_rois_fpn6               : (977, 5)             => rois                        : (786, 5)             ------|
+INFO net.py: 240: rpn_roi_probs_fpn2          : (4000, 1)            => rois                        : (786, 5)             ------|
+INFO net.py: 240: rpn_roi_probs_fpn3          : (3999, 1)            => rois                        : (786, 5)             ------|
+INFO net.py: 240: rpn_roi_probs_fpn4          : (3987, 1)            => rois                        : (786, 5)             ------|
+INFO net.py: 240: rpn_roi_probs_fpn5          : (3696, 1)            => rois                        : (786, 5)             ------|
+INFO net.py: 240: rpn_roi_probs_fpn6          : (977, 1)             => rois                        : (786, 5)             ------|
+INFO net.py: 240: roidb                       : (85252,)             => rois                        : (786, 5)             ------|
+INFO net.py: 240: im_info                     : (2, 3)               => rois                        : (786, 5)             ------|
+INFO net.py: 240: rpn_labels_int32_wide_fpn2  : (2, 3, 336, 336)     => rpn_labels_int32_fpn2       : (2, 3, 200, 200)     ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_cls_logits_fpn2         : (2, 3, 200, 200)     => rpn_labels_int32_fpn2       : (2, 3, 200, 200)     ------|
+INFO net.py: 240: rpn_bbox_targets_wide_fpn2  : (2, 12, 336, 336)    => rpn_bbox_targets_fpn2       : (2, 12, 200, 200)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    => rpn_bbox_targets_fpn2       : (2, 12, 200, 200)    ------|
+INFO net.py: 240: rpn_bbox_inside_weights_wide_fpn2: (2, 12, 336, 336)    => rpn_bbox_inside_weights_fpn2: (2, 12, 200, 200)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    => rpn_bbox_inside_weights_fpn2: (2, 12, 200, 200)    ------|
+INFO net.py: 240: rpn_bbox_outside_weights_wide_fpn2: (2, 12, 336, 336)    => rpn_bbox_outside_weights_fpn2: (2, 12, 200, 200)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    => rpn_bbox_outside_weights_fpn2: (2, 12, 200, 200)    ------|
+INFO net.py: 240: rpn_cls_logits_fpn2         : (2, 3, 200, 200)     => loss_rpn_cls_fpn2           : ()                   ------- (op: SigmoidCrossEntropyLoss)
+INFO net.py: 240: rpn_labels_int32_fpn2       : (2, 3, 200, 200)     => loss_rpn_cls_fpn2           : ()                   ------|
+INFO net.py: 240: rpn_bbox_pred_fpn2          : (2, 12, 200, 200)    => loss_rpn_bbox_fpn2          : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: rpn_bbox_targets_fpn2       : (2, 12, 200, 200)    => loss_rpn_bbox_fpn2          : ()                   ------|
+INFO net.py: 240: rpn_bbox_inside_weights_fpn2: (2, 12, 200, 200)    => loss_rpn_bbox_fpn2          : ()                   ------|
+INFO net.py: 240: rpn_bbox_outside_weights_fpn2: (2, 12, 200, 200)    => loss_rpn_bbox_fpn2          : ()                   ------|
+INFO net.py: 240: rpn_labels_int32_wide_fpn3  : (2, 3, 168, 168)     => rpn_labels_int32_fpn3       : (2, 3, 100, 100)     ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_cls_logits_fpn3         : (2, 3, 100, 100)     => rpn_labels_int32_fpn3       : (2, 3, 100, 100)     ------|
+INFO net.py: 240: rpn_bbox_targets_wide_fpn3  : (2, 12, 168, 168)    => rpn_bbox_targets_fpn3       : (2, 12, 100, 100)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    => rpn_bbox_targets_fpn3       : (2, 12, 100, 100)    ------|
+INFO net.py: 240: rpn_bbox_inside_weights_wide_fpn3: (2, 12, 168, 168)    => rpn_bbox_inside_weights_fpn3: (2, 12, 100, 100)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    => rpn_bbox_inside_weights_fpn3: (2, 12, 100, 100)    ------|
+INFO net.py: 240: rpn_bbox_outside_weights_wide_fpn3: (2, 12, 168, 168)    => rpn_bbox_outside_weights_fpn3: (2, 12, 100, 100)    ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    => rpn_bbox_outside_weights_fpn3: (2, 12, 100, 100)    ------|
+INFO net.py: 240: rpn_cls_logits_fpn3         : (2, 3, 100, 100)     => loss_rpn_cls_fpn3           : ()                   ------- (op: SigmoidCrossEntropyLoss)
+INFO net.py: 240: rpn_labels_int32_fpn3       : (2, 3, 100, 100)     => loss_rpn_cls_fpn3           : ()                   ------|
+INFO net.py: 240: rpn_bbox_pred_fpn3          : (2, 12, 100, 100)    => loss_rpn_bbox_fpn3          : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: rpn_bbox_targets_fpn3       : (2, 12, 100, 100)    => loss_rpn_bbox_fpn3          : ()                   ------|
+INFO net.py: 240: rpn_bbox_inside_weights_fpn3: (2, 12, 100, 100)    => loss_rpn_bbox_fpn3          : ()                   ------|
+INFO net.py: 240: rpn_bbox_outside_weights_fpn3: (2, 12, 100, 100)    => loss_rpn_bbox_fpn3          : ()                   ------|
+INFO net.py: 240: rpn_labels_int32_wide_fpn4  : (2, 3, 84, 84)       => rpn_labels_int32_fpn4       : (2, 3, 50, 50)       ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_cls_logits_fpn4         : (2, 3, 50, 50)       => rpn_labels_int32_fpn4       : (2, 3, 50, 50)       ------|
+INFO net.py: 240: rpn_bbox_targets_wide_fpn4  : (2, 12, 84, 84)      => rpn_bbox_targets_fpn4       : (2, 12, 50, 50)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      => rpn_bbox_targets_fpn4       : (2, 12, 50, 50)      ------|
+INFO net.py: 240: rpn_bbox_inside_weights_wide_fpn4: (2, 12, 84, 84)      => rpn_bbox_inside_weights_fpn4: (2, 12, 50, 50)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      => rpn_bbox_inside_weights_fpn4: (2, 12, 50, 50)      ------|
+INFO net.py: 240: rpn_bbox_outside_weights_wide_fpn4: (2, 12, 84, 84)      => rpn_bbox_outside_weights_fpn4: (2, 12, 50, 50)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      => rpn_bbox_outside_weights_fpn4: (2, 12, 50, 50)      ------|
+INFO net.py: 240: rpn_cls_logits_fpn4         : (2, 3, 50, 50)       => loss_rpn_cls_fpn4           : ()                   ------- (op: SigmoidCrossEntropyLoss)
+INFO net.py: 240: rpn_labels_int32_fpn4       : (2, 3, 50, 50)       => loss_rpn_cls_fpn4           : ()                   ------|
+INFO net.py: 240: rpn_bbox_pred_fpn4          : (2, 12, 50, 50)      => loss_rpn_bbox_fpn4          : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: rpn_bbox_targets_fpn4       : (2, 12, 50, 50)      => loss_rpn_bbox_fpn4          : ()                   ------|
+INFO net.py: 240: rpn_bbox_inside_weights_fpn4: (2, 12, 50, 50)      => loss_rpn_bbox_fpn4          : ()                   ------|
+INFO net.py: 240: rpn_bbox_outside_weights_fpn4: (2, 12, 50, 50)      => loss_rpn_bbox_fpn4          : ()                   ------|
+INFO net.py: 240: rpn_labels_int32_wide_fpn5  : (2, 3, 42, 42)       => rpn_labels_int32_fpn5       : (2, 3, 25, 25)       ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_cls_logits_fpn5         : (2, 3, 25, 25)       => rpn_labels_int32_fpn5       : (2, 3, 25, 25)       ------|
+INFO net.py: 240: rpn_bbox_targets_wide_fpn5  : (2, 12, 42, 42)      => rpn_bbox_targets_fpn5       : (2, 12, 25, 25)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      => rpn_bbox_targets_fpn5       : (2, 12, 25, 25)      ------|
+INFO net.py: 240: rpn_bbox_inside_weights_wide_fpn5: (2, 12, 42, 42)      => rpn_bbox_inside_weights_fpn5: (2, 12, 25, 25)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      => rpn_bbox_inside_weights_fpn5: (2, 12, 25, 25)      ------|
+INFO net.py: 240: rpn_bbox_outside_weights_wide_fpn5: (2, 12, 42, 42)      => rpn_bbox_outside_weights_fpn5: (2, 12, 25, 25)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      => rpn_bbox_outside_weights_fpn5: (2, 12, 25, 25)      ------|
+INFO net.py: 240: rpn_cls_logits_fpn5         : (2, 3, 25, 25)       => loss_rpn_cls_fpn5           : ()                   ------- (op: SigmoidCrossEntropyLoss)
+INFO net.py: 240: rpn_labels_int32_fpn5       : (2, 3, 25, 25)       => loss_rpn_cls_fpn5           : ()                   ------|
+INFO net.py: 240: rpn_bbox_pred_fpn5          : (2, 12, 25, 25)      => loss_rpn_bbox_fpn5          : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: rpn_bbox_targets_fpn5       : (2, 12, 25, 25)      => loss_rpn_bbox_fpn5          : ()                   ------|
+INFO net.py: 240: rpn_bbox_inside_weights_fpn5: (2, 12, 25, 25)      => loss_rpn_bbox_fpn5          : ()                   ------|
+INFO net.py: 240: rpn_bbox_outside_weights_fpn5: (2, 12, 25, 25)      => loss_rpn_bbox_fpn5          : ()                   ------|
+INFO net.py: 240: rpn_labels_int32_wide_fpn6  : (2, 3, 21, 21)       => rpn_labels_int32_fpn6       : (2, 3, 13, 13)       ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_cls_logits_fpn6         : (2, 3, 13, 13)       => rpn_labels_int32_fpn6       : (2, 3, 13, 13)       ------|
+INFO net.py: 240: rpn_bbox_targets_wide_fpn6  : (2, 12, 21, 21)      => rpn_bbox_targets_fpn6       : (2, 12, 13, 13)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      => rpn_bbox_targets_fpn6       : (2, 12, 13, 13)      ------|
+INFO net.py: 240: rpn_bbox_inside_weights_wide_fpn6: (2, 12, 21, 21)      => rpn_bbox_inside_weights_fpn6: (2, 12, 13, 13)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      => rpn_bbox_inside_weights_fpn6: (2, 12, 13, 13)      ------|
+INFO net.py: 240: rpn_bbox_outside_weights_wide_fpn6: (2, 12, 21, 21)      => rpn_bbox_outside_weights_fpn6: (2, 12, 13, 13)      ------- (op: SpatialNarrowAs)
+INFO net.py: 240: rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      => rpn_bbox_outside_weights_fpn6: (2, 12, 13, 13)      ------|
+INFO net.py: 240: rpn_cls_logits_fpn6         : (2, 3, 13, 13)       => loss_rpn_cls_fpn6           : ()                   ------- (op: SigmoidCrossEntropyLoss)
+INFO net.py: 240: rpn_labels_int32_fpn6       : (2, 3, 13, 13)       => loss_rpn_cls_fpn6           : ()                   ------|
+INFO net.py: 240: rpn_bbox_pred_fpn6          : (2, 12, 13, 13)      => loss_rpn_bbox_fpn6          : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: rpn_bbox_targets_fpn6       : (2, 12, 13, 13)      => loss_rpn_bbox_fpn6          : ()                   ------|
+INFO net.py: 240: rpn_bbox_inside_weights_fpn6: (2, 12, 13, 13)      => loss_rpn_bbox_fpn6          : ()                   ------|
+INFO net.py: 240: rpn_bbox_outside_weights_fpn6: (2, 12, 13, 13)      => loss_rpn_bbox_fpn6          : ()                   ------|
+INFO net.py: 240: fpn_res2_2_sum              : (2, 256, 200, 200)   => roi_feat_fpn2               : (786, 256, 7, 7)     ------- (op: RoIAlign)
+INFO net.py: 240: rois_fpn2                   : (786, 5)             => roi_feat_fpn2               : (786, 256, 7, 7)     ------|
+INFO net.py: 240: fpn_res3_3_sum              : (2, 256, 100, 100)   => roi_feat_fpn3               : (0, 256, 7, 7)       ------- (op: RoIAlign)
+INFO net.py: 240: rois_fpn3                   : (0, 5)               => roi_feat_fpn3               : (0, 256, 7, 7)       ------|
+INFO net.py: 240: fpn_res4_5_sum              : (2, 256, 50, 50)     => roi_feat_fpn4               : (0, 256, 7, 7)       ------- (op: RoIAlign)
+INFO net.py: 240: rois_fpn4                   : (0, 5)               => roi_feat_fpn4               : (0, 256, 7, 7)       ------|
+INFO net.py: 240: fpn_res5_2_sum              : (2, 256, 25, 25)     => roi_feat_fpn5               : (0, 256, 7, 7)       ------- (op: RoIAlign)
+INFO net.py: 240: rois_fpn5                   : (0, 5)               => roi_feat_fpn5               : (0, 256, 7, 7)       ------|
+INFO net.py: 240: roi_feat_fpn2               : (786, 256, 7, 7)     => roi_feat_shuffled           : (786, 256, 7, 7)     ------- (op: Concat)
+INFO net.py: 240: roi_feat_fpn3               : (0, 256, 7, 7)       => roi_feat_shuffled           : (786, 256, 7, 7)     ------|
+INFO net.py: 240: roi_feat_fpn4               : (0, 256, 7, 7)       => roi_feat_shuffled           : (786, 256, 7, 7)     ------|
+INFO net.py: 240: roi_feat_fpn5               : (0, 256, 7, 7)       => roi_feat_shuffled           : (786, 256, 7, 7)     ------|
+INFO net.py: 240: roi_feat_shuffled           : (786, 256, 7, 7)     => roi_feat                    : (786, 256, 7, 7)     ------- (op: BatchPermutation)
+INFO net.py: 240: rois_idx_restore_int32      : (786,)               => roi_feat                    : (786, 256, 7, 7)     ------|
+INFO net.py: 240: roi_feat                    : (786, 256, 7, 7)     => fc6                         : (786, 1024)          ------- (op: FC)
+INFO net.py: 240: fc6                         : (786, 1024)          => fc6                         : (786, 1024)          ------- (op: Relu)
+INFO net.py: 240: fc6                         : (786, 1024)          => fc7                         : (786, 1024)          ------- (op: FC)
+INFO net.py: 240: fc7                         : (786, 1024)          => fc7                         : (786, 1024)          ------- (op: Relu)
+INFO net.py: 240: fc7                         : (786, 1024)          => cls_score                   : (786, 2)             ------- (op: FC)
+INFO net.py: 240: fc7                         : (786, 1024)          => bbox_pred                   : (786, 8)             ------- (op: FC)
+INFO net.py: 240: cls_score                   : (786, 2)             => cls_prob                    : (786, 2)             ------- (op: SoftmaxWithLoss)
+INFO net.py: 240: labels_int32                : (786,)               => cls_prob                    : (786, 2)             ------|
+INFO net.py: 240: bbox_pred                   : (786, 8)             => loss_bbox                   : ()                   ------- (op: SmoothL1Loss)
+INFO net.py: 240: bbox_targets                : (786, 8)             => loss_bbox                   : ()                   ------|
+INFO net.py: 240: bbox_inside_weights         : (786, 8)             => loss_bbox                   : ()                   ------|
+INFO net.py: 240: bbox_outside_weights        : (786, 8)             => loss_bbox                   : ()                   ------|
+INFO net.py: 240: cls_prob                    : (786, 2)             => accuracy_cls                : ()                   ------- (op: Accuracy)
+INFO net.py: 240: labels_int32                : (786,)               => accuracy_cls                : ()                   ------|
+INFO net.py: 244: End of model: generalized_rcnn
+json_stats: {"accuracy_cls": 0.905852, "eta": "5 days, 23:13:27", "iter": 0, "loss": 1.249832, "loss_bbox": 0.000241, "loss_cls": 0.517540, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.008090, "loss_rpn_bbox_fpn4": 0.021277, "loss_rpn_bbox_fpn5": 0.017269, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.486550, "loss_rpn_cls_fpn3": 0.117028, "loss_rpn_cls_fpn4": 0.056443, "loss_rpn_cls_fpn5": 0.024038, "loss_rpn_cls_fpn6": 0.001356, "lr": 0.000333, "mb_qsize": 64, "mem": 4714, "time": 5.728967}
+json_stats: {"accuracy_cls": 0.907255, "eta": "16:07:51", "iter": 20, "loss": 0.990320, "loss_bbox": 0.016336, "loss_cls": 0.286697, "loss_rpn_bbox_fpn2": 0.003121, "loss_rpn_bbox_fpn3": 0.016639, "loss_rpn_bbox_fpn4": 0.044138, "loss_rpn_bbox_fpn5": 0.019997, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.298095, "loss_rpn_cls_fpn3": 0.112946, "loss_rpn_cls_fpn4": 0.083509, "loss_rpn_cls_fpn5": 0.030451, "loss_rpn_cls_fpn6": 0.003251, "lr": 0.000360, "mb_qsize": 64, "mem": 6028, "time": 0.645382}
+json_stats: {"accuracy_cls": 0.930664, "eta": "9:15:57", "iter": 40, "loss": 0.603073, "loss_bbox": 0.063390, "loss_cls": 0.197479, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.007166, "loss_rpn_bbox_fpn4": 0.029056, "loss_rpn_bbox_fpn5": 0.012550, "loss_rpn_bbox_fpn6": 0.000970, "loss_rpn_cls_fpn2": 0.061167, "loss_rpn_cls_fpn3": 0.095423, "loss_rpn_cls_fpn4": 0.062859, "loss_rpn_cls_fpn5": 0.025248, "loss_rpn_cls_fpn6": 0.002712, "lr": 0.000387, "mb_qsize": 64, "mem": 6047, "time": 0.370808}
+json_stats: {"accuracy_cls": 0.928711, "eta": "9:21:39", "iter": 60, "loss": 0.576974, "loss_bbox": 0.070054, "loss_cls": 0.201691, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.011801, "loss_rpn_bbox_fpn4": 0.030166, "loss_rpn_bbox_fpn5": 0.014417, "loss_rpn_bbox_fpn6": 0.007167, "loss_rpn_cls_fpn2": 0.009780, "loss_rpn_cls_fpn3": 0.066750, "loss_rpn_cls_fpn4": 0.049393, "loss_rpn_cls_fpn5": 0.025622, "loss_rpn_cls_fpn6": 0.012850, "lr": 0.000413, "mb_qsize": 64, "mem": 6047, "time": 0.374692}
+json_stats: {"accuracy_cls": 0.891113, "eta": "9:23:58", "iter": 80, "loss": 0.643752, "loss_bbox": 0.118503, "loss_cls": 0.284620, "loss_rpn_bbox_fpn2": 0.001330, "loss_rpn_bbox_fpn3": 0.006845, "loss_rpn_bbox_fpn4": 0.018258, "loss_rpn_bbox_fpn5": 0.018179, "loss_rpn_bbox_fpn6": 0.004059, "loss_rpn_cls_fpn2": 0.009916, "loss_rpn_cls_fpn3": 0.039408, "loss_rpn_cls_fpn4": 0.045575, "loss_rpn_cls_fpn5": 0.033305, "loss_rpn_cls_fpn6": 0.006890, "lr": 0.000440, "mb_qsize": 64, "mem": 6052, "time": 0.376316}
+json_stats: {"accuracy_cls": 0.892578, "eta": "9:24:03", "iter": 100, "loss": 0.715005, "loss_bbox": 0.143199, "loss_cls": 0.245075, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.006988, "loss_rpn_bbox_fpn4": 0.025106, "loss_rpn_bbox_fpn5": 0.024585, "loss_rpn_bbox_fpn6": 0.001472, "loss_rpn_cls_fpn2": 0.004109, "loss_rpn_cls_fpn3": 0.041898, "loss_rpn_cls_fpn4": 0.051768, "loss_rpn_cls_fpn5": 0.034085, "loss_rpn_cls_fpn6": 0.005206, "lr": 0.000467, "mb_qsize": 64, "mem": 6054, "time": 0.376459}
+json_stats: {"accuracy_cls": 0.911133, "eta": "9:22:39", "iter": 120, "loss": 0.573109, "loss_bbox": 0.144821, "loss_cls": 0.206762, "loss_rpn_bbox_fpn2": 0.001382, "loss_rpn_bbox_fpn3": 0.009397, "loss_rpn_bbox_fpn4": 0.017885, "loss_rpn_bbox_fpn5": 0.016402, "loss_rpn_bbox_fpn6": 0.000928, "loss_rpn_cls_fpn2": 0.011289, "loss_rpn_cls_fpn3": 0.037129, "loss_rpn_cls_fpn4": 0.045663, "loss_rpn_cls_fpn5": 0.023896, "loss_rpn_cls_fpn6": 0.003444, "lr": 0.000493, "mb_qsize": 64, "mem": 6054, "time": 0.375611}
+json_stats: {"accuracy_cls": 0.913883, "eta": "9:18:45", "iter": 140, "loss": 0.566324, "loss_bbox": 0.116394, "loss_cls": 0.211343, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.017585, "loss_rpn_bbox_fpn4": 0.024762, "loss_rpn_bbox_fpn5": 0.011465, "loss_rpn_bbox_fpn6": 0.004229, "loss_rpn_cls_fpn2": 0.003976, "loss_rpn_cls_fpn3": 0.049013, "loss_rpn_cls_fpn4": 0.037001, "loss_rpn_cls_fpn5": 0.019123, "loss_rpn_cls_fpn6": 0.004722, "lr": 0.000520, "mb_qsize": 64, "mem": 6057, "time": 0.373083}
+json_stats: {"accuracy_cls": 0.915527, "eta": "9:22:39", "iter": 160, "loss": 0.599713, "loss_bbox": 0.120897, "loss_cls": 0.224755, "loss_rpn_bbox_fpn2": 0.000464, "loss_rpn_bbox_fpn3": 0.011258, "loss_rpn_bbox_fpn4": 0.018455, "loss_rpn_bbox_fpn5": 0.029820, "loss_rpn_bbox_fpn6": 0.004254, "loss_rpn_cls_fpn2": 0.009791, "loss_rpn_cls_fpn3": 0.046074, "loss_rpn_cls_fpn4": 0.040457, "loss_rpn_cls_fpn5": 0.027841, "loss_rpn_cls_fpn6": 0.004978, "lr": 0.000547, "mb_qsize": 64, "mem": 7167, "time": 0.375769}
+json_stats: {"accuracy_cls": 0.927869, "eta": "9:22:00", "iter": 180, "loss": 0.454802, "loss_bbox": 0.123519, "loss_cls": 0.188015, "loss_rpn_bbox_fpn2": 0.000360, "loss_rpn_bbox_fpn3": 0.007024, "loss_rpn_bbox_fpn4": 0.016156, "loss_rpn_bbox_fpn5": 0.010544, "loss_rpn_bbox_fpn6": 0.009494, "loss_rpn_cls_fpn2": 0.006380, "loss_rpn_cls_fpn3": 0.027708, "loss_rpn_cls_fpn4": 0.031118, "loss_rpn_cls_fpn5": 0.017304, "loss_rpn_cls_fpn6": 0.006993, "lr": 0.000573, "mb_qsize": 64, "mem": 7167, "time": 0.375419}
+json_stats: {"accuracy_cls": 0.898926, "eta": "9:22:16", "iter": 200, "loss": 0.628826, "loss_bbox": 0.199635, "loss_cls": 0.254951, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.009479, "loss_rpn_bbox_fpn4": 0.015435, "loss_rpn_bbox_fpn5": 0.028550, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.003320, "loss_rpn_cls_fpn3": 0.035081, "loss_rpn_cls_fpn4": 0.036171, "loss_rpn_cls_fpn5": 0.021120, "loss_rpn_cls_fpn6": 0.002890, "lr": 0.000600, "mb_qsize": 64, "mem": 7168, "time": 0.375688}
+json_stats: {"accuracy_cls": 0.910620, "eta": "9:25:05", "iter": 220, "loss": 0.592018, "loss_bbox": 0.159693, "loss_cls": 0.205975, "loss_rpn_bbox_fpn2": 0.000872, "loss_rpn_bbox_fpn3": 0.005655, "loss_rpn_bbox_fpn4": 0.013629, "loss_rpn_bbox_fpn5": 0.010569, "loss_rpn_bbox_fpn6": 0.006946, "loss_rpn_cls_fpn2": 0.008284, "loss_rpn_cls_fpn3": 0.027956, "loss_rpn_cls_fpn4": 0.025809, "loss_rpn_cls_fpn5": 0.017039, "loss_rpn_cls_fpn6": 0.005663, "lr": 0.000627, "mb_qsize": 64, "mem": 7175, "time": 0.377655}
+json_stats: {"accuracy_cls": 0.880150, "eta": "9:25:11", "iter": 240, "loss": 0.618795, "loss_bbox": 0.192286, "loss_cls": 0.278333, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.008034, "loss_rpn_bbox_fpn4": 0.015708, "loss_rpn_bbox_fpn5": 0.023651, "loss_rpn_bbox_fpn6": 0.000732, "loss_rpn_cls_fpn2": 0.009373, "loss_rpn_cls_fpn3": 0.035642, "loss_rpn_cls_fpn4": 0.025320, "loss_rpn_cls_fpn5": 0.011054, "loss_rpn_cls_fpn6": 0.002874, "lr": 0.000653, "mb_qsize": 64, "mem": 7175, "time": 0.377799}
+json_stats: {"accuracy_cls": 0.846716, "eta": "9:27:46", "iter": 260, "loss": 0.799838, "loss_bbox": 0.171144, "loss_cls": 0.341021, "loss_rpn_bbox_fpn2": 0.001500, "loss_rpn_bbox_fpn3": 0.004865, "loss_rpn_bbox_fpn4": 0.023378, "loss_rpn_bbox_fpn5": 0.014329, "loss_rpn_bbox_fpn6": 0.004155, "loss_rpn_cls_fpn2": 0.023238, "loss_rpn_cls_fpn3": 0.033945, "loss_rpn_cls_fpn4": 0.044295, "loss_rpn_cls_fpn5": 0.016774, "loss_rpn_cls_fpn6": 0.005212, "lr": 0.000680, "mb_qsize": 64, "mem": 7180, "time": 0.379618}
+json_stats: {"accuracy_cls": 0.894370, "eta": "9:29:59", "iter": 280, "loss": 0.652770, "loss_bbox": 0.197800, "loss_cls": 0.255504, "loss_rpn_bbox_fpn2": 0.000363, "loss_rpn_bbox_fpn3": 0.013045, "loss_rpn_bbox_fpn4": 0.016142, "loss_rpn_bbox_fpn5": 0.013363, "loss_rpn_bbox_fpn6": 0.002808, "loss_rpn_cls_fpn2": 0.006716, "loss_rpn_cls_fpn3": 0.039948, "loss_rpn_cls_fpn4": 0.030877, "loss_rpn_cls_fpn5": 0.013230, "loss_rpn_cls_fpn6": 0.004572, "lr": 0.000707, "mb_qsize": 64, "mem": 7181, "time": 0.381181}
+json_stats: {"accuracy_cls": 0.880784, "eta": "9:31:30", "iter": 300, "loss": 0.727227, "loss_bbox": 0.191674, "loss_cls": 0.286500, "loss_rpn_bbox_fpn2": 0.001925, "loss_rpn_bbox_fpn3": 0.009644, "loss_rpn_bbox_fpn4": 0.022651, "loss_rpn_bbox_fpn5": 0.022705, "loss_rpn_bbox_fpn6": 0.003843, "loss_rpn_cls_fpn2": 0.014242, "loss_rpn_cls_fpn3": 0.031074, "loss_rpn_cls_fpn4": 0.031290, "loss_rpn_cls_fpn5": 0.015444, "loss_rpn_cls_fpn6": 0.004019, "lr": 0.000733, "mb_qsize": 64, "mem": 7187, "time": 0.382282}
+json_stats: {"accuracy_cls": 0.898926, "eta": "9:34:40", "iter": 320, "loss": 0.635774, "loss_bbox": 0.195971, "loss_cls": 0.248455, "loss_rpn_bbox_fpn2": 0.000442, "loss_rpn_bbox_fpn3": 0.005707, "loss_rpn_bbox_fpn4": 0.012830, "loss_rpn_bbox_fpn5": 0.020088, "loss_rpn_bbox_fpn6": 0.004104, "loss_rpn_cls_fpn2": 0.010711, "loss_rpn_cls_fpn3": 0.028601, "loss_rpn_cls_fpn4": 0.028142, "loss_rpn_cls_fpn5": 0.012843, "loss_rpn_cls_fpn6": 0.004500, "lr": 0.000760, "mb_qsize": 64, "mem": 7187, "time": 0.384479}
+json_stats: {"accuracy_cls": 0.884283, "eta": "9:36:18", "iter": 340, "loss": 0.676071, "loss_bbox": 0.229486, "loss_cls": 0.274479, "loss_rpn_bbox_fpn2": 0.000476, "loss_rpn_bbox_fpn3": 0.011871, "loss_rpn_bbox_fpn4": 0.023110, "loss_rpn_bbox_fpn5": 0.028301, "loss_rpn_bbox_fpn6": 0.000517, "loss_rpn_cls_fpn2": 0.008249, "loss_rpn_cls_fpn3": 0.030879, "loss_rpn_cls_fpn4": 0.024496, "loss_rpn_cls_fpn5": 0.013680, "loss_rpn_cls_fpn6": 0.001972, "lr": 0.000787, "mb_qsize": 64, "mem": 7187, "time": 0.385658}
+json_stats: {"accuracy_cls": 0.850431, "eta": "9:41:06", "iter": 360, "loss": 0.762007, "loss_bbox": 0.237716, "loss_cls": 0.326135, "loss_rpn_bbox_fpn2": 0.001740, "loss_rpn_bbox_fpn3": 0.010694, "loss_rpn_bbox_fpn4": 0.039283, "loss_rpn_bbox_fpn5": 0.033979, "loss_rpn_bbox_fpn6": 0.000401, "loss_rpn_cls_fpn2": 0.015342, "loss_rpn_cls_fpn3": 0.031019, "loss_rpn_cls_fpn4": 0.038133, "loss_rpn_cls_fpn5": 0.011320, "loss_rpn_cls_fpn6": 0.001158, "lr": 0.000813, "mb_qsize": 64, "mem": 7190, "time": 0.388965}
+json_stats: {"accuracy_cls": 0.886568, "eta": "9:39:37", "iter": 380, "loss": 0.656290, "loss_bbox": 0.226890, "loss_cls": 0.274334, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.007123, "loss_rpn_bbox_fpn4": 0.018588, "loss_rpn_bbox_fpn5": 0.012897, "loss_rpn_bbox_fpn6": 0.003274, "loss_rpn_cls_fpn2": 0.006388, "loss_rpn_cls_fpn3": 0.024817, "loss_rpn_cls_fpn4": 0.026938, "loss_rpn_cls_fpn5": 0.013221, "loss_rpn_cls_fpn6": 0.001864, "lr": 0.000840, "mb_qsize": 64, "mem": 7194, "time": 0.388054}
+json_stats: {"accuracy_cls": 0.879883, "eta": "9:39:40", "iter": 400, "loss": 0.674331, "loss_bbox": 0.239007, "loss_cls": 0.284270, "loss_rpn_bbox_fpn2": 0.000836, "loss_rpn_bbox_fpn3": 0.009423, "loss_rpn_bbox_fpn4": 0.031328, "loss_rpn_bbox_fpn5": 0.010139, "loss_rpn_bbox_fpn6": 0.000039, "loss_rpn_cls_fpn2": 0.010099, "loss_rpn_cls_fpn3": 0.030527, "loss_rpn_cls_fpn4": 0.022191, "loss_rpn_cls_fpn5": 0.012616, "loss_rpn_cls_fpn6": 0.003062, "lr": 0.000867, "mb_qsize": 64, "mem": 7200, "time": 0.388178}
+json_stats: {"accuracy_cls": 0.886903, "eta": "9:41:00", "iter": 420, "loss": 0.649313, "loss_bbox": 0.220831, "loss_cls": 0.252614, "loss_rpn_bbox_fpn2": 0.001545, "loss_rpn_bbox_fpn3": 0.012612, "loss_rpn_bbox_fpn4": 0.030291, "loss_rpn_bbox_fpn5": 0.009173, "loss_rpn_bbox_fpn6": 0.001495, "loss_rpn_cls_fpn2": 0.008134, "loss_rpn_cls_fpn3": 0.024501, "loss_rpn_cls_fpn4": 0.022920, "loss_rpn_cls_fpn5": 0.008982, "loss_rpn_cls_fpn6": 0.002056, "lr": 0.000893, "mb_qsize": 64, "mem": 7209, "time": 0.389153}
+json_stats: {"accuracy_cls": 0.845640, "eta": "9:42:38", "iter": 440, "loss": 0.788644, "loss_bbox": 0.274839, "loss_cls": 0.333331, "loss_rpn_bbox_fpn2": 0.002202, "loss_rpn_bbox_fpn3": 0.007424, "loss_rpn_bbox_fpn4": 0.027320, "loss_rpn_bbox_fpn5": 0.023135, "loss_rpn_bbox_fpn6": 0.002959, "loss_rpn_cls_fpn2": 0.013798, "loss_rpn_cls_fpn3": 0.022637, "loss_rpn_cls_fpn4": 0.027401, "loss_rpn_cls_fpn5": 0.012747, "loss_rpn_cls_fpn6": 0.002168, "lr": 0.000920, "mb_qsize": 64, "mem": 7216, "time": 0.390331}
+json_stats: {"accuracy_cls": 0.870070, "eta": "9:41:48", "iter": 460, "loss": 0.688191, "loss_bbox": 0.222510, "loss_cls": 0.282561, "loss_rpn_bbox_fpn2": 0.003212, "loss_rpn_bbox_fpn3": 0.008007, "loss_rpn_bbox_fpn4": 0.009423, "loss_rpn_bbox_fpn5": 0.023131, "loss_rpn_bbox_fpn6": 0.003360, "loss_rpn_cls_fpn2": 0.009074, "loss_rpn_cls_fpn3": 0.017708, "loss_rpn_cls_fpn4": 0.024787, "loss_rpn_cls_fpn5": 0.009876, "loss_rpn_cls_fpn6": 0.001994, "lr": 0.000947, "mb_qsize": 64, "mem": 7216, "time": 0.389861}
+json_stats: {"accuracy_cls": 0.875901, "eta": "9:40:28", "iter": 480, "loss": 0.655822, "loss_bbox": 0.236312, "loss_cls": 0.275031, "loss_rpn_bbox_fpn2": 0.000972, "loss_rpn_bbox_fpn3": 0.006974, "loss_rpn_bbox_fpn4": 0.027276, "loss_rpn_bbox_fpn5": 0.012108, "loss_rpn_bbox_fpn6": 0.006788, "loss_rpn_cls_fpn2": 0.008141, "loss_rpn_cls_fpn3": 0.016312, "loss_rpn_cls_fpn4": 0.025682, "loss_rpn_cls_fpn5": 0.008977, "loss_rpn_cls_fpn6": 0.002264, "lr": 0.000973, "mb_qsize": 64, "mem": 7216, "time": 0.389055}
+json_stats: {"accuracy_cls": 0.863981, "eta": "9:41:10", "iter": 500, "loss": 0.702478, "loss_bbox": 0.255055, "loss_cls": 0.319812, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.007593, "loss_rpn_bbox_fpn4": 0.012857, "loss_rpn_bbox_fpn5": 0.009481, "loss_rpn_bbox_fpn6": 0.000017, "loss_rpn_cls_fpn2": 0.006531, "loss_rpn_cls_fpn3": 0.019121, "loss_rpn_cls_fpn4": 0.019385, "loss_rpn_cls_fpn5": 0.008157, "loss_rpn_cls_fpn6": 0.000241, "lr": 0.001000, "mb_qsize": 64, "mem": 7216, "time": 0.389613}
+json_stats: {"accuracy_cls": 0.863174, "eta": "9:40:25", "iter": 520, "loss": 0.698874, "loss_bbox": 0.242965, "loss_cls": 0.300803, "loss_rpn_bbox_fpn2": 0.000765, "loss_rpn_bbox_fpn3": 0.008289, "loss_rpn_bbox_fpn4": 0.018078, "loss_rpn_bbox_fpn5": 0.017064, "loss_rpn_bbox_fpn6": 0.000623, "loss_rpn_cls_fpn2": 0.005881, "loss_rpn_cls_fpn3": 0.017813, "loss_rpn_cls_fpn4": 0.023126, "loss_rpn_cls_fpn5": 0.009247, "loss_rpn_cls_fpn6": 0.000712, "lr": 0.001000, "mb_qsize": 64, "mem": 7216, "time": 0.389200}
+json_stats: {"accuracy_cls": 0.876772, "eta": "9:40:55", "iter": 540, "loss": 0.662800, "loss_bbox": 0.232196, "loss_cls": 0.279974, "loss_rpn_bbox_fpn2": 0.000902, "loss_rpn_bbox_fpn3": 0.007052, "loss_rpn_bbox_fpn4": 0.013715, "loss_rpn_bbox_fpn5": 0.009886, "loss_rpn_bbox_fpn6": 0.003230, "loss_rpn_cls_fpn2": 0.004911, "loss_rpn_cls_fpn3": 0.015277, "loss_rpn_cls_fpn4": 0.017580, "loss_rpn_cls_fpn5": 0.011552, "loss_rpn_cls_fpn6": 0.003756, "lr": 0.001000, "mb_qsize": 64, "mem": 7216, "time": 0.389622}
+json_stats: {"accuracy_cls": 0.890079, "eta": "9:39:34", "iter": 560, "loss": 0.638754, "loss_bbox": 0.245928, "loss_cls": 0.268667, "loss_rpn_bbox_fpn2": 0.000978, "loss_rpn_bbox_fpn3": 0.006735, "loss_rpn_bbox_fpn4": 0.013798, "loss_rpn_bbox_fpn5": 0.010138, "loss_rpn_bbox_fpn6": 0.005286, "loss_rpn_cls_fpn2": 0.004525, "loss_rpn_cls_fpn3": 0.017467, "loss_rpn_cls_fpn4": 0.016631, "loss_rpn_cls_fpn5": 0.012849, "loss_rpn_cls_fpn6": 0.002861, "lr": 0.001000, "mb_qsize": 64, "mem": 7216, "time": 0.388808}
+json_stats: {"accuracy_cls": 0.864672, "eta": "9:40:21", "iter": 580, "loss": 0.722695, "loss_bbox": 0.259428, "loss_cls": 0.311259, "loss_rpn_bbox_fpn2": 0.001217, "loss_rpn_bbox_fpn3": 0.014604, "loss_rpn_bbox_fpn4": 0.021534, "loss_rpn_bbox_fpn5": 0.023474, "loss_rpn_bbox_fpn6": 0.004107, "loss_rpn_cls_fpn2": 0.005252, "loss_rpn_cls_fpn3": 0.017091, "loss_rpn_cls_fpn4": 0.024321, "loss_rpn_cls_fpn5": 0.010141, "loss_rpn_cls_fpn6": 0.000775, "lr": 0.001000, "mb_qsize": 64, "mem": 7220, "time": 0.389412}
+json_stats: {"accuracy_cls": 0.883453, "eta": "9:40:08", "iter": 600, "loss": 0.653435, "loss_bbox": 0.249738, "loss_cls": 0.266686, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.004754, "loss_rpn_bbox_fpn4": 0.012047, "loss_rpn_bbox_fpn5": 0.012056, "loss_rpn_bbox_fpn6": 0.000871, "loss_rpn_cls_fpn2": 0.003247, "loss_rpn_cls_fpn3": 0.007257, "loss_rpn_cls_fpn4": 0.011310, "loss_rpn_cls_fpn5": 0.005798, "loss_rpn_cls_fpn6": 0.001266, "lr": 0.001000, "mb_qsize": 64, "mem": 7221, "time": 0.389358}
+json_stats: {"accuracy_cls": 0.877850, "eta": "9:40:31", "iter": 620, "loss": 0.630648, "loss_bbox": 0.236234, "loss_cls": 0.274986, "loss_rpn_bbox_fpn2": 0.001134, "loss_rpn_bbox_fpn3": 0.007745, "loss_rpn_bbox_fpn4": 0.009099, "loss_rpn_bbox_fpn5": 0.008403, "loss_rpn_bbox_fpn6": 0.007110, "loss_rpn_cls_fpn2": 0.005218, "loss_rpn_cls_fpn3": 0.014216, "loss_rpn_cls_fpn4": 0.012386, "loss_rpn_cls_fpn5": 0.010007, "loss_rpn_cls_fpn6": 0.003222, "lr": 0.001000, "mb_qsize": 64, "mem": 7222, "time": 0.389697}
+json_stats: {"accuracy_cls": 0.889648, "eta": "9:40:00", "iter": 640, "loss": 0.580900, "loss_bbox": 0.217585, "loss_cls": 0.256141, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.006785, "loss_rpn_bbox_fpn4": 0.010280, "loss_rpn_bbox_fpn5": 0.011488, "loss_rpn_bbox_fpn6": 0.005487, "loss_rpn_cls_fpn2": 0.003100, "loss_rpn_cls_fpn3": 0.011889, "loss_rpn_cls_fpn4": 0.015583, "loss_rpn_cls_fpn5": 0.007346, "loss_rpn_cls_fpn6": 0.001904, "lr": 0.001000, "mb_qsize": 64, "mem": 7222, "time": 0.389436}
+json_stats: {"accuracy_cls": 0.862164, "eta": "9:41:13", "iter": 660, "loss": 0.686103, "loss_bbox": 0.254483, "loss_cls": 0.308365, "loss_rpn_bbox_fpn2": 0.000473, "loss_rpn_bbox_fpn3": 0.009456, "loss_rpn_bbox_fpn4": 0.020900, "loss_rpn_bbox_fpn5": 0.012495, "loss_rpn_bbox_fpn6": 0.000227, "loss_rpn_cls_fpn2": 0.002484, "loss_rpn_cls_fpn3": 0.015060, "loss_rpn_cls_fpn4": 0.014446, "loss_rpn_cls_fpn5": 0.007060, "loss_rpn_cls_fpn6": 0.002116, "lr": 0.001000, "mb_qsize": 64, "mem": 7222, "time": 0.390349}
+json_stats: {"accuracy_cls": 0.888824, "eta": "9:41:26", "iter": 680, "loss": 0.633425, "loss_bbox": 0.250376, "loss_cls": 0.271764, "loss_rpn_bbox_fpn2": 0.001028, "loss_rpn_bbox_fpn3": 0.007839, "loss_rpn_bbox_fpn4": 0.010227, "loss_rpn_bbox_fpn5": 0.007836, "loss_rpn_bbox_fpn6": 0.005239, "loss_rpn_cls_fpn2": 0.003306, "loss_rpn_cls_fpn3": 0.019965, "loss_rpn_cls_fpn4": 0.013450, "loss_rpn_cls_fpn5": 0.008767, "loss_rpn_cls_fpn6": 0.002993, "lr": 0.001000, "mb_qsize": 64, "mem": 7222, "time": 0.390582}
+json_stats: {"accuracy_cls": 0.864258, "eta": "9:40:36", "iter": 700, "loss": 0.739072, "loss_bbox": 0.264648, "loss_cls": 0.319334, "loss_rpn_bbox_fpn2": 0.000705, "loss_rpn_bbox_fpn3": 0.007729, "loss_rpn_bbox_fpn4": 0.013521, "loss_rpn_bbox_fpn5": 0.021738, "loss_rpn_bbox_fpn6": 0.004921, "loss_rpn_cls_fpn2": 0.007274, "loss_rpn_cls_fpn3": 0.026035, "loss_rpn_cls_fpn4": 0.016039, "loss_rpn_cls_fpn5": 0.009803, "loss_rpn_cls_fpn6": 0.001641, "lr": 0.001000, "mb_qsize": 64, "mem": 7222, "time": 0.390102}
+json_stats: {"accuracy_cls": 0.866236, "eta": "9:40:42", "iter": 720, "loss": 0.684432, "loss_bbox": 0.245326, "loss_cls": 0.305538, "loss_rpn_bbox_fpn2": 0.000453, "loss_rpn_bbox_fpn3": 0.009861, "loss_rpn_bbox_fpn4": 0.021658, "loss_rpn_bbox_fpn5": 0.009955, "loss_rpn_bbox_fpn6": 0.002464, "loss_rpn_cls_fpn2": 0.004050, "loss_rpn_cls_fpn3": 0.014554, "loss_rpn_cls_fpn4": 0.018648, "loss_rpn_cls_fpn5": 0.008515, "loss_rpn_cls_fpn6": 0.002718, "lr": 0.001000, "mb_qsize": 64, "mem": 7222, "time": 0.390260}
+json_stats: {"accuracy_cls": 0.868580, "eta": "9:41:00", "iter": 740, "loss": 0.672381, "loss_bbox": 0.252676, "loss_cls": 0.301007, "loss_rpn_bbox_fpn2": 0.000960, "loss_rpn_bbox_fpn3": 0.005232, "loss_rpn_bbox_fpn4": 0.014554, "loss_rpn_bbox_fpn5": 0.016247, "loss_rpn_bbox_fpn6": 0.005619, "loss_rpn_cls_fpn2": 0.003984, "loss_rpn_cls_fpn3": 0.011005, "loss_rpn_cls_fpn4": 0.013907, "loss_rpn_cls_fpn5": 0.007849, "loss_rpn_cls_fpn6": 0.001324, "lr": 0.001000, "mb_qsize": 64, "mem": 7222, "time": 0.390552}
+json_stats: {"accuracy_cls": 0.873047, "eta": "9:40:29", "iter": 760, "loss": 0.670444, "loss_bbox": 0.260912, "loss_cls": 0.281343, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.008083, "loss_rpn_bbox_fpn4": 0.018523, "loss_rpn_bbox_fpn5": 0.007442, "loss_rpn_bbox_fpn6": 0.000352, "loss_rpn_cls_fpn2": 0.002624, "loss_rpn_cls_fpn3": 0.012460, "loss_rpn_cls_fpn4": 0.012547, "loss_rpn_cls_fpn5": 0.008023, "loss_rpn_cls_fpn6": 0.001892, "lr": 0.001000, "mb_qsize": 64, "mem": 7223, "time": 0.390290}
+json_stats: {"accuracy_cls": 0.880859, "eta": "9:40:14", "iter": 780, "loss": 0.624609, "loss_bbox": 0.261049, "loss_cls": 0.266881, "loss_rpn_bbox_fpn2": 0.001465, "loss_rpn_bbox_fpn3": 0.004373, "loss_rpn_bbox_fpn4": 0.012207, "loss_rpn_bbox_fpn5": 0.012530, "loss_rpn_bbox_fpn6": 0.006204, "loss_rpn_cls_fpn2": 0.005678, "loss_rpn_cls_fpn3": 0.010339, "loss_rpn_cls_fpn4": 0.013828, "loss_rpn_cls_fpn5": 0.007526, "loss_rpn_cls_fpn6": 0.002112, "lr": 0.001000, "mb_qsize": 64, "mem": 7223, "time": 0.390204}
+json_stats: {"accuracy_cls": 0.872070, "eta": "9:39:33", "iter": 800, "loss": 0.654772, "loss_bbox": 0.264904, "loss_cls": 0.286969, "loss_rpn_bbox_fpn2": 0.000894, "loss_rpn_bbox_fpn3": 0.007924, "loss_rpn_bbox_fpn4": 0.018493, "loss_rpn_bbox_fpn5": 0.018518, "loss_rpn_bbox_fpn6": 0.002035, "loss_rpn_cls_fpn2": 0.002925, "loss_rpn_cls_fpn3": 0.015028, "loss_rpn_cls_fpn4": 0.014513, "loss_rpn_cls_fpn5": 0.008347, "loss_rpn_cls_fpn6": 0.001907, "lr": 0.001000, "mb_qsize": 64, "mem": 7223, "time": 0.389837}
+json_stats: {"accuracy_cls": 0.864474, "eta": "9:39:27", "iter": 820, "loss": 0.726244, "loss_bbox": 0.263138, "loss_cls": 0.311909, "loss_rpn_bbox_fpn2": 0.000543, "loss_rpn_bbox_fpn3": 0.007112, "loss_rpn_bbox_fpn4": 0.019297, "loss_rpn_bbox_fpn5": 0.013266, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.005933, "loss_rpn_cls_fpn3": 0.012011, "loss_rpn_cls_fpn4": 0.009271, "loss_rpn_cls_fpn5": 0.008526, "loss_rpn_cls_fpn6": 0.000062, "lr": 0.001000, "mb_qsize": 64, "mem": 7223, "time": 0.389853}
+json_stats: {"accuracy_cls": 0.875977, "eta": "9:39:15", "iter": 840, "loss": 0.656073, "loss_bbox": 0.264238, "loss_cls": 0.283885, "loss_rpn_bbox_fpn2": 0.000749, "loss_rpn_bbox_fpn3": 0.005111, "loss_rpn_bbox_fpn4": 0.012596, "loss_rpn_bbox_fpn5": 0.017789, "loss_rpn_bbox_fpn6": 0.002985, "loss_rpn_cls_fpn2": 0.003111, "loss_rpn_cls_fpn3": 0.008991, "loss_rpn_cls_fpn4": 0.015750, "loss_rpn_cls_fpn5": 0.008652, "loss_rpn_cls_fpn6": 0.002003, "lr": 0.001000, "mb_qsize": 64, "mem": 7223, "time": 0.389807}
+json_stats: {"accuracy_cls": 0.862009, "eta": "9:38:25", "iter": 860, "loss": 0.696157, "loss_bbox": 0.262557, "loss_cls": 0.315091, "loss_rpn_bbox_fpn2": 0.000886, "loss_rpn_bbox_fpn3": 0.009826, "loss_rpn_bbox_fpn4": 0.015801, "loss_rpn_bbox_fpn5": 0.006297, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.002734, "loss_rpn_cls_fpn3": 0.014294, "loss_rpn_cls_fpn4": 0.013880, "loss_rpn_cls_fpn5": 0.004963, "loss_rpn_cls_fpn6": 0.001496, "lr": 0.001000, "mb_qsize": 64, "mem": 7223, "time": 0.389333}
+json_stats: {"accuracy_cls": 0.866291, "eta": "9:38:01", "iter": 880, "loss": 0.705855, "loss_bbox": 0.255278, "loss_cls": 0.305707, "loss_rpn_bbox_fpn2": 0.000214, "loss_rpn_bbox_fpn3": 0.014503, "loss_rpn_bbox_fpn4": 0.017963, "loss_rpn_bbox_fpn5": 0.009761, "loss_rpn_bbox_fpn6": 0.004410, "loss_rpn_cls_fpn2": 0.004485, "loss_rpn_cls_fpn3": 0.020978, "loss_rpn_cls_fpn4": 0.013804, "loss_rpn_cls_fpn5": 0.005890, "loss_rpn_cls_fpn6": 0.000983, "lr": 0.001000, "mb_qsize": 64, "mem": 7223, "time": 0.389150}
+json_stats: {"accuracy_cls": 0.867188, "eta": "9:37:07", "iter": 900, "loss": 0.691378, "loss_bbox": 0.255582, "loss_cls": 0.296631, "loss_rpn_bbox_fpn2": 0.000557, "loss_rpn_bbox_fpn3": 0.007144, "loss_rpn_bbox_fpn4": 0.015748, "loss_rpn_bbox_fpn5": 0.016118, "loss_rpn_bbox_fpn6": 0.005148, "loss_rpn_cls_fpn2": 0.005155, "loss_rpn_cls_fpn3": 0.011774, "loss_rpn_cls_fpn4": 0.012943, "loss_rpn_cls_fpn5": 0.007292, "loss_rpn_cls_fpn6": 0.001644, "lr": 0.001000, "mb_qsize": 64, "mem": 7223, "time": 0.388639}
+json_stats: {"accuracy_cls": 0.874512, "eta": "9:37:16", "iter": 920, "loss": 0.602336, "loss_bbox": 0.244794, "loss_cls": 0.289285, "loss_rpn_bbox_fpn2": 0.000718, "loss_rpn_bbox_fpn3": 0.004019, "loss_rpn_bbox_fpn4": 0.012915, "loss_rpn_bbox_fpn5": 0.006711, "loss_rpn_bbox_fpn6": 0.000686, "loss_rpn_cls_fpn2": 0.002606, "loss_rpn_cls_fpn3": 0.007889, "loss_rpn_cls_fpn4": 0.012972, "loss_rpn_cls_fpn5": 0.006818, "loss_rpn_cls_fpn6": 0.000673, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.388827}
+json_stats: {"accuracy_cls": 0.872906, "eta": "9:37:06", "iter": 940, "loss": 0.654315, "loss_bbox": 0.247172, "loss_cls": 0.286697, "loss_rpn_bbox_fpn2": 0.000599, "loss_rpn_bbox_fpn3": 0.008930, "loss_rpn_bbox_fpn4": 0.011327, "loss_rpn_bbox_fpn5": 0.015833, "loss_rpn_bbox_fpn6": 0.003620, "loss_rpn_cls_fpn2": 0.006472, "loss_rpn_cls_fpn3": 0.010144, "loss_rpn_cls_fpn4": 0.011485, "loss_rpn_cls_fpn5": 0.007078, "loss_rpn_cls_fpn6": 0.001606, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.388794}
+json_stats: {"accuracy_cls": 0.877288, "eta": "9:37:44", "iter": 960, "loss": 0.637594, "loss_bbox": 0.253390, "loss_cls": 0.272989, "loss_rpn_bbox_fpn2": 0.000673, "loss_rpn_bbox_fpn3": 0.007223, "loss_rpn_bbox_fpn4": 0.019575, "loss_rpn_bbox_fpn5": 0.015895, "loss_rpn_bbox_fpn6": 0.000682, "loss_rpn_cls_fpn2": 0.003697, "loss_rpn_cls_fpn3": 0.011716, "loss_rpn_cls_fpn4": 0.010597, "loss_rpn_cls_fpn5": 0.010204, "loss_rpn_cls_fpn6": 0.002367, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.389310}
+json_stats: {"accuracy_cls": 0.883181, "eta": "9:36:52", "iter": 980, "loss": 0.603619, "loss_bbox": 0.255912, "loss_cls": 0.275340, "loss_rpn_bbox_fpn2": 0.000194, "loss_rpn_bbox_fpn3": 0.006339, "loss_rpn_bbox_fpn4": 0.016076, "loss_rpn_bbox_fpn5": 0.006781, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.003328, "loss_rpn_cls_fpn3": 0.008860, "loss_rpn_cls_fpn4": 0.009335, "loss_rpn_cls_fpn5": 0.008149, "loss_rpn_cls_fpn6": 0.000134, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.388821}
+json_stats: {"accuracy_cls": 0.852465, "eta": "9:37:04", "iter": 1000, "loss": 0.706795, "loss_bbox": 0.257409, "loss_cls": 0.318566, "loss_rpn_bbox_fpn2": 0.004277, "loss_rpn_bbox_fpn3": 0.010632, "loss_rpn_bbox_fpn4": 0.016292, "loss_rpn_bbox_fpn5": 0.006154, "loss_rpn_bbox_fpn6": 0.001123, "loss_rpn_cls_fpn2": 0.005407, "loss_rpn_cls_fpn3": 0.013623, "loss_rpn_cls_fpn4": 0.008028, "loss_rpn_cls_fpn5": 0.007587, "loss_rpn_cls_fpn6": 0.001226, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.389043}
+json_stats: {"accuracy_cls": 0.875194, "eta": "9:37:52", "iter": 1020, "loss": 0.639072, "loss_bbox": 0.237614, "loss_cls": 0.280901, "loss_rpn_bbox_fpn2": 0.000625, "loss_rpn_bbox_fpn3": 0.007585, "loss_rpn_bbox_fpn4": 0.014452, "loss_rpn_bbox_fpn5": 0.011253, "loss_rpn_bbox_fpn6": 0.003629, "loss_rpn_cls_fpn2": 0.003134, "loss_rpn_cls_fpn3": 0.011843, "loss_rpn_cls_fpn4": 0.010253, "loss_rpn_cls_fpn5": 0.008724, "loss_rpn_cls_fpn6": 0.001843, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.389664}
+json_stats: {"accuracy_cls": 0.876456, "eta": "9:37:41", "iter": 1040, "loss": 0.630663, "loss_bbox": 0.230347, "loss_cls": 0.282107, "loss_rpn_bbox_fpn2": 0.000671, "loss_rpn_bbox_fpn3": 0.007718, "loss_rpn_bbox_fpn4": 0.011183, "loss_rpn_bbox_fpn5": 0.013221, "loss_rpn_bbox_fpn6": 0.000498, "loss_rpn_cls_fpn2": 0.003394, "loss_rpn_cls_fpn3": 0.016291, "loss_rpn_cls_fpn4": 0.008834, "loss_rpn_cls_fpn5": 0.004358, "loss_rpn_cls_fpn6": 0.000688, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.389634}
+json_stats: {"accuracy_cls": 0.878418, "eta": "9:37:07", "iter": 1060, "loss": 0.621460, "loss_bbox": 0.242485, "loss_cls": 0.278801, "loss_rpn_bbox_fpn2": 0.000771, "loss_rpn_bbox_fpn3": 0.006037, "loss_rpn_bbox_fpn4": 0.018408, "loss_rpn_bbox_fpn5": 0.016593, "loss_rpn_bbox_fpn6": 0.003665, "loss_rpn_cls_fpn2": 0.002769, "loss_rpn_cls_fpn3": 0.013429, "loss_rpn_cls_fpn4": 0.013711, "loss_rpn_cls_fpn5": 0.008690, "loss_rpn_cls_fpn6": 0.001640, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.389331}
+json_stats: {"accuracy_cls": 0.860651, "eta": "9:37:14", "iter": 1080, "loss": 0.679033, "loss_bbox": 0.270819, "loss_cls": 0.330308, "loss_rpn_bbox_fpn2": 0.002065, "loss_rpn_bbox_fpn3": 0.009568, "loss_rpn_bbox_fpn4": 0.009971, "loss_rpn_bbox_fpn5": 0.012146, "loss_rpn_bbox_fpn6": 0.004927, "loss_rpn_cls_fpn2": 0.005282, "loss_rpn_cls_fpn3": 0.016780, "loss_rpn_cls_fpn4": 0.011859, "loss_rpn_cls_fpn5": 0.006950, "loss_rpn_cls_fpn6": 0.001500, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.389503}
+json_stats: {"accuracy_cls": 0.881836, "eta": "9:37:05", "iter": 1100, "loss": 0.602146, "loss_bbox": 0.227866, "loss_cls": 0.266974, "loss_rpn_bbox_fpn2": 0.001247, "loss_rpn_bbox_fpn3": 0.004868, "loss_rpn_bbox_fpn4": 0.028665, "loss_rpn_bbox_fpn5": 0.016712, "loss_rpn_bbox_fpn6": 0.001032, "loss_rpn_cls_fpn2": 0.005215, "loss_rpn_cls_fpn3": 0.007568, "loss_rpn_cls_fpn4": 0.014067, "loss_rpn_cls_fpn5": 0.009375, "loss_rpn_cls_fpn6": 0.001615, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.389486}
+json_stats: {"accuracy_cls": 0.880859, "eta": "9:37:45", "iter": 1120, "loss": 0.613492, "loss_bbox": 0.250760, "loss_cls": 0.279503, "loss_rpn_bbox_fpn2": 0.000891, "loss_rpn_bbox_fpn3": 0.007830, "loss_rpn_bbox_fpn4": 0.016075, "loss_rpn_bbox_fpn5": 0.010819, "loss_rpn_bbox_fpn6": 0.004971, "loss_rpn_cls_fpn2": 0.004434, "loss_rpn_cls_fpn3": 0.010892, "loss_rpn_cls_fpn4": 0.008988, "loss_rpn_cls_fpn5": 0.004075, "loss_rpn_cls_fpn6": 0.000518, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.390022}
+json_stats: {"accuracy_cls": 0.891870, "eta": "9:37:00", "iter": 1140, "loss": 0.562670, "loss_bbox": 0.240156, "loss_cls": 0.248024, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.003312, "loss_rpn_bbox_fpn4": 0.009659, "loss_rpn_bbox_fpn5": 0.009322, "loss_rpn_bbox_fpn6": 0.002429, "loss_rpn_cls_fpn2": 0.001578, "loss_rpn_cls_fpn3": 0.008487, "loss_rpn_cls_fpn4": 0.006617, "loss_rpn_cls_fpn5": 0.005173, "loss_rpn_cls_fpn6": 0.001381, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.389603}
+json_stats: {"accuracy_cls": 0.875646, "eta": "9:36:57", "iter": 1160, "loss": 0.676323, "loss_bbox": 0.243744, "loss_cls": 0.305929, "loss_rpn_bbox_fpn2": 0.000321, "loss_rpn_bbox_fpn3": 0.005614, "loss_rpn_bbox_fpn4": 0.009742, "loss_rpn_bbox_fpn5": 0.016343, "loss_rpn_bbox_fpn6": 0.001309, "loss_rpn_cls_fpn2": 0.002401, "loss_rpn_cls_fpn3": 0.013952, "loss_rpn_cls_fpn4": 0.009207, "loss_rpn_cls_fpn5": 0.006477, "loss_rpn_cls_fpn6": 0.000966, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.389665}
+json_stats: {"accuracy_cls": 0.885122, "eta": "9:36:25", "iter": 1180, "loss": 0.650892, "loss_bbox": 0.258158, "loss_cls": 0.276033, "loss_rpn_bbox_fpn2": 0.000186, "loss_rpn_bbox_fpn3": 0.007176, "loss_rpn_bbox_fpn4": 0.009121, "loss_rpn_bbox_fpn5": 0.010045, "loss_rpn_bbox_fpn6": 0.003078, "loss_rpn_cls_fpn2": 0.001891, "loss_rpn_cls_fpn3": 0.009211, "loss_rpn_cls_fpn4": 0.008577, "loss_rpn_cls_fpn5": 0.004717, "loss_rpn_cls_fpn6": 0.001429, "lr": 0.001000, "mb_qsize": 64, "mem": 7226, "time": 0.389385}
+json_stats: {"accuracy_cls": 0.867676, "eta": "9:36:23", "iter": 1200, "loss": 0.644965, "loss_bbox": 0.234749, "loss_cls": 0.300249, "loss_rpn_bbox_fpn2": 0.000793, "loss_rpn_bbox_fpn3": 0.009375, "loss_rpn_bbox_fpn4": 0.023676, "loss_rpn_bbox_fpn5": 0.013607, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.003363, "loss_rpn_cls_fpn3": 0.013830, "loss_rpn_cls_fpn4": 0.012162, "loss_rpn_cls_fpn5": 0.005760, "loss_rpn_cls_fpn6": 0.000007, "lr": 0.001000, "mb_qsize": 64, "mem": 7231, "time": 0.389451}
+json_stats: {"accuracy_cls": 0.881651, "eta": "9:36:22", "iter": 1220, "loss": 0.624527, "loss_bbox": 0.223054, "loss_cls": 0.277670, "loss_rpn_bbox_fpn2": 0.000939, "loss_rpn_bbox_fpn3": 0.008112, "loss_rpn_bbox_fpn4": 0.011072, "loss_rpn_bbox_fpn5": 0.009817, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.005526, "loss_rpn_cls_fpn3": 0.013525, "loss_rpn_cls_fpn4": 0.008073, "loss_rpn_cls_fpn5": 0.006595, "loss_rpn_cls_fpn6": 0.000130, "lr": 0.001000, "mb_qsize": 64, "mem": 7233, "time": 0.389533}
+json_stats: {"accuracy_cls": 0.874512, "eta": "9:36:19", "iter": 1240, "loss": 0.628532, "loss_bbox": 0.232208, "loss_cls": 0.279862, "loss_rpn_bbox_fpn2": 0.000566, "loss_rpn_bbox_fpn3": 0.008546, "loss_rpn_bbox_fpn4": 0.011134, "loss_rpn_bbox_fpn5": 0.005733, "loss_rpn_bbox_fpn6": 0.004765, "loss_rpn_cls_fpn2": 0.002928, "loss_rpn_cls_fpn3": 0.007770, "loss_rpn_cls_fpn4": 0.009529, "loss_rpn_cls_fpn5": 0.005627, "loss_rpn_cls_fpn6": 0.001217, "lr": 0.001000, "mb_qsize": 64, "mem": 7233, "time": 0.389585}
+json_stats: {"accuracy_cls": 0.886066, "eta": "9:36:35", "iter": 1260, "loss": 0.611200, "loss_bbox": 0.252330, "loss_cls": 0.271459, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.003921, "loss_rpn_bbox_fpn4": 0.013969, "loss_rpn_bbox_fpn5": 0.005140, "loss_rpn_bbox_fpn6": 0.000936, "loss_rpn_cls_fpn2": 0.002539, "loss_rpn_cls_fpn3": 0.009259, "loss_rpn_cls_fpn4": 0.008909, "loss_rpn_cls_fpn5": 0.004002, "loss_rpn_cls_fpn6": 0.000780, "lr": 0.001000, "mb_qsize": 64, "mem": 7233, "time": 0.389853}
+json_stats: {"accuracy_cls": 0.878418, "eta": "9:37:30", "iter": 1280, "loss": 0.588520, "loss_bbox": 0.262352, "loss_cls": 0.268840, "loss_rpn_bbox_fpn2": 0.001401, "loss_rpn_bbox_fpn3": 0.005097, "loss_rpn_bbox_fpn4": 0.007838, "loss_rpn_bbox_fpn5": 0.008591, "loss_rpn_bbox_fpn6": 0.002277, "loss_rpn_cls_fpn2": 0.003695, "loss_rpn_cls_fpn3": 0.009200, "loss_rpn_cls_fpn4": 0.009386, "loss_rpn_cls_fpn5": 0.007723, "loss_rpn_cls_fpn6": 0.001338, "lr": 0.001000, "mb_qsize": 64, "mem": 7233, "time": 0.390561}
+json_stats: {"accuracy_cls": 0.873439, "eta": "9:36:46", "iter": 1300, "loss": 0.661721, "loss_bbox": 0.265134, "loss_cls": 0.305035, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.005715, "loss_rpn_bbox_fpn4": 0.012061, "loss_rpn_bbox_fpn5": 0.011517, "loss_rpn_bbox_fpn6": 0.000720, "loss_rpn_cls_fpn2": 0.004966, "loss_rpn_cls_fpn3": 0.012537, "loss_rpn_cls_fpn4": 0.009173, "loss_rpn_cls_fpn5": 0.007292, "loss_rpn_cls_fpn6": 0.000377, "lr": 0.001000, "mb_qsize": 64, "mem": 7233, "time": 0.390150}
+json_stats: {"accuracy_cls": 0.883141, "eta": "9:36:29", "iter": 1320, "loss": 0.635504, "loss_bbox": 0.266072, "loss_cls": 0.285785, "loss_rpn_bbox_fpn2": 0.000748, "loss_rpn_bbox_fpn3": 0.005900, "loss_rpn_bbox_fpn4": 0.020183, "loss_rpn_bbox_fpn5": 0.008279, "loss_rpn_bbox_fpn6": 0.005824, "loss_rpn_cls_fpn2": 0.003844, "loss_rpn_cls_fpn3": 0.008701, "loss_rpn_cls_fpn4": 0.011746, "loss_rpn_cls_fpn5": 0.008753, "loss_rpn_cls_fpn6": 0.002078, "lr": 0.001000, "mb_qsize": 64, "mem": 7236, "time": 0.390046}
+json_stats: {"accuracy_cls": 0.871823, "eta": "9:36:32", "iter": 1340, "loss": 0.670829, "loss_bbox": 0.245170, "loss_cls": 0.297076, "loss_rpn_bbox_fpn2": 0.001759, "loss_rpn_bbox_fpn3": 0.006550, "loss_rpn_bbox_fpn4": 0.016327, "loss_rpn_bbox_fpn5": 0.011917, "loss_rpn_bbox_fpn6": 0.002161, "loss_rpn_cls_fpn2": 0.003211, "loss_rpn_cls_fpn3": 0.013548, "loss_rpn_cls_fpn4": 0.010949, "loss_rpn_cls_fpn5": 0.005846, "loss_rpn_cls_fpn6": 0.002122, "lr": 0.001000, "mb_qsize": 64, "mem": 7237, "time": 0.390176}
+json_stats: {"accuracy_cls": 0.878906, "eta": "9:37:42", "iter": 1360, "loss": 0.603403, "loss_bbox": 0.236140, "loss_cls": 0.279050, "loss_rpn_bbox_fpn2": 0.000622, "loss_rpn_bbox_fpn3": 0.003631, "loss_rpn_bbox_fpn4": 0.012565, "loss_rpn_bbox_fpn5": 0.013245, "loss_rpn_bbox_fpn6": 0.004736, "loss_rpn_cls_fpn2": 0.003118, "loss_rpn_cls_fpn3": 0.007005, "loss_rpn_cls_fpn4": 0.009320, "loss_rpn_cls_fpn5": 0.008499, "loss_rpn_cls_fpn6": 0.002049, "lr": 0.001000, "mb_qsize": 64, "mem": 7237, "time": 0.391052}
+json_stats: {"accuracy_cls": 0.883885, "eta": "9:37:21", "iter": 1380, "loss": 0.587503, "loss_bbox": 0.221631, "loss_cls": 0.277427, "loss_rpn_bbox_fpn2": 0.001443, "loss_rpn_bbox_fpn3": 0.005452, "loss_rpn_bbox_fpn4": 0.013900, "loss_rpn_bbox_fpn5": 0.014294, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.003268, "loss_rpn_cls_fpn3": 0.011209, "loss_rpn_cls_fpn4": 0.008217, "loss_rpn_cls_fpn5": 0.005616, "loss_rpn_cls_fpn6": 0.001285, "lr": 0.001000, "mb_qsize": 64, "mem": 7237, "time": 0.390902}
+json_stats: {"accuracy_cls": 0.885742, "eta": "9:36:53", "iter": 1400, "loss": 0.523133, "loss_bbox": 0.198699, "loss_cls": 0.257879, "loss_rpn_bbox_fpn2": 0.000189, "loss_rpn_bbox_fpn3": 0.006587, "loss_rpn_bbox_fpn4": 0.008129, "loss_rpn_bbox_fpn5": 0.004590, "loss_rpn_bbox_fpn6": 0.000189, "loss_rpn_cls_fpn2": 0.001365, "loss_rpn_cls_fpn3": 0.008919, "loss_rpn_cls_fpn4": 0.002433, "loss_rpn_cls_fpn5": 0.002552, "loss_rpn_cls_fpn6": 0.000408, "lr": 0.001000, "mb_qsize": 64, "mem": 7237, "time": 0.390676}
+json_stats: {"accuracy_cls": 0.872070, "eta": "9:36:14", "iter": 1420, "loss": 0.632261, "loss_bbox": 0.238817, "loss_cls": 0.299436, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.005014, "loss_rpn_bbox_fpn4": 0.011836, "loss_rpn_bbox_fpn5": 0.012162, "loss_rpn_bbox_fpn6": 0.001492, "loss_rpn_cls_fpn2": 0.002323, "loss_rpn_cls_fpn3": 0.008033, "loss_rpn_cls_fpn4": 0.010361, "loss_rpn_cls_fpn5": 0.007646, "loss_rpn_cls_fpn6": 0.001324, "lr": 0.001000, "mb_qsize": 64, "mem": 7242, "time": 0.390324}
+json_stats: {"accuracy_cls": 0.881873, "eta": "9:36:19", "iter": 1440, "loss": 0.595812, "loss_bbox": 0.236379, "loss_cls": 0.271235, "loss_rpn_bbox_fpn2": 0.001104, "loss_rpn_bbox_fpn3": 0.007816, "loss_rpn_bbox_fpn4": 0.016362, "loss_rpn_bbox_fpn5": 0.014981, "loss_rpn_bbox_fpn6": 0.000666, "loss_rpn_cls_fpn2": 0.003233, "loss_rpn_cls_fpn3": 0.009837, "loss_rpn_cls_fpn4": 0.011198, "loss_rpn_cls_fpn5": 0.008187, "loss_rpn_cls_fpn6": 0.001906, "lr": 0.001000, "mb_qsize": 64, "mem": 7242, "time": 0.390463}
+json_stats: {"accuracy_cls": 0.880257, "eta": "9:36:55", "iter": 1460, "loss": 0.608023, "loss_bbox": 0.249808, "loss_cls": 0.278666, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.003881, "loss_rpn_bbox_fpn4": 0.012306, "loss_rpn_bbox_fpn5": 0.011466, "loss_rpn_bbox_fpn6": 0.003989, "loss_rpn_cls_fpn2": 0.001986, "loss_rpn_cls_fpn3": 0.007547, "loss_rpn_cls_fpn4": 0.009195, "loss_rpn_cls_fpn5": 0.005872, "loss_rpn_cls_fpn6": 0.001116, "lr": 0.001000, "mb_qsize": 64, "mem": 7242, "time": 0.390962}
+json_stats: {"accuracy_cls": 0.880545, "eta": "9:36:32", "iter": 1480, "loss": 0.608543, "loss_bbox": 0.229500, "loss_cls": 0.261306, "loss_rpn_bbox_fpn2": 0.000874, "loss_rpn_bbox_fpn3": 0.006092, "loss_rpn_bbox_fpn4": 0.013502, "loss_rpn_bbox_fpn5": 0.012794, "loss_rpn_bbox_fpn6": 0.001845, "loss_rpn_cls_fpn2": 0.002081, "loss_rpn_cls_fpn3": 0.009306, "loss_rpn_cls_fpn4": 0.011922, "loss_rpn_cls_fpn5": 0.008320, "loss_rpn_cls_fpn6": 0.001066, "lr": 0.001000, "mb_qsize": 64, "mem": 7242, "time": 0.390790}
+json_stats: {"accuracy_cls": 0.877441, "eta": "9:36:42", "iter": 1500, "loss": 0.636381, "loss_bbox": 0.249136, "loss_cls": 0.286198, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.006956, "loss_rpn_bbox_fpn4": 0.013317, "loss_rpn_bbox_fpn5": 0.005920, "loss_rpn_bbox_fpn6": 0.000101, "loss_rpn_cls_fpn2": 0.003925, "loss_rpn_cls_fpn3": 0.011992, "loss_rpn_cls_fpn4": 0.010213, "loss_rpn_cls_fpn5": 0.006498, "loss_rpn_cls_fpn6": 0.000705, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.390985}
+json_stats: {"accuracy_cls": 0.875518, "eta": "9:36:33", "iter": 1520, "loss": 0.618759, "loss_bbox": 0.235159, "loss_cls": 0.284088, "loss_rpn_bbox_fpn2": 0.000864, "loss_rpn_bbox_fpn3": 0.006372, "loss_rpn_bbox_fpn4": 0.011776, "loss_rpn_bbox_fpn5": 0.014915, "loss_rpn_bbox_fpn6": 0.000945, "loss_rpn_cls_fpn2": 0.003212, "loss_rpn_cls_fpn3": 0.009582, "loss_rpn_cls_fpn4": 0.009863, "loss_rpn_cls_fpn5": 0.007984, "loss_rpn_cls_fpn6": 0.000669, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.390980}
+json_stats: {"accuracy_cls": 0.876721, "eta": "9:36:42", "iter": 1540, "loss": 0.615665, "loss_bbox": 0.249558, "loss_cls": 0.283386, "loss_rpn_bbox_fpn2": 0.001803, "loss_rpn_bbox_fpn3": 0.004950, "loss_rpn_bbox_fpn4": 0.013193, "loss_rpn_bbox_fpn5": 0.010194, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.003745, "loss_rpn_cls_fpn3": 0.009310, "loss_rpn_cls_fpn4": 0.007473, "loss_rpn_cls_fpn5": 0.004599, "loss_rpn_cls_fpn6": 0.001339, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391165}
+json_stats: {"accuracy_cls": 0.892090, "eta": "9:36:28", "iter": 1560, "loss": 0.518992, "loss_bbox": 0.234226, "loss_cls": 0.243572, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.004074, "loss_rpn_bbox_fpn4": 0.006287, "loss_rpn_bbox_fpn5": 0.003814, "loss_rpn_bbox_fpn6": 0.000543, "loss_rpn_cls_fpn2": 0.001586, "loss_rpn_cls_fpn3": 0.005415, "loss_rpn_cls_fpn4": 0.005841, "loss_rpn_cls_fpn5": 0.003457, "loss_rpn_cls_fpn6": 0.000196, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391094}
+json_stats: {"accuracy_cls": 0.865647, "eta": "9:36:32", "iter": 1580, "loss": 0.648932, "loss_bbox": 0.247658, "loss_cls": 0.306533, "loss_rpn_bbox_fpn2": 0.003296, "loss_rpn_bbox_fpn3": 0.008362, "loss_rpn_bbox_fpn4": 0.019418, "loss_rpn_bbox_fpn5": 0.013747, "loss_rpn_bbox_fpn6": 0.001656, "loss_rpn_cls_fpn2": 0.004834, "loss_rpn_cls_fpn3": 0.010252, "loss_rpn_cls_fpn4": 0.015623, "loss_rpn_cls_fpn5": 0.008223, "loss_rpn_cls_fpn6": 0.001817, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391234}
+json_stats: {"accuracy_cls": 0.880430, "eta": "9:36:56", "iter": 1600, "loss": 0.589840, "loss_bbox": 0.229185, "loss_cls": 0.263608, "loss_rpn_bbox_fpn2": 0.000109, "loss_rpn_bbox_fpn3": 0.003640, "loss_rpn_bbox_fpn4": 0.013525, "loss_rpn_bbox_fpn5": 0.015411, "loss_rpn_bbox_fpn6": 0.005598, "loss_rpn_cls_fpn2": 0.002821, "loss_rpn_cls_fpn3": 0.005378, "loss_rpn_cls_fpn4": 0.008088, "loss_rpn_cls_fpn5": 0.007840, "loss_rpn_cls_fpn6": 0.001573, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391595}
+json_stats: {"accuracy_cls": 0.894039, "eta": "9:36:47", "iter": 1620, "loss": 0.508634, "loss_bbox": 0.203447, "loss_cls": 0.240954, "loss_rpn_bbox_fpn2": 0.000666, "loss_rpn_bbox_fpn3": 0.004131, "loss_rpn_bbox_fpn4": 0.009728, "loss_rpn_bbox_fpn5": 0.005098, "loss_rpn_bbox_fpn6": 0.000358, "loss_rpn_cls_fpn2": 0.002150, "loss_rpn_cls_fpn3": 0.005829, "loss_rpn_cls_fpn4": 0.005173, "loss_rpn_cls_fpn5": 0.002942, "loss_rpn_cls_fpn6": 0.000361, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391581}
+json_stats: {"accuracy_cls": 0.878831, "eta": "9:36:51", "iter": 1640, "loss": 0.601837, "loss_bbox": 0.223105, "loss_cls": 0.286148, "loss_rpn_bbox_fpn2": 0.001177, "loss_rpn_bbox_fpn3": 0.007460, "loss_rpn_bbox_fpn4": 0.018671, "loss_rpn_bbox_fpn5": 0.009029, "loss_rpn_bbox_fpn6": 0.003670, "loss_rpn_cls_fpn2": 0.003103, "loss_rpn_cls_fpn3": 0.011040, "loss_rpn_cls_fpn4": 0.009449, "loss_rpn_cls_fpn5": 0.005982, "loss_rpn_cls_fpn6": 0.001634, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391714}
+json_stats: {"accuracy_cls": 0.882324, "eta": "9:36:18", "iter": 1660, "loss": 0.576620, "loss_bbox": 0.224864, "loss_cls": 0.280972, "loss_rpn_bbox_fpn2": 0.000057, "loss_rpn_bbox_fpn3": 0.006420, "loss_rpn_bbox_fpn4": 0.012648, "loss_rpn_bbox_fpn5": 0.008150, "loss_rpn_bbox_fpn6": 0.006349, "loss_rpn_cls_fpn2": 0.001637, "loss_rpn_cls_fpn3": 0.011279, "loss_rpn_cls_fpn4": 0.007606, "loss_rpn_cls_fpn5": 0.005353, "loss_rpn_cls_fpn6": 0.002565, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391424}
+json_stats: {"accuracy_cls": 0.885254, "eta": "9:36:05", "iter": 1680, "loss": 0.614340, "loss_bbox": 0.222206, "loss_cls": 0.284237, "loss_rpn_bbox_fpn2": 0.001090, "loss_rpn_bbox_fpn3": 0.010109, "loss_rpn_bbox_fpn4": 0.013678, "loss_rpn_bbox_fpn5": 0.015611, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.005511, "loss_rpn_cls_fpn3": 0.010105, "loss_rpn_cls_fpn4": 0.008582, "loss_rpn_cls_fpn5": 0.003085, "loss_rpn_cls_fpn6": 0.000622, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391363}
+json_stats: {"accuracy_cls": 0.874643, "eta": "9:36:09", "iter": 1700, "loss": 0.603630, "loss_bbox": 0.235784, "loss_cls": 0.273824, "loss_rpn_bbox_fpn2": 0.001113, "loss_rpn_bbox_fpn3": 0.004394, "loss_rpn_bbox_fpn4": 0.011204, "loss_rpn_bbox_fpn5": 0.008134, "loss_rpn_bbox_fpn6": 0.001658, "loss_rpn_cls_fpn2": 0.003679, "loss_rpn_cls_fpn3": 0.006697, "loss_rpn_cls_fpn4": 0.010589, "loss_rpn_cls_fpn5": 0.003777, "loss_rpn_cls_fpn6": 0.000934, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391497}
+json_stats: {"accuracy_cls": 0.887207, "eta": "9:35:53", "iter": 1720, "loss": 0.572947, "loss_bbox": 0.232179, "loss_cls": 0.270784, "loss_rpn_bbox_fpn2": 0.001130, "loss_rpn_bbox_fpn3": 0.004658, "loss_rpn_bbox_fpn4": 0.018653, "loss_rpn_bbox_fpn5": 0.013409, "loss_rpn_bbox_fpn6": 0.000440, "loss_rpn_cls_fpn2": 0.002753, "loss_rpn_cls_fpn3": 0.005706, "loss_rpn_cls_fpn4": 0.011980, "loss_rpn_cls_fpn5": 0.009726, "loss_rpn_cls_fpn6": 0.000536, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391411}
+json_stats: {"accuracy_cls": 0.877441, "eta": "9:35:32", "iter": 1740, "loss": 0.597309, "loss_bbox": 0.252158, "loss_cls": 0.293779, "loss_rpn_bbox_fpn2": 0.000815, "loss_rpn_bbox_fpn3": 0.004534, "loss_rpn_bbox_fpn4": 0.011189, "loss_rpn_bbox_fpn5": 0.013999, "loss_rpn_bbox_fpn6": 0.000935, "loss_rpn_cls_fpn2": 0.001829, "loss_rpn_cls_fpn3": 0.006012, "loss_rpn_cls_fpn4": 0.006772, "loss_rpn_cls_fpn5": 0.005864, "loss_rpn_cls_fpn6": 0.001016, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391264}
+json_stats: {"accuracy_cls": 0.885254, "eta": "9:35:03", "iter": 1760, "loss": 0.572855, "loss_bbox": 0.232826, "loss_cls": 0.274989, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.004691, "loss_rpn_bbox_fpn4": 0.010142, "loss_rpn_bbox_fpn5": 0.004287, "loss_rpn_bbox_fpn6": 0.001011, "loss_rpn_cls_fpn2": 0.000886, "loss_rpn_cls_fpn3": 0.010490, "loss_rpn_cls_fpn4": 0.007224, "loss_rpn_cls_fpn5": 0.004425, "loss_rpn_cls_fpn6": 0.001241, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391017}
+json_stats: {"accuracy_cls": 0.872744, "eta": "9:34:56", "iter": 1780, "loss": 0.607661, "loss_bbox": 0.232624, "loss_cls": 0.292124, "loss_rpn_bbox_fpn2": 0.000826, "loss_rpn_bbox_fpn3": 0.005875, "loss_rpn_bbox_fpn4": 0.019967, "loss_rpn_bbox_fpn5": 0.018300, "loss_rpn_bbox_fpn6": 0.002420, "loss_rpn_cls_fpn2": 0.001104, "loss_rpn_cls_fpn3": 0.011419, "loss_rpn_cls_fpn4": 0.010387, "loss_rpn_cls_fpn5": 0.004827, "loss_rpn_cls_fpn6": 0.001198, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391025}
+json_stats: {"accuracy_cls": 0.872154, "eta": "9:35:03", "iter": 1800, "loss": 0.597966, "loss_bbox": 0.249729, "loss_cls": 0.281388, "loss_rpn_bbox_fpn2": 0.000522, "loss_rpn_bbox_fpn3": 0.002697, "loss_rpn_bbox_fpn4": 0.011099, "loss_rpn_bbox_fpn5": 0.010093, "loss_rpn_bbox_fpn6": 0.001125, "loss_rpn_cls_fpn2": 0.002641, "loss_rpn_cls_fpn3": 0.005318, "loss_rpn_cls_fpn4": 0.006834, "loss_rpn_cls_fpn5": 0.004006, "loss_rpn_cls_fpn6": 0.000731, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391198}
+json_stats: {"accuracy_cls": 0.875550, "eta": "9:34:50", "iter": 1820, "loss": 0.581629, "loss_bbox": 0.229372, "loss_cls": 0.280107, "loss_rpn_bbox_fpn2": 0.000044, "loss_rpn_bbox_fpn3": 0.005478, "loss_rpn_bbox_fpn4": 0.011212, "loss_rpn_bbox_fpn5": 0.006272, "loss_rpn_bbox_fpn6": 0.003644, "loss_rpn_cls_fpn2": 0.001726, "loss_rpn_cls_fpn3": 0.007429, "loss_rpn_cls_fpn4": 0.007171, "loss_rpn_cls_fpn5": 0.004964, "loss_rpn_cls_fpn6": 0.000906, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391136}
+json_stats: {"accuracy_cls": 0.864746, "eta": "9:34:28", "iter": 1840, "loss": 0.657392, "loss_bbox": 0.266628, "loss_cls": 0.314981, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.009723, "loss_rpn_bbox_fpn4": 0.016982, "loss_rpn_bbox_fpn5": 0.008773, "loss_rpn_bbox_fpn6": 0.000395, "loss_rpn_cls_fpn2": 0.000853, "loss_rpn_cls_fpn3": 0.013609, "loss_rpn_cls_fpn4": 0.010162, "loss_rpn_cls_fpn5": 0.004281, "loss_rpn_cls_fpn6": 0.000398, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.390977}
+json_stats: {"accuracy_cls": 0.889333, "eta": "9:34:31", "iter": 1860, "loss": 0.569730, "loss_bbox": 0.217983, "loss_cls": 0.252679, "loss_rpn_bbox_fpn2": 0.001269, "loss_rpn_bbox_fpn3": 0.004400, "loss_rpn_bbox_fpn4": 0.011064, "loss_rpn_bbox_fpn5": 0.009848, "loss_rpn_bbox_fpn6": 0.000277, "loss_rpn_cls_fpn2": 0.002695, "loss_rpn_cls_fpn3": 0.006895, "loss_rpn_cls_fpn4": 0.009127, "loss_rpn_cls_fpn5": 0.007320, "loss_rpn_cls_fpn6": 0.000493, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391097}
+json_stats: {"accuracy_cls": 0.872070, "eta": "9:34:29", "iter": 1880, "loss": 0.660712, "loss_bbox": 0.239517, "loss_cls": 0.301368, "loss_rpn_bbox_fpn2": 0.000949, "loss_rpn_bbox_fpn3": 0.008355, "loss_rpn_bbox_fpn4": 0.017503, "loss_rpn_bbox_fpn5": 0.015389, "loss_rpn_bbox_fpn6": 0.000095, "loss_rpn_cls_fpn2": 0.003485, "loss_rpn_cls_fpn3": 0.009317, "loss_rpn_cls_fpn4": 0.012363, "loss_rpn_cls_fpn5": 0.006244, "loss_rpn_cls_fpn6": 0.002640, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.391162}
+json_stats: {"accuracy_cls": 0.884217, "eta": "9:33:57", "iter": 1900, "loss": 0.542021, "loss_bbox": 0.220912, "loss_cls": 0.266064, "loss_rpn_bbox_fpn2": 0.000745, "loss_rpn_bbox_fpn3": 0.004416, "loss_rpn_bbox_fpn4": 0.010988, "loss_rpn_bbox_fpn5": 0.011969, "loss_rpn_bbox_fpn6": 0.002416, "loss_rpn_cls_fpn2": 0.004063, "loss_rpn_cls_fpn3": 0.004295, "loss_rpn_cls_fpn4": 0.006304, "loss_rpn_cls_fpn5": 0.003578, "loss_rpn_cls_fpn6": 0.000790, "lr": 0.001000, "mb_qsize": 64, "mem": 7243, "time": 0.390890}
+json_stats: {"accuracy_cls": 0.880207, "eta": "9:33:59", "iter": 1920, "loss": 0.572385, "loss_bbox": 0.244806, "loss_cls": 0.282411, "loss_rpn_bbox_fpn2": 0.000250, "loss_rpn_bbox_fpn3": 0.002516, "loss_rpn_bbox_fpn4": 0.012504, "loss_rpn_bbox_fpn5": 0.009376, "loss_rpn_bbox_fpn6": 0.001852, "loss_rpn_cls_fpn2": 0.001445, "loss_rpn_cls_fpn3": 0.005286, "loss_rpn_cls_fpn4": 0.006465, "loss_rpn_cls_fpn5": 0.005015, "loss_rpn_cls_fpn6": 0.000828, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391004}
+json_stats: {"accuracy_cls": 0.878418, "eta": "9:34:00", "iter": 1940, "loss": 0.591723, "loss_bbox": 0.234796, "loss_cls": 0.286577, "loss_rpn_bbox_fpn2": 0.001417, "loss_rpn_bbox_fpn3": 0.004245, "loss_rpn_bbox_fpn4": 0.010563, "loss_rpn_bbox_fpn5": 0.009309, "loss_rpn_bbox_fpn6": 0.001877, "loss_rpn_cls_fpn2": 0.002244, "loss_rpn_cls_fpn3": 0.005024, "loss_rpn_cls_fpn4": 0.007944, "loss_rpn_cls_fpn5": 0.005069, "loss_rpn_cls_fpn6": 0.001153, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391105}
+json_stats: {"accuracy_cls": 0.885770, "eta": "9:33:40", "iter": 1960, "loss": 0.538622, "loss_bbox": 0.216294, "loss_cls": 0.251291, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.004489, "loss_rpn_bbox_fpn4": 0.010134, "loss_rpn_bbox_fpn5": 0.006746, "loss_rpn_bbox_fpn6": 0.000968, "loss_rpn_cls_fpn2": 0.000786, "loss_rpn_cls_fpn3": 0.006109, "loss_rpn_cls_fpn4": 0.005827, "loss_rpn_cls_fpn5": 0.003903, "loss_rpn_cls_fpn6": 0.001132, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390959}
+json_stats: {"accuracy_cls": 0.882610, "eta": "9:33:27", "iter": 1980, "loss": 0.532622, "loss_bbox": 0.197037, "loss_cls": 0.274317, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.006631, "loss_rpn_bbox_fpn4": 0.011939, "loss_rpn_bbox_fpn5": 0.007287, "loss_rpn_bbox_fpn6": 0.003833, "loss_rpn_cls_fpn2": 0.001238, "loss_rpn_cls_fpn3": 0.008055, "loss_rpn_cls_fpn4": 0.007163, "loss_rpn_cls_fpn5": 0.002359, "loss_rpn_cls_fpn6": 0.001969, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390903}
+json_stats: {"accuracy_cls": 0.896973, "eta": "9:33:17", "iter": 2000, "loss": 0.509407, "loss_bbox": 0.199591, "loss_cls": 0.234474, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.005263, "loss_rpn_bbox_fpn4": 0.011261, "loss_rpn_bbox_fpn5": 0.004759, "loss_rpn_bbox_fpn6": 0.001322, "loss_rpn_cls_fpn2": 0.002029, "loss_rpn_cls_fpn3": 0.012220, "loss_rpn_cls_fpn4": 0.009258, "loss_rpn_cls_fpn5": 0.002639, "loss_rpn_cls_fpn6": 0.000328, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390882}
+json_stats: {"accuracy_cls": 0.857298, "eta": "9:33:13", "iter": 2020, "loss": 0.664551, "loss_bbox": 0.251596, "loss_cls": 0.317055, "loss_rpn_bbox_fpn2": 0.000726, "loss_rpn_bbox_fpn3": 0.006037, "loss_rpn_bbox_fpn4": 0.015949, "loss_rpn_bbox_fpn5": 0.010246, "loss_rpn_bbox_fpn6": 0.000346, "loss_rpn_cls_fpn2": 0.005215, "loss_rpn_cls_fpn3": 0.007954, "loss_rpn_cls_fpn4": 0.011255, "loss_rpn_cls_fpn5": 0.003869, "loss_rpn_cls_fpn6": 0.001870, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390926}
+json_stats: {"accuracy_cls": 0.881920, "eta": "9:33:15", "iter": 2040, "loss": 0.566595, "loss_bbox": 0.233547, "loss_cls": 0.272016, "loss_rpn_bbox_fpn2": 0.000433, "loss_rpn_bbox_fpn3": 0.005261, "loss_rpn_bbox_fpn4": 0.014311, "loss_rpn_bbox_fpn5": 0.009193, "loss_rpn_bbox_fpn6": 0.002975, "loss_rpn_cls_fpn2": 0.002314, "loss_rpn_cls_fpn3": 0.009874, "loss_rpn_cls_fpn4": 0.004806, "loss_rpn_cls_fpn5": 0.005068, "loss_rpn_cls_fpn6": 0.000977, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391040}
+json_stats: {"accuracy_cls": 0.902344, "eta": "9:32:46", "iter": 2060, "loss": 0.520598, "loss_bbox": 0.208377, "loss_cls": 0.247528, "loss_rpn_bbox_fpn2": 0.000153, "loss_rpn_bbox_fpn3": 0.003411, "loss_rpn_bbox_fpn4": 0.008104, "loss_rpn_bbox_fpn5": 0.012722, "loss_rpn_bbox_fpn6": 0.001111, "loss_rpn_cls_fpn2": 0.002558, "loss_rpn_cls_fpn3": 0.006466, "loss_rpn_cls_fpn4": 0.006732, "loss_rpn_cls_fpn5": 0.004721, "loss_rpn_cls_fpn6": 0.001058, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390800}
+json_stats: {"accuracy_cls": 0.880342, "eta": "9:32:49", "iter": 2080, "loss": 0.562025, "loss_bbox": 0.211707, "loss_cls": 0.275007, "loss_rpn_bbox_fpn2": 0.001822, "loss_rpn_bbox_fpn3": 0.006823, "loss_rpn_bbox_fpn4": 0.020938, "loss_rpn_bbox_fpn5": 0.013254, "loss_rpn_bbox_fpn6": 0.003159, "loss_rpn_cls_fpn2": 0.003523, "loss_rpn_cls_fpn3": 0.006727, "loss_rpn_cls_fpn4": 0.009521, "loss_rpn_cls_fpn5": 0.008130, "loss_rpn_cls_fpn6": 0.000586, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390923}
+json_stats: {"accuracy_cls": 0.885220, "eta": "9:33:08", "iter": 2100, "loss": 0.552939, "loss_bbox": 0.215850, "loss_cls": 0.261848, "loss_rpn_bbox_fpn2": 0.000858, "loss_rpn_bbox_fpn3": 0.006614, "loss_rpn_bbox_fpn4": 0.010083, "loss_rpn_bbox_fpn5": 0.005340, "loss_rpn_bbox_fpn6": 0.002699, "loss_rpn_cls_fpn2": 0.002948, "loss_rpn_cls_fpn3": 0.007510, "loss_rpn_cls_fpn4": 0.006466, "loss_rpn_cls_fpn5": 0.004645, "loss_rpn_cls_fpn6": 0.001837, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391220}
+json_stats: {"accuracy_cls": 0.882324, "eta": "9:32:57", "iter": 2120, "loss": 0.595844, "loss_bbox": 0.216485, "loss_cls": 0.272840, "loss_rpn_bbox_fpn2": 0.000664, "loss_rpn_bbox_fpn3": 0.006378, "loss_rpn_bbox_fpn4": 0.016415, "loss_rpn_bbox_fpn5": 0.005489, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.003349, "loss_rpn_cls_fpn3": 0.011676, "loss_rpn_cls_fpn4": 0.008632, "loss_rpn_cls_fpn5": 0.004418, "loss_rpn_cls_fpn6": 0.000748, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391182}
+json_stats: {"accuracy_cls": 0.908973, "eta": "9:33:00", "iter": 2140, "loss": 0.522809, "loss_bbox": 0.199122, "loss_cls": 0.229362, "loss_rpn_bbox_fpn2": 0.000204, "loss_rpn_bbox_fpn3": 0.004697, "loss_rpn_bbox_fpn4": 0.008150, "loss_rpn_bbox_fpn5": 0.004375, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.003764, "loss_rpn_cls_fpn3": 0.010447, "loss_rpn_cls_fpn4": 0.005408, "loss_rpn_cls_fpn5": 0.002970, "loss_rpn_cls_fpn6": 0.000741, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391309}
+json_stats: {"accuracy_cls": 0.885726, "eta": "9:33:05", "iter": 2160, "loss": 0.529142, "loss_bbox": 0.202319, "loss_cls": 0.251817, "loss_rpn_bbox_fpn2": 0.001004, "loss_rpn_bbox_fpn3": 0.005465, "loss_rpn_bbox_fpn4": 0.009711, "loss_rpn_bbox_fpn5": 0.009187, "loss_rpn_bbox_fpn6": 0.000587, "loss_rpn_cls_fpn2": 0.001861, "loss_rpn_cls_fpn3": 0.005315, "loss_rpn_cls_fpn4": 0.008232, "loss_rpn_cls_fpn5": 0.003338, "loss_rpn_cls_fpn6": 0.000468, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391457}
+json_stats: {"accuracy_cls": 0.873409, "eta": "9:33:09", "iter": 2180, "loss": 0.611551, "loss_bbox": 0.241753, "loss_cls": 0.288422, "loss_rpn_bbox_fpn2": 0.000727, "loss_rpn_bbox_fpn3": 0.005828, "loss_rpn_bbox_fpn4": 0.014389, "loss_rpn_bbox_fpn5": 0.014137, "loss_rpn_bbox_fpn6": 0.004037, "loss_rpn_cls_fpn2": 0.002000, "loss_rpn_cls_fpn3": 0.007122, "loss_rpn_cls_fpn4": 0.009880, "loss_rpn_cls_fpn5": 0.004541, "loss_rpn_cls_fpn6": 0.002349, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391593}
+json_stats: {"accuracy_cls": 0.875881, "eta": "9:32:57", "iter": 2200, "loss": 0.634855, "loss_bbox": 0.235455, "loss_cls": 0.287989, "loss_rpn_bbox_fpn2": 0.000891, "loss_rpn_bbox_fpn3": 0.006654, "loss_rpn_bbox_fpn4": 0.023615, "loss_rpn_bbox_fpn5": 0.017048, "loss_rpn_bbox_fpn6": 0.001954, "loss_rpn_cls_fpn2": 0.002889, "loss_rpn_cls_fpn3": 0.013589, "loss_rpn_cls_fpn4": 0.011374, "loss_rpn_cls_fpn5": 0.003533, "loss_rpn_cls_fpn6": 0.000963, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391539}
+json_stats: {"accuracy_cls": 0.881348, "eta": "9:32:46", "iter": 2220, "loss": 0.573678, "loss_bbox": 0.209118, "loss_cls": 0.272732, "loss_rpn_bbox_fpn2": 0.001408, "loss_rpn_bbox_fpn3": 0.006783, "loss_rpn_bbox_fpn4": 0.017475, "loss_rpn_bbox_fpn5": 0.003147, "loss_rpn_bbox_fpn6": 0.003689, "loss_rpn_cls_fpn2": 0.001962, "loss_rpn_cls_fpn3": 0.009281, "loss_rpn_cls_fpn4": 0.004392, "loss_rpn_cls_fpn5": 0.007064, "loss_rpn_cls_fpn6": 0.001920, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391502}
+json_stats: {"accuracy_cls": 0.890137, "eta": "9:32:22", "iter": 2240, "loss": 0.588929, "loss_bbox": 0.229755, "loss_cls": 0.263441, "loss_rpn_bbox_fpn2": 0.000691, "loss_rpn_bbox_fpn3": 0.006661, "loss_rpn_bbox_fpn4": 0.012883, "loss_rpn_bbox_fpn5": 0.007657, "loss_rpn_bbox_fpn6": 0.004012, "loss_rpn_cls_fpn2": 0.003345, "loss_rpn_cls_fpn3": 0.007733, "loss_rpn_cls_fpn4": 0.006113, "loss_rpn_cls_fpn5": 0.004013, "loss_rpn_cls_fpn6": 0.002401, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391320}
+json_stats: {"accuracy_cls": 0.896123, "eta": "9:32:02", "iter": 2260, "loss": 0.530762, "loss_bbox": 0.196506, "loss_cls": 0.246247, "loss_rpn_bbox_fpn2": 0.000582, "loss_rpn_bbox_fpn3": 0.005233, "loss_rpn_bbox_fpn4": 0.014329, "loss_rpn_bbox_fpn5": 0.010484, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.002840, "loss_rpn_cls_fpn3": 0.009215, "loss_rpn_cls_fpn4": 0.008382, "loss_rpn_cls_fpn5": 0.008628, "loss_rpn_cls_fpn6": 0.000054, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391183}
+json_stats: {"accuracy_cls": 0.895651, "eta": "9:31:57", "iter": 2280, "loss": 0.492088, "loss_bbox": 0.194308, "loss_cls": 0.242900, "loss_rpn_bbox_fpn2": 0.000521, "loss_rpn_bbox_fpn3": 0.004587, "loss_rpn_bbox_fpn4": 0.010471, "loss_rpn_bbox_fpn5": 0.006960, "loss_rpn_bbox_fpn6": 0.000294, "loss_rpn_cls_fpn2": 0.001481, "loss_rpn_cls_fpn3": 0.006768, "loss_rpn_cls_fpn4": 0.006014, "loss_rpn_cls_fpn5": 0.005076, "loss_rpn_cls_fpn6": 0.000061, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391220}
+json_stats: {"accuracy_cls": 0.886719, "eta": "9:31:35", "iter": 2300, "loss": 0.547139, "loss_bbox": 0.205914, "loss_cls": 0.261039, "loss_rpn_bbox_fpn2": 0.001415, "loss_rpn_bbox_fpn3": 0.006205, "loss_rpn_bbox_fpn4": 0.009969, "loss_rpn_bbox_fpn5": 0.004690, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.003154, "loss_rpn_cls_fpn3": 0.006663, "loss_rpn_cls_fpn4": 0.003516, "loss_rpn_cls_fpn5": 0.004009, "loss_rpn_cls_fpn6": 0.000028, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391053}
+json_stats: {"accuracy_cls": 0.893634, "eta": "9:31:27", "iter": 2320, "loss": 0.557838, "loss_bbox": 0.207186, "loss_cls": 0.264518, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.004986, "loss_rpn_bbox_fpn4": 0.010374, "loss_rpn_bbox_fpn5": 0.014726, "loss_rpn_bbox_fpn6": 0.000420, "loss_rpn_cls_fpn2": 0.001654, "loss_rpn_cls_fpn3": 0.007732, "loss_rpn_cls_fpn4": 0.008843, "loss_rpn_cls_fpn5": 0.003144, "loss_rpn_cls_fpn6": 0.000452, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.391055}
+json_stats: {"accuracy_cls": 0.875977, "eta": "9:31:14", "iter": 2340, "loss": 0.619616, "loss_bbox": 0.244659, "loss_cls": 0.284881, "loss_rpn_bbox_fpn2": 0.001384, "loss_rpn_bbox_fpn3": 0.004413, "loss_rpn_bbox_fpn4": 0.013524, "loss_rpn_bbox_fpn5": 0.014929, "loss_rpn_bbox_fpn6": 0.003046, "loss_rpn_cls_fpn2": 0.003771, "loss_rpn_cls_fpn3": 0.008726, "loss_rpn_cls_fpn4": 0.011499, "loss_rpn_cls_fpn5": 0.004068, "loss_rpn_cls_fpn6": 0.000487, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390991}
+json_stats: {"accuracy_cls": 0.885927, "eta": "9:31:02", "iter": 2360, "loss": 0.571208, "loss_bbox": 0.209018, "loss_cls": 0.262753, "loss_rpn_bbox_fpn2": 0.000620, "loss_rpn_bbox_fpn3": 0.008233, "loss_rpn_bbox_fpn4": 0.014206, "loss_rpn_bbox_fpn5": 0.009761, "loss_rpn_bbox_fpn6": 0.000105, "loss_rpn_cls_fpn2": 0.001943, "loss_rpn_cls_fpn3": 0.006481, "loss_rpn_cls_fpn4": 0.004042, "loss_rpn_cls_fpn5": 0.005455, "loss_rpn_cls_fpn6": 0.000254, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390943}
+json_stats: {"accuracy_cls": 0.884852, "eta": "9:30:41", "iter": 2380, "loss": 0.563343, "loss_bbox": 0.223150, "loss_cls": 0.269701, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.004174, "loss_rpn_bbox_fpn4": 0.012748, "loss_rpn_bbox_fpn5": 0.006106, "loss_rpn_bbox_fpn6": 0.003573, "loss_rpn_cls_fpn2": 0.002179, "loss_rpn_cls_fpn3": 0.005065, "loss_rpn_cls_fpn4": 0.006427, "loss_rpn_cls_fpn5": 0.003368, "loss_rpn_cls_fpn6": 0.000989, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390794}
+json_stats: {"accuracy_cls": 0.875644, "eta": "9:30:30", "iter": 2400, "loss": 0.601501, "loss_bbox": 0.227257, "loss_cls": 0.288271, "loss_rpn_bbox_fpn2": 0.001447, "loss_rpn_bbox_fpn3": 0.004972, "loss_rpn_bbox_fpn4": 0.015438, "loss_rpn_bbox_fpn5": 0.011176, "loss_rpn_bbox_fpn6": 0.002460, "loss_rpn_cls_fpn2": 0.002855, "loss_rpn_cls_fpn3": 0.006268, "loss_rpn_cls_fpn4": 0.006695, "loss_rpn_cls_fpn5": 0.004564, "loss_rpn_cls_fpn6": 0.000464, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390761}
+json_stats: {"accuracy_cls": 0.900200, "eta": "9:30:09", "iter": 2420, "loss": 0.479219, "loss_bbox": 0.190119, "loss_cls": 0.232794, "loss_rpn_bbox_fpn2": 0.000482, "loss_rpn_bbox_fpn3": 0.006502, "loss_rpn_bbox_fpn4": 0.012239, "loss_rpn_bbox_fpn5": 0.009513, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.002094, "loss_rpn_cls_fpn3": 0.006334, "loss_rpn_cls_fpn4": 0.005653, "loss_rpn_cls_fpn5": 0.005259, "loss_rpn_cls_fpn6": 0.000249, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390613}
+json_stats: {"accuracy_cls": 0.878877, "eta": "9:29:33", "iter": 2440, "loss": 0.571764, "loss_bbox": 0.220935, "loss_cls": 0.274539, "loss_rpn_bbox_fpn2": 0.000657, "loss_rpn_bbox_fpn3": 0.002602, "loss_rpn_bbox_fpn4": 0.007597, "loss_rpn_bbox_fpn5": 0.012154, "loss_rpn_bbox_fpn6": 0.002846, "loss_rpn_cls_fpn2": 0.001658, "loss_rpn_cls_fpn3": 0.005218, "loss_rpn_cls_fpn4": 0.007599, "loss_rpn_cls_fpn5": 0.006542, "loss_rpn_cls_fpn6": 0.001376, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390282}
+json_stats: {"accuracy_cls": 0.877639, "eta": "9:29:09", "iter": 2460, "loss": 0.616491, "loss_bbox": 0.215667, "loss_cls": 0.281634, "loss_rpn_bbox_fpn2": 0.000903, "loss_rpn_bbox_fpn3": 0.006691, "loss_rpn_bbox_fpn4": 0.007495, "loss_rpn_bbox_fpn5": 0.009139, "loss_rpn_bbox_fpn6": 0.002240, "loss_rpn_cls_fpn2": 0.001949, "loss_rpn_cls_fpn3": 0.012117, "loss_rpn_cls_fpn4": 0.007043, "loss_rpn_cls_fpn5": 0.004233, "loss_rpn_cls_fpn6": 0.000885, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390103}
+json_stats: {"accuracy_cls": 0.882324, "eta": "9:29:01", "iter": 2480, "loss": 0.620874, "loss_bbox": 0.239696, "loss_cls": 0.268192, "loss_rpn_bbox_fpn2": 0.000517, "loss_rpn_bbox_fpn3": 0.007720, "loss_rpn_bbox_fpn4": 0.009741, "loss_rpn_bbox_fpn5": 0.011031, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.004392, "loss_rpn_cls_fpn3": 0.007647, "loss_rpn_cls_fpn4": 0.005010, "loss_rpn_cls_fpn5": 0.003244, "loss_rpn_cls_fpn6": 0.000487, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390094}
+json_stats: {"accuracy_cls": 0.893936, "eta": "9:29:08", "iter": 2500, "loss": 0.545183, "loss_bbox": 0.231318, "loss_cls": 0.252324, "loss_rpn_bbox_fpn2": 0.000892, "loss_rpn_bbox_fpn3": 0.003405, "loss_rpn_bbox_fpn4": 0.007876, "loss_rpn_bbox_fpn5": 0.007467, "loss_rpn_bbox_fpn6": 0.004713, "loss_rpn_cls_fpn2": 0.001773, "loss_rpn_cls_fpn3": 0.004374, "loss_rpn_cls_fpn4": 0.008707, "loss_rpn_cls_fpn5": 0.005436, "loss_rpn_cls_fpn6": 0.002636, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390274}
+json_stats: {"accuracy_cls": 0.898708, "eta": "9:28:40", "iter": 2520, "loss": 0.498122, "loss_bbox": 0.203961, "loss_cls": 0.244248, "loss_rpn_bbox_fpn2": 0.000336, "loss_rpn_bbox_fpn3": 0.005438, "loss_rpn_bbox_fpn4": 0.010233, "loss_rpn_bbox_fpn5": 0.006626, "loss_rpn_bbox_fpn6": 0.000210, "loss_rpn_cls_fpn2": 0.002772, "loss_rpn_cls_fpn3": 0.008355, "loss_rpn_cls_fpn4": 0.005019, "loss_rpn_cls_fpn5": 0.002427, "loss_rpn_cls_fpn6": 0.000123, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390041}
+json_stats: {"accuracy_cls": 0.885388, "eta": "9:28:31", "iter": 2540, "loss": 0.537766, "loss_bbox": 0.220954, "loss_cls": 0.255114, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.003403, "loss_rpn_bbox_fpn4": 0.008922, "loss_rpn_bbox_fpn5": 0.005047, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.002503, "loss_rpn_cls_fpn3": 0.005433, "loss_rpn_cls_fpn4": 0.004047, "loss_rpn_cls_fpn5": 0.001287, "loss_rpn_cls_fpn6": 0.000421, "lr": 0.001000, "mb_qsize": 64, "mem": 7248, "time": 0.390029}
+json_stats: {"accuracy_cls": 0.875461, "eta": "9:28:19", "iter": 2560, "loss": 0.580858, "loss_bbox": 0.220016, "loss_cls": 0.277507, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.004793, "loss_rpn_bbox_fpn4": 0.015470, "loss_rpn_bbox_fpn5": 0.009378, "loss_rpn_bbox_fpn6": 0.001609, "loss_rpn_cls_fpn2": 0.001394, "loss_rpn_cls_fpn3": 0.006303, "loss_rpn_cls_fpn4": 0.010293, "loss_rpn_cls_fpn5": 0.003270, "loss_rpn_cls_fpn6": 0.000565, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389970}
+json_stats: {"accuracy_cls": 0.858667, "eta": "9:28:09", "iter": 2580, "loss": 0.668380, "loss_bbox": 0.241021, "loss_cls": 0.324802, "loss_rpn_bbox_fpn2": 0.000802, "loss_rpn_bbox_fpn3": 0.004422, "loss_rpn_bbox_fpn4": 0.014244, "loss_rpn_bbox_fpn5": 0.016098, "loss_rpn_bbox_fpn6": 0.003571, "loss_rpn_cls_fpn2": 0.002955, "loss_rpn_cls_fpn3": 0.007899, "loss_rpn_cls_fpn4": 0.006791, "loss_rpn_cls_fpn5": 0.004482, "loss_rpn_cls_fpn6": 0.001161, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389947}
+json_stats: {"accuracy_cls": 0.887231, "eta": "9:27:36", "iter": 2600, "loss": 0.561719, "loss_bbox": 0.223878, "loss_cls": 0.277934, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.007186, "loss_rpn_bbox_fpn4": 0.015168, "loss_rpn_bbox_fpn5": 0.006910, "loss_rpn_bbox_fpn6": 0.000194, "loss_rpn_cls_fpn2": 0.001165, "loss_rpn_cls_fpn3": 0.008771, "loss_rpn_cls_fpn4": 0.006834, "loss_rpn_cls_fpn5": 0.002419, "loss_rpn_cls_fpn6": 0.000069, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389660}
+json_stats: {"accuracy_cls": 0.895982, "eta": "9:27:29", "iter": 2620, "loss": 0.524715, "loss_bbox": 0.215552, "loss_cls": 0.249190, "loss_rpn_bbox_fpn2": 0.000197, "loss_rpn_bbox_fpn3": 0.004696, "loss_rpn_bbox_fpn4": 0.009152, "loss_rpn_bbox_fpn5": 0.009149, "loss_rpn_bbox_fpn6": 0.002959, "loss_rpn_cls_fpn2": 0.001987, "loss_rpn_cls_fpn3": 0.007039, "loss_rpn_cls_fpn4": 0.004495, "loss_rpn_cls_fpn5": 0.003192, "loss_rpn_cls_fpn6": 0.000866, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389676}
+json_stats: {"accuracy_cls": 0.904929, "eta": "9:27:13", "iter": 2640, "loss": 0.438478, "loss_bbox": 0.185036, "loss_cls": 0.219457, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.002937, "loss_rpn_bbox_fpn4": 0.008563, "loss_rpn_bbox_fpn5": 0.003243, "loss_rpn_bbox_fpn6": 0.000000, "loss_rpn_cls_fpn2": 0.000881, "loss_rpn_cls_fpn3": 0.002564, "loss_rpn_cls_fpn4": 0.003483, "loss_rpn_cls_fpn5": 0.001328, "loss_rpn_cls_fpn6": 0.000123, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389578}
+json_stats: {"accuracy_cls": 0.890625, "eta": "9:27:10", "iter": 2660, "loss": 0.540030, "loss_bbox": 0.223173, "loss_cls": 0.255526, "loss_rpn_bbox_fpn2": 0.000970, "loss_rpn_bbox_fpn3": 0.003292, "loss_rpn_bbox_fpn4": 0.013098, "loss_rpn_bbox_fpn5": 0.009013, "loss_rpn_bbox_fpn6": 0.002201, "loss_rpn_cls_fpn2": 0.002135, "loss_rpn_cls_fpn3": 0.003997, "loss_rpn_cls_fpn4": 0.006712, "loss_rpn_cls_fpn5": 0.006788, "loss_rpn_cls_fpn6": 0.001000, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389630}
+json_stats: {"accuracy_cls": 0.886230, "eta": "9:27:00", "iter": 2680, "loss": 0.537966, "loss_bbox": 0.210510, "loss_cls": 0.257552, "loss_rpn_bbox_fpn2": 0.000108, "loss_rpn_bbox_fpn3": 0.003631, "loss_rpn_bbox_fpn4": 0.008151, "loss_rpn_bbox_fpn5": 0.006859, "loss_rpn_bbox_fpn6": 0.003792, "loss_rpn_cls_fpn2": 0.001585, "loss_rpn_cls_fpn3": 0.007222, "loss_rpn_cls_fpn4": 0.005968, "loss_rpn_cls_fpn5": 0.002168, "loss_rpn_cls_fpn6": 0.001122, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389605}
+json_stats: {"accuracy_cls": 0.886671, "eta": "9:26:51", "iter": 2700, "loss": 0.530952, "loss_bbox": 0.207705, "loss_cls": 0.261746, "loss_rpn_bbox_fpn2": 0.000812, "loss_rpn_bbox_fpn3": 0.006913, "loss_rpn_bbox_fpn4": 0.009726, "loss_rpn_bbox_fpn5": 0.009705, "loss_rpn_bbox_fpn6": 0.000843, "loss_rpn_cls_fpn2": 0.003673, "loss_rpn_cls_fpn3": 0.007121, "loss_rpn_cls_fpn4": 0.004727, "loss_rpn_cls_fpn5": 0.003148, "loss_rpn_cls_fpn6": 0.001003, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389596}
+json_stats: {"accuracy_cls": 0.878606, "eta": "9:26:30", "iter": 2720, "loss": 0.553684, "loss_bbox": 0.222238, "loss_cls": 0.267502, "loss_rpn_bbox_fpn2": 0.000075, "loss_rpn_bbox_fpn3": 0.005116, "loss_rpn_bbox_fpn4": 0.014806, "loss_rpn_bbox_fpn5": 0.008104, "loss_rpn_bbox_fpn6": 0.000788, "loss_rpn_cls_fpn2": 0.001820, "loss_rpn_cls_fpn3": 0.008163, "loss_rpn_cls_fpn4": 0.006782, "loss_rpn_cls_fpn5": 0.004242, "loss_rpn_cls_fpn6": 0.000591, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389447}
+json_stats: {"accuracy_cls": 0.885897, "eta": "9:26:30", "iter": 2740, "loss": 0.573334, "loss_bbox": 0.217052, "loss_cls": 0.266993, "loss_rpn_bbox_fpn2": 0.002528, "loss_rpn_bbox_fpn3": 0.005204, "loss_rpn_bbox_fpn4": 0.010437, "loss_rpn_bbox_fpn5": 0.009884, "loss_rpn_bbox_fpn6": 0.000766, "loss_rpn_cls_fpn2": 0.004905, "loss_rpn_cls_fpn3": 0.008068, "loss_rpn_cls_fpn4": 0.006450, "loss_rpn_cls_fpn5": 0.004980, "loss_rpn_cls_fpn6": 0.000776, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389536}
+json_stats: {"accuracy_cls": 0.877930, "eta": "9:26:07", "iter": 2760, "loss": 0.558751, "loss_bbox": 0.231473, "loss_cls": 0.277638, "loss_rpn_bbox_fpn2": 0.000363, "loss_rpn_bbox_fpn3": 0.007216, "loss_rpn_bbox_fpn4": 0.013649, "loss_rpn_bbox_fpn5": 0.007649, "loss_rpn_bbox_fpn6": 0.001840, "loss_rpn_cls_fpn2": 0.001398, "loss_rpn_cls_fpn3": 0.007526, "loss_rpn_cls_fpn4": 0.005697, "loss_rpn_cls_fpn5": 0.002746, "loss_rpn_cls_fpn6": 0.000950, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389353}
+json_stats: {"accuracy_cls": 0.879660, "eta": "9:26:02", "iter": 2780, "loss": 0.642345, "loss_bbox": 0.236817, "loss_cls": 0.307693, "loss_rpn_bbox_fpn2": 0.000616, "loss_rpn_bbox_fpn3": 0.005485, "loss_rpn_bbox_fpn4": 0.011266, "loss_rpn_bbox_fpn5": 0.008595, "loss_rpn_bbox_fpn6": 0.001547, "loss_rpn_cls_fpn2": 0.001748, "loss_rpn_cls_fpn3": 0.013021, "loss_rpn_cls_fpn4": 0.009259, "loss_rpn_cls_fpn5": 0.004015, "loss_rpn_cls_fpn6": 0.001463, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389389}
+json_stats: {"accuracy_cls": 0.884195, "eta": "9:25:53", "iter": 2800, "loss": 0.511186, "loss_bbox": 0.214967, "loss_cls": 0.258740, "loss_rpn_bbox_fpn2": 0.000630, "loss_rpn_bbox_fpn3": 0.004921, "loss_rpn_bbox_fpn4": 0.011897, "loss_rpn_bbox_fpn5": 0.008153, "loss_rpn_bbox_fpn6": 0.002739, "loss_rpn_cls_fpn2": 0.001528, "loss_rpn_cls_fpn3": 0.008959, "loss_rpn_cls_fpn4": 0.005234, "loss_rpn_cls_fpn5": 0.003789, "loss_rpn_cls_fpn6": 0.000840, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389375}
+json_stats: {"accuracy_cls": 0.868587, "eta": "9:25:58", "iter": 2820, "loss": 0.614738, "loss_bbox": 0.227283, "loss_cls": 0.302442, "loss_rpn_bbox_fpn2": 0.000809, "loss_rpn_bbox_fpn3": 0.005574, "loss_rpn_bbox_fpn4": 0.017761, "loss_rpn_bbox_fpn5": 0.009414, "loss_rpn_bbox_fpn6": 0.001215, "loss_rpn_cls_fpn2": 0.003188, "loss_rpn_cls_fpn3": 0.010026, "loss_rpn_cls_fpn4": 0.009591, "loss_rpn_cls_fpn5": 0.003850, "loss_rpn_cls_fpn6": 0.000497, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389521}
+json_stats: {"accuracy_cls": 0.889691, "eta": "9:25:42", "iter": 2840, "loss": 0.516973, "loss_bbox": 0.205026, "loss_cls": 0.250352, "loss_rpn_bbox_fpn2": 0.000593, "loss_rpn_bbox_fpn3": 0.004153, "loss_rpn_bbox_fpn4": 0.014312, "loss_rpn_bbox_fpn5": 0.007446, "loss_rpn_bbox_fpn6": 0.001454, "loss_rpn_cls_fpn2": 0.001770, "loss_rpn_cls_fpn3": 0.005692, "loss_rpn_cls_fpn4": 0.006581, "loss_rpn_cls_fpn5": 0.004289, "loss_rpn_cls_fpn6": 0.000470, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389433}
+json_stats: {"accuracy_cls": 0.888184, "eta": "9:25:31", "iter": 2860, "loss": 0.541787, "loss_bbox": 0.212807, "loss_cls": 0.253379, "loss_rpn_bbox_fpn2": 0.000244, "loss_rpn_bbox_fpn3": 0.003790, "loss_rpn_bbox_fpn4": 0.009716, "loss_rpn_bbox_fpn5": 0.014863, "loss_rpn_bbox_fpn6": 0.003781, "loss_rpn_cls_fpn2": 0.001624, "loss_rpn_cls_fpn3": 0.007329, "loss_rpn_cls_fpn4": 0.008282, "loss_rpn_cls_fpn5": 0.005550, "loss_rpn_cls_fpn6": 0.001882, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389393}
+json_stats: {"accuracy_cls": 0.893066, "eta": "9:25:13", "iter": 2880, "loss": 0.527959, "loss_bbox": 0.208339, "loss_cls": 0.249781, "loss_rpn_bbox_fpn2": 0.000159, "loss_rpn_bbox_fpn3": 0.004935, "loss_rpn_bbox_fpn4": 0.005912, "loss_rpn_bbox_fpn5": 0.003752, "loss_rpn_bbox_fpn6": 0.000779, "loss_rpn_cls_fpn2": 0.001952, "loss_rpn_cls_fpn3": 0.005677, "loss_rpn_cls_fpn4": 0.005373, "loss_rpn_cls_fpn5": 0.002240, "loss_rpn_cls_fpn6": 0.000934, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389272}
+json_stats: {"accuracy_cls": 0.883374, "eta": "9:25:06", "iter": 2900, "loss": 0.569604, "loss_bbox": 0.209287, "loss_cls": 0.272155, "loss_rpn_bbox_fpn2": 0.000320, "loss_rpn_bbox_fpn3": 0.006386, "loss_rpn_bbox_fpn4": 0.012550, "loss_rpn_bbox_fpn5": 0.012021, "loss_rpn_bbox_fpn6": 0.003628, "loss_rpn_cls_fpn2": 0.002546, "loss_rpn_cls_fpn3": 0.007227, "loss_rpn_cls_fpn4": 0.008521, "loss_rpn_cls_fpn5": 0.006673, "loss_rpn_cls_fpn6": 0.001872, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389285}
+json_stats: {"accuracy_cls": 0.890625, "eta": "9:24:50", "iter": 2920, "loss": 0.515043, "loss_bbox": 0.208224, "loss_cls": 0.251089, "loss_rpn_bbox_fpn2": 0.001055, "loss_rpn_bbox_fpn3": 0.002920, "loss_rpn_bbox_fpn4": 0.012185, "loss_rpn_bbox_fpn5": 0.010783, "loss_rpn_bbox_fpn6": 0.000755, "loss_rpn_cls_fpn2": 0.001055, "loss_rpn_cls_fpn3": 0.005032, "loss_rpn_cls_fpn4": 0.006413, "loss_rpn_cls_fpn5": 0.006015, "loss_rpn_cls_fpn6": 0.000478, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389189}
+json_stats: {"accuracy_cls": 0.881537, "eta": "9:24:37", "iter": 2940, "loss": 0.566019, "loss_bbox": 0.210387, "loss_cls": 0.269988, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.004647, "loss_rpn_bbox_fpn4": 0.011135, "loss_rpn_bbox_fpn5": 0.006937, "loss_rpn_bbox_fpn6": 0.000432, "loss_rpn_cls_fpn2": 0.001448, "loss_rpn_cls_fpn3": 0.004274, "loss_rpn_cls_fpn4": 0.007170, "loss_rpn_cls_fpn5": 0.002056, "loss_rpn_cls_fpn6": 0.001095, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389123}
+json_stats: {"accuracy_cls": 0.901808, "eta": "9:24:32", "iter": 2960, "loss": 0.489634, "loss_bbox": 0.183930, "loss_cls": 0.237079, "loss_rpn_bbox_fpn2": 0.000152, "loss_rpn_bbox_fpn3": 0.003755, "loss_rpn_bbox_fpn4": 0.008137, "loss_rpn_bbox_fpn5": 0.008809, "loss_rpn_bbox_fpn6": 0.002136, "loss_rpn_cls_fpn2": 0.001295, "loss_rpn_cls_fpn3": 0.005511, "loss_rpn_cls_fpn4": 0.004432, "loss_rpn_cls_fpn5": 0.005996, "loss_rpn_cls_fpn6": 0.000662, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389162}
+json_stats: {"accuracy_cls": 0.886696, "eta": "9:24:27", "iter": 2980, "loss": 0.542476, "loss_bbox": 0.218007, "loss_cls": 0.268246, "loss_rpn_bbox_fpn2": 0.000343, "loss_rpn_bbox_fpn3": 0.008187, "loss_rpn_bbox_fpn4": 0.010099, "loss_rpn_bbox_fpn5": 0.005134, "loss_rpn_bbox_fpn6": 0.000446, "loss_rpn_cls_fpn2": 0.003077, "loss_rpn_cls_fpn3": 0.006559, "loss_rpn_cls_fpn4": 0.006599, "loss_rpn_cls_fpn5": 0.002676, "loss_rpn_cls_fpn6": 0.000625, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389197}
+json_stats: {"accuracy_cls": 0.892090, "eta": "9:24:15", "iter": 3000, "loss": 0.510839, "loss_bbox": 0.201096, "loss_cls": 0.241291, "loss_rpn_bbox_fpn2": 0.000000, "loss_rpn_bbox_fpn3": 0.004303, "loss_rpn_bbox_fpn4": 0.009067, "loss_rpn_bbox_fpn5": 0.006968, "loss_rpn_bbox_fpn6": 0.000477, "loss_rpn_cls_fpn2": 0.001884, "loss_rpn_cls_fpn3": 0.003898, "loss_rpn_cls_fpn4": 0.003024, "loss_rpn_cls_fpn5": 0.002151, "loss_rpn_cls_fpn6": 0.000381, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389138}
+json_stats: {"accuracy_cls": 0.873271, "eta": "9:24:15", "iter": 3020, "loss": 0.578161, "loss_bbox": 0.234743, "loss_cls": 0.294182, "loss_rpn_bbox_fpn2": 0.000632, "loss_rpn_bbox_fpn3": 0.004690, "loss_rpn_bbox_fpn4": 0.009769, "loss_rpn_bbox_fpn5": 0.011173, "loss_rpn_bbox_fpn6": 0.001502, "loss_rpn_cls_fpn2": 0.001928, "loss_rpn_cls_fpn3": 0.005107, "loss_rpn_cls_fpn4": 0.008275, "loss_rpn_cls_fpn5": 0.004399, "loss_rpn_cls_fpn6": 0.000295, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389229}
+json_stats: {"accuracy_cls": 0.884382, "eta": "9:23:58", "iter": 3040, "loss": 0.571643, "loss_bbox": 0.230419, "loss_cls": 0.270706, "loss_rpn_bbox_fpn2": 0.000043, "loss_rpn_bbox_fpn3": 0.007937, "loss_rpn_bbox_fpn4": 0.012636, "loss_rpn_bbox_fpn5": 0.011109, "loss_rpn_bbox_fpn6": 0.001883, "loss_rpn_cls_fpn2": 0.001493, "loss_rpn_cls_fpn3": 0.008380, "loss_rpn_cls_fpn4": 0.006720, "loss_rpn_cls_fpn5": 0.004830, "loss_rpn_cls_fpn6": 0.001238, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389131}
+json_stats: {"accuracy_cls": 0.884429, "eta": "9:23:41", "iter": 3060, "loss": 0.549420, "loss_bbox": 0.203422, "loss_cls": 0.270523, "loss_rpn_bbox_fpn2": 0.001122, "loss_rpn_bbox_fpn3": 0.005631, "loss_rpn_bbox_fpn4": 0.016343, "loss_rpn_bbox_fpn5": 0.005852, "loss_rpn_bbox_fpn6": 0.001236, "loss_rpn_cls_fpn2": 0.001714, "loss_rpn_cls_fpn3": 0.005905, "loss_rpn_cls_fpn4": 0.006853, "loss_rpn_cls_fpn5": 0.001619, "loss_rpn_cls_fpn6": 0.000751, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389024}
+INFO loader.py: 285: SIGINT: Shutting down RoIDataLoader threads and exiting...
+INFO loader.py: 126: Stopping enqueue thread
+INFO loader.py: 113: Stopping mini-batch loading thread
+INFO loader.py: 113: Stopping mini-batch loading thread
+INFO loader.py: 113: Stopping mini-batch loading thread
+INFO loader.py: 113: Stopping mini-batch loading thread
+json_stats: {"accuracy_cls": 0.874011, "eta": "9:23:50", "iter": 3080, "loss": 0.590138, "loss_bbox": 0.215496, "loss_cls": 0.294707, "loss_rpn_bbox_fpn2": 0.000519, "loss_rpn_bbox_fpn3": 0.006526, "loss_rpn_bbox_fpn4": 0.013134, "loss_rpn_bbox_fpn5": 0.011089, "loss_rpn_bbox_fpn6": 0.000028, "loss_rpn_cls_fpn2": 0.002286, "loss_rpn_cls_fpn3": 0.008579, "loss_rpn_cls_fpn4": 0.007317, "loss_rpn_cls_fpn5": 0.004981, "loss_rpn_cls_fpn6": 0.000107, "lr": 0.001000, "mb_qsize": 64, "mem": 7250, "time": 0.389214}
+Original python traceback for operator 0 in network `generalized_rcnn` in exception above (most recent call last):
+  File "tools/train_net.py", line 281, in <module>
+  File "tools/train_net.py", line 119, in main
+  File "tools/train_net.py", line 128, in train_model
+  File "tools/train_net.py", line 206, in create_model
+  File "/home/swk/Documents/ML/Detectron/lib/modeling/model_builder.py", line 124, in create
+  File "/home/swk/Documents/ML/Detectron/lib/modeling/model_builder.py", line 89, in generalized_rcnn
+  File "/home/swk/Documents/ML/Detectron/lib/modeling/model_builder.py", line 229, in build_generic_detection_model
+  File "/home/swk/Documents/ML/Detectron/lib/modeling/optimizer.py", line 40, in build_data_parallel_model
+  File "/home/swk/Documents/ML/Detectron/lib/modeling/optimizer.py", line 63, in _build_forward_graph
+  File "/home/swk/Documents/ML/Detectron/lib/modeling/model_builder.py", line 169, in _single_gpu_build_func
+  File "/home/swk/Documents/ML/Detectron/lib/modeling/FPN.py", line 47, in add_fpn_ResNet50_conv5_body
+  File "/home/swk/Documents/ML/Detectron/lib/modeling/FPN.py", line 103, in add_fpn_onto_conv_body
+  File "/home/swk/Documents/ML/Detectron/lib/modeling/ResNet.py", line 38, in add_ResNet50_conv5_body
+  File "/home/swk/Documents/ML/Detectron/lib/modeling/ResNet.py", line 94, in add_ResNet_convX_body
+  File "/home/swk/Documents/ML/caffe2/build/caffe2/python/cnn.py", line 112, in Conv
+  File "/home/swk/Documents/ML/caffe2/build/caffe2/python/brew.py", line 121, in scope_wrapper
+  File "/home/swk/Documents/ML/caffe2/build/caffe2/python/helpers/conv.py", line 201, in conv
+  File "/home/swk/Documents/ML/caffe2/build/caffe2/python/helpers/conv.py", line 154, in _ConvBase

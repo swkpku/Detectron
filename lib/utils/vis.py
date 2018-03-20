@@ -248,6 +248,60 @@ def vis_one_image_opencv(
     return im
 
 
+def rle_encoding(x):
+    dots = np.where(x.T.flatten() == 1)[0]
+    run_lengths = []
+    prev = -2
+    for b in dots:
+        if (b>prev+1): run_lengths.extend((b + 1, 0))
+        run_lengths[-1] += 1
+        prev = b
+    return run_lengths
+
+
+def mask_to_rles(x):
+    for i in range(1, x.max() + 1):
+        yield rle_encoding(x == i)
+
+
+def make_submission(im, im_name, boxes, segms=None, keypoints=None, thresh=0.9):
+    """Make Submissions"""
+    if isinstance(boxes, list):
+        boxes, segms, keypoints, classes = convert_from_cls_format(
+            boxes, segms, keypoints)
+
+    if segms is not None and len(segms) > 0:
+        masks = mask_util.decode(segms)
+
+    new_test_ids = []
+    rles = []
+
+    h, w = im.shape[0], im.shape[1]
+    labeled_image = np.zeros((h, w)).astype(np.uint16)
+    label = 1
+
+    # Display in largest to smallest order to reduce occlusion
+    areas = (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
+    sorted_inds = np.argsort(-areas)
+
+    for i in sorted_inds:
+        score = boxes[i, -1]
+        if score < thresh:
+            continue
+
+        e = masks[:, :, i]
+        #labeled_image[np.argwhere(e==1)] = label
+        for index in np.argwhere(e == 1):
+            labeled_image[index[0], index[1]] = label
+        label = label + 1
+
+    rle = list(mask_to_rles(labeled_image))
+    rles.extend(rle)
+    new_test_ids.extend([im_name[46:-4]] * len(rle))
+
+    return new_test_ids, rles
+
+
 def vis_one_image(
         im, im_name, output_dir, boxes, segms=None, keypoints=None, thresh=0.9,
         kp_thresh=2, dpi=200, box_alpha=0.0, dataset=None, show_class=False,
@@ -322,6 +376,10 @@ def vis_one_image(
             for c in range(3):
                 img[:, :, c] = color_mask[c]
             e = masks[:, :, i]
+
+            print(np.argwhere(e==1))
+            print(im_name)
+            exit(-1)
 
             _, contour, hier = cv2.findContours(
                 e.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
