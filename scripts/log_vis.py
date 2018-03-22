@@ -11,6 +11,7 @@ args = parser.parse_args()
 viz = Visdom()
 iter = []
 accuracy_cls = []
+loss_bbox = []
 loss_mask = []
 
 print(args.file)
@@ -27,9 +28,11 @@ with open(args.file, 'r') as f:
             iter.append(stats["iter"])
             accuracy_cls.append(stats["accuracy_cls"])
             loss_mask.append(stats["loss_mask"])
+            loss_bbox.append(stats["loss_bbox"])
 
 iter_arr = np.array(iter)
 accuracy_cls_arr = np.array(accuracy_cls)
 loss_mask_arr = np.array(loss_mask)
+loss_bbox_arr = np.array(loss_bbox)
 
-viz.line(X=iter_arr, Y=np.column_stack((accuracy_cls_arr, loss_mask_arr)))
+viz.line(X=iter_arr, Y=np.column_stack((accuracy_cls_arr, loss_mask_arr, loss_bbox_arr)), opts=dict(legend=["acc", "mask_loss", "bbox_loss"]))

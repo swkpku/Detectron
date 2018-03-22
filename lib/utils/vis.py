@@ -23,6 +23,7 @@ from __future__ import unicode_literals
 import cv2
 import numpy as np
 import os
+import skimage.io
 
 import pycocotools.mask as mask_util
 
@@ -259,6 +260,30 @@ def rle_encoding(x):
     return run_lengths
 
 
+def numpy2encoding_no_overlap(predicts, img_name, scores):
+    sum_predicts = np.sum(predicts, axis=2)
+    rows, cols = np.where(sum_predicts >= 2)
+
+    for i in zip(rows, cols):
+        print(np.any(predicts[i[0], i[1], :]))
+        instance_indicies = np.where(np.any(predicts[i[0], i[1], :]))[0]
+        print(instance_indicies)
+        highest = instance_indicies[0]
+        predicts[i[0], i[1], :] = predicts[i[0], i[1], :] * 0
+        predicts[i[0], i[1], highest] = 1
+
+    exit()
+    ImageId = []
+    EncodedPixels = []
+    print(predicts.shape)
+    for i in range(predicts.shape[2]):
+        rle = rle_encoding(predicts[:, :, i])
+        if len(rle) > 0:
+            ImageId.append(img_name)
+            EncodedPixels.append(rle)
+    return ImageId, EncodedPixels
+
+
 def mask_to_rles(x):
     for i in range(1, x.max() + 1):
         yield rle_encoding(x == i)
@@ -273,6 +298,14 @@ def make_submission(im, im_name, boxes, segms=None, keypoints=None, thresh=0.9):
     if segms is not None and len(segms) > 0:
         masks = mask_util.decode(segms)
 
+    sc = boxes[:, -1]
+    pred = masks
+
+    ids, rle = numpy2encoding_no_overlap(pred, im_name[46:-4], sc)
+
+    return ids, rle
+
+"""
     new_test_ids = []
     rles = []
 
@@ -282,7 +315,7 @@ def make_submission(im, im_name, boxes, segms=None, keypoints=None, thresh=0.9):
 
     # Display in largest to smallest order to reduce occlusion
     areas = (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
-    sorted_inds = np.argsort(-areas)
+    sorted_inds = np.argsort(areas)
 
     for i in sorted_inds:
         score = boxes[i, -1]
@@ -300,7 +333,99 @@ def make_submission(im, im_name, boxes, segms=None, keypoints=None, thresh=0.9):
     new_test_ids.extend([im_name[46:-4]] * len(rle))
 
     return new_test_ids, rles
+"""
 
+
+def calculate_metrics(im, im_name, boxes, segms=None, keypoints=None, thresh=0.9):
+    """Calculate Metrics"""
+
+    file_map = {}
+    with open("/home/swk/Documents/ML/nuclei/file_mapping.txt") as f:
+        for line in f:
+            (key, val) = line.split()
+            file_map[key] = val
+
+    id_ = file_map[im_name.split("/")[7]]
+
+    # Load a single image and its associated masks
+    file = "/home/swk/dsb2018/stage1_train/{}/images/{}.png".format(id_, id_)
+    masks = "/home/swk/dsb2018/stage1_train/{}/masks/*.png".format(id_)
+    image = skimage.io.imread(file)
+    masks = skimage.io.imread_collection(masks).concatenate()
+    height, width, _ = image.shape
+    num_masks = masks.shape[0]
+
+    # Make a ground truth label image (pixel value is index of object label)
+    labels = np.zeros((height, width), np.uint16)
+    for index in range(0, num_masks):
+        labels[masks[index] > 0] = index + 1
+
+    if isinstance(boxes, list):
+        boxes, segms, keypoints, classes = convert_from_cls_format(
+            boxes, segms, keypoints)
+
+    if segms is not None and len(segms) > 0:
+        masks = mask_util.decode(segms)
+
+    h, w = im.shape[0], im.shape[1]
+    labeled_image = np.zeros((h, w)).astype(np.uint16)
+    label = 1
+
+    # Display in largest to smallest order to reduce occlusion
+    areas = (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
+    sorted_inds = np.argsort(areas)
+
+    for i in sorted_inds:
+        score = boxes[i, -1]
+        if score < thresh:
+            continue
+
+        e = masks[:, :, i]
+        #labeled_image[np.argwhere(e==1)] = label
+        for index in np.argwhere(e == 1):
+            labeled_image[index[0], index[1]] = label
+        label = label + 1
+
+    true_objects = len(np.unique(labels))
+    pred_objects = len(np.unique(labeled_image))
+
+    # Compute intersection between all objects
+    intersection = np.histogram2d(labels.flatten(), labeled_image.flatten(), bins=(true_objects, pred_objects))[0]
+
+    # Compute areas (needed for finding the union between all objects)
+    area_true = np.histogram(labels, bins=true_objects)[0]
+    area_pred = np.histogram(labeled_image, bins=pred_objects)[0]
+    area_true = np.expand_dims(area_true, -1)
+    area_pred = np.expand_dims(area_pred, 0)
+
+    # Compute union
+    union = area_true + area_pred - intersection
+
+    # Exclude background from the analysis
+    intersection = intersection[1:, 1:]
+    union = union[1:, 1:]
+    union[union == 0] = 1e-9
+
+    # Compute the intersection over union
+    iou = intersection / union
+
+    # Precision helper function
+    def precision_at(threshold, iou):
+        matches = iou > threshold
+        true_positives = np.sum(matches, axis=1) == 1  # Correct objects
+        false_positives = np.sum(matches, axis=0) == 0  # Missed objects
+        false_negatives = np.sum(matches, axis=1) == 0  # Extra objects
+        tp, fp, fn = np.sum(true_positives), np.sum(false_positives), np.sum(false_negatives)
+        return tp, fp, fn
+
+    # Loop over IoU thresholds
+    prec = []
+    for t in np.arange(0.5, 1.0, 0.05):
+        tp, fp, fn = precision_at(t, iou)
+        p = tp / (tp + fp + fn)
+        prec.append(p)
+
+    return np.mean(prec)
 
 def vis_one_image(
         im, im_name, output_dir, boxes, segms=None, keypoints=None, thresh=0.9,
@@ -376,10 +501,6 @@ def vis_one_image(
             for c in range(3):
                 img[:, :, c] = color_mask[c]
             e = masks[:, :, i]
-
-            print(np.argwhere(e==1))
-            print(im_name)
-            exit(-1)
 
             _, contour, hier = cv2.findContours(
                 e.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)

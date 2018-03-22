@@ -134,7 +134,7 @@ def main(args):
             cls_keyps,
             dataset=dummy_coco_dataset,
             box_alpha=0.3,
-            show_class=True,
+            show_class=False,
             thresh=0.7,
             kp_thresh=2
         )

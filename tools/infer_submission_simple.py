@@ -144,7 +144,7 @@ def main(args):
     sub = pd.DataFrame()
     sub['ImageId'] = test_ids
     sub['EncodedPixels'] = pd.Series(rles).apply(lambda x: ' '.join(str(y) for y in x))
-    sub.to_csv(args.output_dir + 'e2e_mask_rcnn_R-50-FPN_1x-lr3e-3-nuclei.csv', index=False)
+    sub.to_csv(args.output_dir + '/e2e_mask_rcnn_R-50-FPN_1x-lr3e-3-nuclei-6-new.csv', index=False)
 
 
 if __name__ == '__main__':
